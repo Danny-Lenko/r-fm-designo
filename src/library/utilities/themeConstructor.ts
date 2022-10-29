@@ -1,57 +1,57 @@
-const assembleThemeObj = (mode: any) => ({
+const assembleThemeObj = (mode: any, theme: any) => ({
   typography: {
     fontFamily: [
       '-apple-system',
       'BlinkMacSystemFont',
-      '"Nunito Sans"',
+      '"Jost"',
       'Arial',
       'sans-serif',
       '"Apple Color Emoji"',
     ].join(','),
-    fontWeightLight: 300,
-    fontWeightRegular: 600,
-    fontWeightMedium: 700,
-    fontWeightBold: 800
+    h1: {
+      fontWeight: 500,
+      fontSize: 48 / theme.typography.htmlFontSize + 'rem',
+      lineHeight: 1
+    },
+    h2: {
+      fontWeight: 500,
+      fontSize: 40 / theme.typography.htmlFontSize + 'rem',
+      lineHeight: 48/40,
+      letterSpacing: '2px'
+    },
+    h3: {
+      fontWeight: 500,
+      fontSize: 20 / theme.typography.htmlFontSize + 'rem',
+      lineHeight: 26 / 20,
+      letterSpacing: '5px'
+    },
+    body1: {
+      lineHeight: 26 / 16
+    }
   },
   palette: {
     mode,
     ...(mode === 'light'
       ? {
           text: {
-            primary: 'hsl(200, 15%, 8%)',
-            secondary: 'hsl(0, 0%, 52%)',
+            primary: '#1D1C1E',
           },
-          background: {
-            default: 'hsl(0, 0%, 98%)',
-            paper: 'hsl(0, 0%, 100%)'
-          }
         }
       : {
           text: {
             primary: 'hsl(0, 0%, 100%)'
-          },
-          background: {
-            default: 'hsl(207, 26%, 17%)',
-            paper: 'hsl(209, 23%, 22%)',
           }
         }),
-    blueCustom: {
-      main: 'hsl(238, 40%, 52%)',
-      light: 'hsl(239, 57%, 85%)',
-      dark: 'hsl(212, 24%, 26%)',
-      contrastText: '#fff',
-    },
-    redCustom: {
-      main: 'hsl(358, 79%, 66%)',
-      light: 'hsl(357, 100%, 86%)',
-      contrastText: '#fff'
-    },
     greyCustom: {
       main: 'hsl(223, 19%, 93%)',
-      light: 'hsl(228, 33%, 97%)',
-      dark: 'hsl(211, 10%, 45%)',
+      light: '#F1F3F5',
+      dark: '#333136',
       contrastText: '#000'
     },
+    peachCustom: {
+      main: '#E7816B',
+      light: '#FFAD9B'
+    }
   },
 })
 

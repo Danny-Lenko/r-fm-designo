@@ -1,11 +1,14 @@
 import { createContext, useState, useMemo } from 'react'
 import { createTheme } from '@mui/material/styles';
 import { assembleThemeObj } from './themeConstructor';
+// import { useTheme } from '@emotion/react';
 
 const ColorModeContext = createContext({ toggleClrMode: () => { } });
 
 function ToggleColorMode() {
    const [mode, setMode] = useState<'light' | 'dark'>('light');
+   const defaultTheme = createTheme()
+   console.log(defaultTheme)
    const colorMode = useMemo(
       () => ({
          toggleClrMode: () => {
@@ -15,7 +18,7 @@ function ToggleColorMode() {
       [],
    );
 
-   let theme = useMemo(() => createTheme(assembleThemeObj(mode)), [mode]);
+   let theme = useMemo(() => createTheme(assembleThemeObj(mode, defaultTheme)), [mode, defaultTheme]);
 
    return { colorMode, theme }
 }
