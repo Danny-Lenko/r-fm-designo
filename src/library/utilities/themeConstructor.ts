@@ -42,6 +42,9 @@ const assembleThemeObj = (mode: any, theme: any) => ({
             primary: 'hsl(0, 0%, 100%)'
           }
         }),
+    common: {
+      black: '#1D1C1E'
+    },
     greyCustom: {
       main: 'hsl(223, 19%, 93%)',
       light: '#F1F3F5',
