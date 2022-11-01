@@ -22,7 +22,7 @@ export default function Appbar() {
 
    return (
       <Box sx={wrapperStyles}>
-         <AppBar component="nav" color='transparent' elevation={0} >
+         <AppBar position='relative' component="nav" color='transparent' elevation={0} >
             <Container maxWidth='lg'>
                <Toolbar>
                   {/* Logo image */}

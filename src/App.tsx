@@ -11,7 +11,6 @@ function App() {
     <ThemeProvider theme = { myColorMode.theme } >
       <CssBaseline />
 
-      
       <Appbar />
 
       <Routes>
