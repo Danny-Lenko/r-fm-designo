@@ -1,6 +1,11 @@
 // Appbar
 export const APPBARHEIGHTNARROW = '94px'
 export const APPBARHEIGHTWIDE = '128px'
-export const NAVITEMS = ['Our Company', 'Locations', 'Contact'];
 export const DRAWERWIDTH = '100%';
+export const NAVITEMS = ['Our Company', 'Locations', 'Contact'];
+
+// Home
+export const HEROHEIGHTWIDE = '640px'
+export const HEROIMAGEHEIGHTSM = '390px'
+export const HEROIMAGEHEIGHTXS = '370px'
 
