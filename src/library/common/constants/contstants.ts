@@ -6,6 +6,4 @@ export const NAVITEMS = ['Our Company', 'Locations', 'Contact'];
 
 // Home
 export const HEROHEIGHTWIDE = '640px'
-export const HEROIMAGEHEIGHTSM = '390px'
-export const HEROIMAGEHEIGHTXS = '370px'
 
