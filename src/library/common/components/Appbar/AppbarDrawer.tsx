@@ -15,6 +15,7 @@ const AppbarDrawer = ({ handleDrawerToggle }: any) => {
 
    const DrawerHeader = styled('div')(({ theme }) => ({
       minHeight: APPBARHEIGHTNARROW,
+      backgroundColor: theme.palette.common.white,
       display: 'flex',
       alignItems: 'center',
       // necessary for content to be below app bar
@@ -24,7 +25,11 @@ const AppbarDrawer = ({ handleDrawerToggle }: any) => {
 
    // JSX
    return (  
-      <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+      <Box
+         className='drawer-wrapper' 
+         onClick={handleDrawerToggle} 
+         sx={{ textAlign: 'center' }}
+      >
          <DrawerHeader>
             <Toolbar sx={{minWidth: '100%'}}>
                <Box

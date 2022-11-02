@@ -17,5 +17,10 @@ code {
 .hero-box {
   background-image: url("./assets/home/desktop/bg-pattern-hero-home.svg");
   background-repeat: no-repeat;
-  background-position: 100% 50%;
+  background-position: 0 50%;
+}
+@media (min-width: 600px) {
+  .hero-box {
+    background-position: 100% 50%;
+  }
 }

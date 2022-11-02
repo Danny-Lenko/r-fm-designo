@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react'
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -14,7 +14,7 @@ import { wrapperStyles, drawerStyles } from './appbarStyles';
 import Container from '@mui/material/Container';
 
 export default function Appbar() {
-   const [mobileOpen, setMobileOpen] = React.useState(false);
+   const [mobileOpen, setMobileOpen] = useState(false);
 
    const handleDrawerToggle = () => {
       setMobileOpen(!mobileOpen);
@@ -61,7 +61,7 @@ export default function Appbar() {
          </AppBar>
 
          {/* Drawer */}
-         <Box component="nav">
+         <Box component="nav" >
             <Drawer
                anchor="top"
                variant="persistent"
@@ -73,11 +73,15 @@ export default function Appbar() {
                sx={drawerStyles}
             >
                {
-                  <AppbarDrawer handleDrawerToggle={handleDrawerToggle} />
+                  <Box minHeight='99.9vh' display='flex' sx={{ flexDirection: 'column' }}>
+                     <AppbarDrawer
+                        handleDrawerToggle={handleDrawerToggle}
+                     />
+                     <Box minHeight='100%' sx={{flexGrow: 1, bgcolor: 'rgba(0, 0, 0, 0.5)'}}></Box>
+                  </Box>
                }
             </Drawer>
          </Box>
-
       </Box>
 
    );
