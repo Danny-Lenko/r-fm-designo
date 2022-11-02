@@ -21,7 +21,7 @@ export default function Appbar() {
    };
 
    return (
-      <Box sx={wrapperStyles}>
+      <Box sx={wrapperStyles} component='header'>
          <AppBar position='relative' component="nav" color='transparent' elevation={0} >
             <Container maxWidth='lg'>
                <Toolbar>

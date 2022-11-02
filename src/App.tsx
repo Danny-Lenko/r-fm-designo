@@ -13,12 +13,11 @@ function App() {
 
       <Appbar />
 
-      <Routes>
-        <Route path='/' element={<Home />} />
+        <Routes>
+          <Route path='/' element={<Home />} />
 
-        {/* <Route path='*' element={<NotFount />} /> */}
-      </Routes>
-
+          {/* <Route path='*' element={<NotFount />} /> */}
+        </Routes>
     </ThemeProvider >
   );
 }

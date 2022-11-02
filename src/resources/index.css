@@ -24,3 +24,8 @@ code {
     background-position: 100% 50%;
   }
 }
+
+.grey-drops {
+  background-image: url("./assets/home/desktop/grey-drop-top.svg");
+  background-repeat: no-repeat;
+}
