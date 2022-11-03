@@ -26,7 +26,7 @@ const Hero = ({windowWidth}: {windowWidth:number}) => {
                alt='Phone'
                src={windowWidth < 600 ? heroPhoneXs
                   : windowWidth < 900 ? heroPhoneSm
-                     : heroPhone
+                  : heroPhone
                }
             ></Box>
          </Box>

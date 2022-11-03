@@ -14,6 +14,7 @@ code {
     monospace;
 }
 
+/* ----------- home ------------ */
 .hero-box {
   background-image: url("./assets/home/desktop/bg-pattern-hero-home.svg");
   background-repeat: no-repeat;
@@ -25,7 +26,23 @@ code {
   }
 }
 
-.grey-drops {
-  background-image: url("./assets/home/desktop/grey-drop-top.svg");
+.grey-drop {
   background-repeat: no-repeat;
+  min-width: 100%;
+  min-height: 700px;
+  position: absolute;
+  z-index: -1;
+}
+
+.grey-drop-top {
+  background-image: url("./assets/home/desktop/grey-drop-top.svg");
+  top: 350px;
+  left: 0px;
+}
+
+.grey-drop-bottom {
+  background-image: url("./assets/home/desktop/grey-drop-bottom.svg");
+  top: 1500px;
+  right: 0px;
+  min-width: 1000px;
 }
