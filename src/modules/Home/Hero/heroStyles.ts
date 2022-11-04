@@ -1,6 +1,9 @@
 import { HEROHEIGHTWIDE } from "../../../library/common/constants/contstants"
+import { Theme } from "@mui/system"
+import { calcSpacing } from "../../../library/utilities/utils"
 
 export const heroBoxStyles = {
+   mb: (theme:Theme) => calcSpacing(theme, 160),
    minHeight: { md: HEROHEIGHTWIDE },
    backgroundColor: 'peachCustom.main',
    borderRadius: 3,

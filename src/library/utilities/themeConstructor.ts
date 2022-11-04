@@ -9,7 +9,7 @@ const assembleThemeObj = (mode: any, theme: any) => ({
       '"Apple Color Emoji"',
     ].join(','),
     h1: {
-      fontWeight: 500,
+      fontWeight: 500,                                                                                                                                  
       fontSize: 48 / theme.typography.htmlFontSize + 'rem',
       lineHeight: 1
     },

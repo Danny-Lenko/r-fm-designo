@@ -46,3 +46,69 @@ code {
   right: 0px;
   min-width: 1000px;
 }
+/* designs section grid */
+.designs {
+  min-height: 640px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+    "web app"
+    "web graphics";
+  gap: 25px;
+}
+
+.designs__item {
+  cursor: pointer;
+  background: rgb(231, 129, 107);
+  border-radius: 15px;
+  overflow: hidden;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative */
+}
+.designs__item:hover{
+  /* position: relative; */
+  z-index: 2;
+}
+.designs__item:hover .designs__img {
+  transform: scale(1.2);
+  opacity: 0.3;
+}
+
+.designs__item_web {
+  grid-area: web;
+}
+
+.designs__item_app {
+  grid-area: app;
+}
+
+.designs__item_graphics {
+  grid-area: graphics;
+}
+
+.designs__img {
+  /* position: absolute; */
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background-blend-mode: darken;
+  transition: 
+    transform 750ms cubic-bezier(.5, 0, .5, 1),
+    opacity 250ms linear;
+}
+
+.designs__img_web {
+  background: rgba(0,0,0,0.5) url('../resources/assets/home/desktop/image-web-design-large.jpg') 0 0/cover no-repeat;
+}
+
+.designs__img_app {
+  background: rgba(0,0,0,0.5) url('../resources/assets/home/desktop/image-app-design.jpg') 0 0/cover no-repeat;
+}
+
+.designs__img_graphics {
+  background: rgba(0,0,0,0.5) url('../resources/assets/home/desktop/image-graphic-design.jpg') 0 0/cover no-repeat;
+}
