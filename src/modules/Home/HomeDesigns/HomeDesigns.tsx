@@ -1,21 +1,31 @@
 import { Box, Typography } from '@mui/material'
-import { homeDesignsStyles } from './homeDesignsStyles';
+import { homeDesignsStyles } from './homeDesignsStyles'
+import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 
 const HomeDesigns = () => {
    return (
       <Box className="designs" sx={homeDesignsStyles} >
          <Box className="designs__item designs__item_web">
-            <Typography variant="h2" textTransform='uppercase' color='common.white'>Web Design</Typography>
-            <Typography>View Projects</Typography>
-            <Box className="designs__img designs__img_web">
+            <Box className='designs__textbox'>
+               <Typography variant="h2">Web Design</Typography>
+               <Typography>View Projects <ChevronRightIcon /></Typography>
             </Box>
+            <Box className="designs__img designs__img_web"></Box>
          </Box>
 
          <Box className="designs__item designs__item_app">
+            <Box className='designs__textbox'>
+               <Typography variant="h2">App Design</Typography>
+               <Typography>View Projects <ChevronRightIcon /></Typography>
+            </Box>
             <Box className="designs__img designs__img_app"></Box>
          </Box>
 
          <Box className="designs__item designs__item_graphics">
+            <Box className='designs__textbox'>
+               <Typography variant="h2">Graphic Design</Typography>
+               <Typography>View Projects <ChevronRightIcon /></Typography>
+            </Box>
             <Box className="designs__img designs__img_graphics"></Box>
          </Box>
       </Box>

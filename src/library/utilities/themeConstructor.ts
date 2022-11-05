@@ -10,12 +10,12 @@ const assembleThemeObj = (mode: any, theme: any) => ({
     ].join(','),
     h1: {
       fontWeight: 500,                                                                                                                                  
-      fontSize: 48 / theme.typography.htmlFontSize + 'rem',
+      fontSize: 48 / 16 + 'rem',
       lineHeight: 1
     },
     h2: {
       fontWeight: 500,
-      fontSize: 40 / theme.typography.htmlFontSize + 'rem',
+      fontSize: 40 / 16 + 'rem',
       lineHeight: 48/40,
       letterSpacing: '2px'
     },
