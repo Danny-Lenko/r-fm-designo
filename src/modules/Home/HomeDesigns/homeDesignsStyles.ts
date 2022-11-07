@@ -7,12 +7,16 @@ import DesignsAppImgMob from '../../../resources/assets/home/mobile/image-app-de
 import DesignsGraphicsImgDesk from '../../../resources/assets/home/desktop/image-graphic-design.jpg'
 import DesignsGraphicsImgTabl from '../../../resources/assets/home/tablet/image-graphic-design.jpg'
 import DesignsGraphicsImgMob from '../../../resources/assets/home/mobile/image-graphic-design.jpg'
+import { Theme } from "@mui/system"
+import { calcSpacing } from "../../../library/utilities/utils"
+import { SECTIONMARGINBOTTOM } from '../../../library/common/constants/contstants'
 
 function assembleBg(img:string) {
    return `rgba(0,0,0,0.5) url(${img}) 0 0/cover no-repeat`
 }
 
 export const homeDesignsStyles = {
+   mb: (theme:Theme) => calcSpacing(theme, SECTIONMARGINBOTTOM),
    minHeight: { xs: 800, sm: 640 },
    display: 'grid',
    gridTemplateColumns: { xs: '1f', md: '1fr 1fr' },

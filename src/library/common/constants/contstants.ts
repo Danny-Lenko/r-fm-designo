@@ -1,3 +1,6 @@
+// Common
+export const SECTIONMARGINBOTTOM = 160
+
 // Appbar
 export const APPBARHEIGHTNARROW = '94px'
 export const APPBARHEIGHTWIDE = '128px'

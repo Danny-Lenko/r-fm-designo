@@ -23,7 +23,7 @@ const assembleThemeObj = (mode: any, theme: any) => ({
       fontWeight: 500,
       fontSize: 20 / theme.typography.htmlFontSize + 'rem',
       lineHeight: 26 / 20,
-      letterSpacing: '5px'
+      letterSpacing: '5px',
     },
     body1: {
       lineHeight: 26 / 16

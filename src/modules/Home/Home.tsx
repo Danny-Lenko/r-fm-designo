@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Hero from "./Hero/Hero";
 import GreyDrop from "./GreyDrop";
 import HomeDesigns from "./HomeDesigns/HomeDesigns";
+import HomeTraits from "./HomeTraits/HomeTraits";
 
 const Home = () => {
    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
@@ -24,6 +25,8 @@ const Home = () => {
             <Hero windowWidth={windowWidth} />
 
             <HomeDesigns />
+
+            <HomeTraits />
 
             {
                windowWidth >= 900 && <>
