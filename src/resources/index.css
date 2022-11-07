@@ -42,21 +42,10 @@ code {
 
 .grey-drop-bottom {
   background-image: url("./assets/home/desktop/grey-drop-bottom.svg");
-  top: 1500px;
+  top: 1730px;
   right: 0px;
   min-width: 1000px;
 }
 
 /* designs section */
 
-/* .designs__img_web {
-  background: rgba(0,0,0,0.5) url('../resources/assets/home/desktop/image-web-design-large.jpg') 0 0/cover no-repeat;
-} */
-
-/* .designs__img_app {
-  background: rgba(0,0,0,0.5) url('../resources/assets/home/desktop/image-app-design.jpg') 0 0/cover no-repeat;
-} */
-
-/* .designs__img_graphics {
-  background: rgba(0,0,0,0.5) url('../resources/assets/home/desktop/image-graphic-design.jpg') 0 0/cover no-repeat;
-} */
