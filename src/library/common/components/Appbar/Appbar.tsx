@@ -49,9 +49,9 @@ export default function Appbar() {
                      />
                   </IconButton>
                   {/* Links */}
-                  <Box sx={{ display: { xs: 'none', sm: 'block' }, ml: 'auto' }}>
+                  <Box className='links-box' >
                      {NAVITEMS.map((item) => (
-                        <Button key={item} sx={{ color: 'greyCustom.dark' }}>
+                        <Button key={item} >
                            {item}
                         </Button>
                      ))}

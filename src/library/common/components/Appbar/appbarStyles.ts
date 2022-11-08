@@ -7,6 +7,16 @@ export const wrapperStyles = {
    '& .MuiToolbar-root': {
       minHeight: { xs: APPBARHEIGHTNARROW, sm: APPBARHEIGHTWIDE },
       p: 0
+   },
+   '& .links-box': {
+      display: { xs: 'none', sm: 'block' }, 
+      ml: 'auto',
+      '& .MuiButton-root': {
+         color: 'greyCustom.dark',
+         fontWeight: 400,
+         fontSize: 14 / 16 + 'rem',
+         letterSpacing: '2px'
+      }
    }
 }
 

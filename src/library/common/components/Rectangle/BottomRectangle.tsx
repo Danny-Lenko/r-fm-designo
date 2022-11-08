@@ -15,6 +15,7 @@ const BottomRectangle = () => {
       py: { xs: 8, sm: 7, md: 9 },
       alignItems: { xs: 'center', md: 'unset' },
       gap: 4,
+      zIndex: 10,
       '& .content-box-rectangle': {
          textAlign: { xs:'center', md: 'start' },
          color: 'common.white',

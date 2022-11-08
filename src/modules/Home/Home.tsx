@@ -21,7 +21,6 @@ const Home = () => {
 
    return (
       <Box component="main" sx={{ position: 'relative' }}>
-
          <Container maxWidth='lg'>
             <Hero windowWidth={windowWidth} />
 
@@ -38,7 +37,6 @@ const Home = () => {
                </>
             }
          </Container>
-
       </Box>
    );
 }

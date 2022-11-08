@@ -4,6 +4,8 @@ import { ToggleColorMode } from './library/utilities/ToggleColorMode'
 import Appbar from './library/common/components/Appbar/Appbar';
 import Home from './modules/Home/Home'
 
+import Footer from './library/common/components/Footer/Footer';
+
 function App() {
   const myColorMode = ToggleColorMode()
 
@@ -13,11 +15,13 @@ function App() {
 
       <Appbar />
 
-        <Routes>
-          <Route path='/' element={<Home />} />
+      <Routes>
+        <Route path='/' element={<Home />} />
 
-          {/* <Route path='*' element={<NotFount />} /> */}
-        </Routes>
+        {/* <Route path='*' element={<NotFount />} /> */}
+      </Routes>
+
+      <Footer />
     </ThemeProvider >
   );
 }
