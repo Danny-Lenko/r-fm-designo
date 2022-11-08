@@ -1,9 +1,6 @@
 import Grid from '@mui/material/Unstable_Grid2';
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import { Theme } from "@mui/system"
-import { calcSpacing } from "../../../library/utilities/utils"
-import { SECTIONMARGINBOTTOM } from "../../../library/common/constants/contstants"
 
 const SingleTrait = ({ propsObj }: any) => {
    const { mainImage, bgImage, title, text } = propsObj
@@ -12,13 +9,13 @@ const SingleTrait = ({ propsObj }: any) => {
       mb: {
          xs: 10,
          sm: 4,
-         md: (theme:Theme) => calcSpacing(theme, SECTIONMARGINBOTTOM),
+         md: 20
       },
       textAlign: { xs: 'center', sm: 'start', md: 'center' },
       justifyContent: 'center',
       alignItems: 'flexStart',
       '& .trait-grid-item2': {
-         minHeight: '100%',
+         minHeight: '100%',     // may possibly cause problems
          pl: { xs: 0, sm: 4, md: 0 }
       }
    }
