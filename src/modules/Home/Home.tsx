@@ -1,4 +1,4 @@
-import { Typography, Container, Box } from "@mui/material";
+import { Container, Box } from "@mui/material";
 import { useEffect, useState } from "react";
 import Hero from "./Hero/Hero";
 import GreyDrop from "./GreyDrop";
