@@ -4,7 +4,7 @@ import Hero from "./Hero/Hero";
 import GreyDrop from "./GreyDrop";
 import HomeDesigns from "./HomeDesigns/HomeDesigns";
 import HomeTraits from "./HomeTraits/HomeTraits";
-import CommonRectangle from "../../library/common/components/Rectangle/CommonRectangle";
+import BottomRectangle from "../../library/common/components/Rectangle/BottomRectangle";
 
 const Home = () => {
    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
@@ -28,7 +28,7 @@ const Home = () => {
 
             <HomeTraits />
 
-            <CommonRectangle top={false} />
+            <BottomRectangle />
 
             {
                windowWidth >= 900 && <>

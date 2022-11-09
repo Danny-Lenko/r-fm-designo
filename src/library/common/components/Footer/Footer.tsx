@@ -37,6 +37,7 @@ const Footer = () => {
             display: 'flex',
             flexDirection: { xs: 'column', sm: 'row' },
             mt: { xs: 59 / 8, sm: 0 },
+            textAlign: 'center',
             '&::before': {
                content: '""',
                width: '100%',
@@ -53,6 +54,8 @@ const Footer = () => {
                letterSpacing: '2px',
                fontWeight: 400,
                mb: { xs: 3, sm: 0 },
+               width: 'max-content',
+               mx: 'auto',
                '&::after': {
                   content: '""',
                   width: '85%',
@@ -137,20 +140,35 @@ const Footer = () => {
             <Box className='lower-box'>
                <Box className='lower-box__text'>
                   <Box className='lower-box__text_first'>
-                     <Typography fontWeight={700}>Designo Central Office</Typography>
+                     <Typography 
+                        fontWeight={700}
+                        letterSpacing={2}
+                     >
+                        Designo Central Office
+                     </Typography>
                      <Typography>3886 Wellington Street</Typography>
                      <Typography>Toronto, Ontario M9C 3J5</Typography>
                   </Box>
                   <Box className='lower-box__text_second'>
-                     <Typography fontWeight={700}>Contact Us (Central Office)</Typography>
-                     <Typography fontWeight={700}>P : +1 253-863-8967</Typography>
+                     <Typography 
+                        fontWeight={700}
+                        letterSpacing={2}
+                     >
+                        Contact Us (Central Office)
+                     </Typography>
+                     <Typography 
+                        fontWeight={700}
+                        letterSpacing={2}
+                     >
+                        P : +1 253-863-8967
+                     </Typography>
                      <Typography>M : contact@designo.co</Typography>
                   </Box>
                </Box>
                {/* social network icons */}
                <Box className='lower-box__social'>
                   {
-                     socialIcons.map(icon => <SvgIcon component={icon} inheritViewBox />)
+                     socialIcons.map((icon, i) => <SvgIcon key={i} component={icon} inheritViewBox />)
                   }
                </Box>
             </Box>

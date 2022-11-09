@@ -5,7 +5,7 @@ import CustomButton from '../CustomButton/CustomButton';
 
 const BottomRectangle = () => {
 
-   const bottomRectangularStyles = {
+   const bottomRectangleStyles = {
       width: '100%',
       borderRadius: '15px',
       background: `#E7816B url(${CirclesImg}) 100% 50% no-repeat`,
@@ -35,7 +35,7 @@ const BottomRectangle = () => {
    }
 
    return (
-      <Box sx={bottomRectangularStyles}>
+      <Box sx={bottomRectangleStyles}>
          <Box className='content-box-rectangle'>
             <Typography variant='h2'>
                Let's talk about your project
