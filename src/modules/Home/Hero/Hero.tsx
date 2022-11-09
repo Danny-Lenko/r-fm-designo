@@ -1,9 +1,9 @@
-import { Typography, Box } from "@mui/material";
+import { Typography, Box, SvgIcon } from "@mui/material";
 import CustomButton from "../../../library/common/components/CustomButton/CustomButton";
 import { heroBoxStyles, heroContentBoxStyles, heroTextStyles, phoneImageStyles } from "./heroStyles";
-import heroPhone from '../../../resources/assets/home/desktop/hero-phone2.png'
-import heroPhoneSm from '../../../resources/assets/home/tablet/hero-phone-sm.png'
-import heroPhoneXs from '../../../resources/assets/home/mobile/hero-phone-xs.png'
+import { ReactComponent as HeroPhone } from '../../../resources/assets/home/desktop/image-hero-phone.svg'
+import { ReactComponent as HeroPhoneSm } from '../../../resources/assets/home/tablet/hero-phone-sm.svg'
+import { ReactComponent as HeroPhoneXs } from '../../../resources/assets/home/mobile/hero-phone-xs.svg'
 
 const Hero = ({windowWidth}: {windowWidth:number}) => {
    return (
@@ -19,16 +19,15 @@ const Hero = ({windowWidth}: {windowWidth:number}) => {
             <CustomButton light={true} title='Learn More' />
          </Box>
          {/* phone image */}
-         <Box sx={phoneImageStyles}>
-            <Box
-               className="phone-image"
-               component='img'
-               alt='Phone'
-               src={windowWidth < 600 ? heroPhoneXs
-                  : windowWidth < 900 ? heroPhoneSm
-                  : heroPhone
-               }
-            ></Box>
+         <Box sx={phoneImageStyles}>   
+            <SvgIcon 
+               component={
+                  windowWidth < 600 ? HeroPhoneXs
+                  : windowWidth < 900 ? HeroPhoneSm
+                  : HeroPhone
+               } 
+               inheritViewBox 
+            />
          </Box>
       </Box>
    );
