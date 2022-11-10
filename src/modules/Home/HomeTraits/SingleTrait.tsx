@@ -8,7 +8,7 @@ const SingleTrait = ({ propsObj }: any) => {
    const containerStyles = {
       mb: {
          xs: 10,
-         sm: 4,
+         sm: 108 / 8,
          md: 20
       },
       textAlign: { xs: 'center', sm: 'start', md: 'center' },

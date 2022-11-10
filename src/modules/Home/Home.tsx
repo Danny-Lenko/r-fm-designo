@@ -1,7 +1,7 @@
 import { Container, Box } from "@mui/material";
 import { useEffect, useState } from "react";
 import Hero from "./Hero/Hero";
-import GreyDrop from "./GreyDrop";
+import GreyDrop from "../../library/common/components/GreyDrop/GreyDrop";
 import HomeDesigns from "./HomeDesigns/HomeDesigns";
 import HomeTraits from "./HomeTraits/HomeTraits";
 import BottomRectangle from "../../library/common/components/Rectangle/BottomRectangle";
@@ -30,12 +30,8 @@ const Home = () => {
 
             <BottomRectangle />
 
-            {
-               windowWidth >= 900 && <>
-                  <GreyDrop dropClass="grey-drop-top" />
-                  <GreyDrop dropClass="grey-drop-bottom" />
-               </>
-            }
+            <GreyDrop top={true} />
+            <GreyDrop top={false} />
          </Container>
       </Box>
    );

@@ -4,18 +4,17 @@ import Grid from '@mui/material/Unstable_Grid2';
 import TopRectangle from '../../library/common/components/Rectangle/TopRectangle';
 import { SECTIONMARGINBOTTOM } from '../../library/common/constants/contstants';
 import DesignLink from '../../library/common/components/DesignLink/DesignLink';
-import { appDesignProps, graphicDesignProps } from '../../library/common/constants/contstants';
+import { webDesignProps, graphicDesignProps } from '../../library/common/constants/contstants';
 import BottomRectangle from '../../library/common/components/Rectangle/BottomRectangle';
 import ProjectCard from '../../library/common/components/ProjectCard/ProjectCard';
-import { projects } from './webProjects';
-import CirclesImg from '../../resources/assets/web-design/desktop/bg-pattern-intro-web.svg'
-import GreyDrop from '../../library/common/components/GreyDrop/GreyDrop';
+import { projects } from './appProjects';
+import CirclesImg from '../../resources/assets/app-design/desktop/bg-pattern-intro-app.svg'
 
-const WebDesign = () => {
+const AppDesign = () => {
    const topRectangleContent = {
       title: 'Web Design',
       desc: 'We build websites that serve as powerful marketing tools and bring memorable brand experiences.',
-      cirles: CirclesImg
+      circles: CirclesImg
    }
 
    const appDesignStyles = {
@@ -26,11 +25,11 @@ const WebDesign = () => {
       gridTemplateRows: { xs: '1fr 1fr', md: '1fr' },
       gridTemplateAreas: {
          xs: `
-            "app"
+            "web"
             "graphic"
          `,
          md: `
-            "app graphic"
+            "web graphic"
          `
       },
       gap: '25px',
@@ -41,8 +40,6 @@ const WebDesign = () => {
          <Container>
             <TopRectangle content={topRectangleContent} />
 
-            <GreyDrop top={true} />
-
             <Grid container spacing={4} mb={SECTIONMARGINBOTTOM / 8}>
                {
                   projects.map(project => <ProjectCard key={project.title} project={project} />)
@@ -50,14 +47,14 @@ const WebDesign = () => {
             </Grid>
 
             <Box sx={appDesignStyles} >
-               <DesignLink content={appDesignProps} />
+               <DesignLink content={webDesignProps} />
                <DesignLink content={graphicDesignProps} />
             </Box>
-
+   
             <BottomRectangle />
          </Container>
       </Box>
    );
 }
 
-export default WebDesign;
+export default AppDesign;

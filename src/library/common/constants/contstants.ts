@@ -13,21 +13,21 @@ export const HEROHEIGHTWIDE = '640px'
 // DesingLink
 export const webDesignProps = {
    title: 'Web Design',
-   path: 'web-design',
+   path: '/web-design',
    img: 'WebImg',
    gridArea: 'web'
 }
 
 export const appDesignProps = {
    title: 'App Design',
-   path: 'app-design',
+   path: '/app-design',
    img: 'AppImg',
    gridArea: 'app'
 }
 
 export const graphicDesignProps = {
    title: 'Graphic Design',
-   path: 'graphic-design',
+   path: '/graphic-design',
    img: 'GraphicImg',
    gridArea: 'graphic'
 }
