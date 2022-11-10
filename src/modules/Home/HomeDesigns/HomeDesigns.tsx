@@ -9,19 +9,22 @@ const HomeDesigns = () => {
    const webDesignProps = {
       title: 'Web Design',
       path: 'web-design',
-      img: 'WebImg'
+      img: 'WebImg',
+      gridArea: 'web'
    }
 
    const appDesignProps = {
       title: 'App Design',
       path: 'app-design',
-      img: 'AppImg'
+      img: 'AppImg',
+      gridArea: 'app'
    }
 
    const graphicDesignProps = {
       title: 'Graphic Design',
       path: 'graphic-design',
-      img: 'GraphicImg'
+      img: 'GraphicImg',
+      gridArea: 'graphic'
    }
 
    const homeDesignsStyles = {
@@ -34,11 +37,11 @@ const HomeDesigns = () => {
          xs: `
             "web"
             "app"
-            "graphics"
+            "graphic"
          `,
          md: `
             "web app"
-            "web graphics"
+            "web graphic"
          `
       },
       gap: '25px',

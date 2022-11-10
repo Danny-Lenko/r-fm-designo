@@ -25,7 +25,6 @@ function assembleBg(img: string, size: string) {
       { name: 'GraphicImgSM', link: GraphicImgSM },
       { name: 'GraphicImgXS', link: GraphicImgXS },
    ]
-
    const actualImageName = img + size
    const actualImage = allImages.find(image => image.name === actualImageName)
 
@@ -34,10 +33,10 @@ function assembleBg(img: string, size: string) {
 
 // the component
 const DesignLink = ({ content }: { content: any }) => {
-
    const navigate = useNavigate()
 
    const designLinkStyles = {
+      gridArea: content.gridArea,
       position: 'relative',
       cursor: 'pointer',
       backgroundColor: 'peachCustom.main',
@@ -95,7 +94,6 @@ const DesignLink = ({ content }: { content: any }) => {
             }
          }
       }
-
    }
 
    return (
