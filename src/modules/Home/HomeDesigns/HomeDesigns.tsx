@@ -1,39 +1,54 @@
-import { Box, Typography } from '@mui/material'
-import { homeDesignsStyles } from './homeDesignsStyles'
-import ChevronRightIcon from '@mui/icons-material/ChevronRight'
-import { useNavigate } from 'react-router-dom'
+import { Box } from '@mui/material'
+import DesignLink from '../../../library/common/components/DesignLink/DesignLink'
+import { Theme } from "@mui/system"
+import { calcSpacing } from '../../../library/utilities/utils'
+import { SECTIONMARGINBOTTOM } from '../../../library/common/constants/contstants'
 
 const HomeDesigns = () => {
-   const navigate = useNavigate()
+
+   const webDesignProps = {
+      title: 'Web Design',
+      path: 'web-design',
+      img: 'WebImg'
+   }
+
+   const appDesignProps = {
+      title: 'App Design',
+      path: 'app-design',
+      img: 'AppImg'
+   }
+
+   const graphicDesignProps = {
+      title: 'Graphic Design',
+      path: 'graphic-design',
+      img: 'GraphicImg'
+   }
+
+   const homeDesignsStyles = {
+      mb: (theme:Theme) => calcSpacing(theme, SECTIONMARGINBOTTOM),
+      minHeight: { xs: 800, sm: 640 },
+      display: 'grid',
+      gridTemplateColumns: { xs: '1f', md: '1fr 1fr' },
+      gridTemplateRows: { xs: '1fr 1fr 1f', md: '1fr 1fr' },
+      gridTemplateAreas: {
+         xs: `
+            "web"
+            "app"
+            "graphics"
+         `,
+         md: `
+            "web app"
+            "web graphics"
+         `
+      },
+      gap: '25px',
+   }
 
    return (
       <Box className="designs" sx={homeDesignsStyles} >
-         <Box 
-            className="designs__item designs__item_web"
-            onClick={() => navigate('web-design')}
-         >
-            <Box className='designs__textbox'>
-               <Typography variant="h2">Web Design</Typography>
-               <Typography>View Projects <ChevronRightIcon /></Typography>
-            </Box>
-            <Box className="designs__img designs__img_web"></Box>
-         </Box>
-
-         <Box className="designs__item designs__item_app">
-            <Box className='designs__textbox'>
-               <Typography variant="h2">App Design</Typography>
-               <Typography>View Projects <ChevronRightIcon /></Typography>
-            </Box>
-            <Box className="designs__img designs__img_app"></Box>
-         </Box>
-
-         <Box className="designs__item designs__item_graphics">
-            <Box className='designs__textbox'>
-               <Typography variant="h2">Graphic Design</Typography>
-               <Typography>View Projects <ChevronRightIcon /></Typography>
-            </Box>
-            <Box className="designs__img designs__img_graphics"></Box>
-         </Box>
+         <DesignLink content={webDesignProps} />
+         <DesignLink content={appDesignProps} />
+         <DesignLink content={graphicDesignProps} />
       </Box>
    );
 }
