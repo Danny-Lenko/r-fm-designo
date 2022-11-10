@@ -47,5 +47,9 @@ code {
   min-width: 1000px;
 }
 
-/* designs section */
+/* 
+.web-grid-container {
+  border: 1px solid black;
+  grid-auto-rows: 'auto';
+} */
 
