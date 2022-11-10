@@ -2,7 +2,6 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import { useNavigate } from 'react-router-dom';
-
 import WebImgMD from '../../../../resources/assets/home/desktop/image-web-design-large.jpg'
 import WebImgSM from '../../../../resources/assets/home/tablet/image-web-design.jpg'
 import WebImgXS from '../../../../resources/assets/home/mobile/image-web-design.jpg'
@@ -36,7 +35,7 @@ const DesignLink = ({ content }: { content: any }) => {
    const navigate = useNavigate()
 
    const designLinkStyles = {
-      gridArea: content.gridArea,
+      gridArea: content.gridArea ? content.gridArea : 'none',
       position: 'relative',
       cursor: 'pointer',
       backgroundColor: 'peachCustom.main',

@@ -3,30 +3,9 @@ import DesignLink from '../../../library/common/components/DesignLink/DesignLink
 import { Theme } from "@mui/system"
 import { calcSpacing } from '../../../library/utilities/utils'
 import { SECTIONMARGINBOTTOM } from '../../../library/common/constants/contstants'
+import { webDesignProps, appDesignProps, graphicDesignProps } from '../../../library/common/constants/contstants'
 
 const HomeDesigns = () => {
-
-   const webDesignProps = {
-      title: 'Web Design',
-      path: 'web-design',
-      img: 'WebImg',
-      gridArea: 'web'
-   }
-
-   const appDesignProps = {
-      title: 'App Design',
-      path: 'app-design',
-      img: 'AppImg',
-      gridArea: 'app'
-   }
-
-   const graphicDesignProps = {
-      title: 'Graphic Design',
-      path: 'graphic-design',
-      img: 'GraphicImg',
-      gridArea: 'graphic'
-   }
-
    const homeDesignsStyles = {
       mb: (theme:Theme) => calcSpacing(theme, SECTIONMARGINBOTTOM),
       minHeight: { xs: 800, sm: 640 },
@@ -48,7 +27,7 @@ const HomeDesigns = () => {
    }
 
    return (
-      <Box className="designs" sx={homeDesignsStyles} >
+      <Box sx={homeDesignsStyles} >
          <DesignLink content={webDesignProps} />
          <DesignLink content={appDesignProps} />
          <DesignLink content={graphicDesignProps} />
