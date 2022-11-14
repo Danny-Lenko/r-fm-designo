@@ -20,7 +20,7 @@ const AboutHero = () => {
       display: 'flex',
       flexDirection: { xs: 'column-reverse', md: 'row' },
       mb: SECTIONMARGINBOTTOM / 8,
-      borderRadius: '24px',
+      borderRadius: '15px',
       '& .content-box': {
          color: 'common.white',
          backgroundColor: 'peachCustom.main',
@@ -31,17 +31,17 @@ const AboutHero = () => {
          textAlign: { xs: 'center', md: 'start' },
          py: { xs: 10, sm: 8, md: 135 / 8 },
          px: { xs: 3, sm: 7, md: 95 / 8 },
-         borderTopLeftRadius: { md: '24px' },
-         borderBottomRightRadius: { sm: '24px', md: 'unset' },
-         borderBottomLeftRadius: { sm: '24px' },
+         borderTopLeftRadius: { md: '15px' },
+         borderBottomRightRadius: { sm: '15px', md: 'unset' },
+         borderBottomLeftRadius: { sm: '15px' },
          '& .MuiTypography-h1': {
             mb: { xs: 3, sm: 4 }
          }
       },
       '& .image-box': {
-         borderTopRightRadius: { sm: '24px', md: '24px' },
-         borderBottomRightRadius: { xs: 0, md: '24px' },
-         borderTopLeftRadius: { sm: '24px', md: 0 },
+         borderTopRightRadius: { sm: '15px', md: '15px' },
+         borderBottomRightRadius: { xs: 0, md: '15px' },
+         borderTopLeftRadius: { sm: '15px', md: 0 },
          width: '100%',
          minHeight: '320px',
          background: {
