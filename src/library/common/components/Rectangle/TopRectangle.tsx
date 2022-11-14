@@ -1,19 +1,19 @@
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography';
-import { SECTIONMARGINBOTTOM } from '../../constants/contstants';
+import { SECTIONMARGINBOTTOM } from '../../constants/constants';
 
-const TopRectangle = ({content}: {content:Record<string, string>}) => {
+const TopRectangle = ({ content }: { content: Record<string, string> }) => {
 
    const topRectangleStyles = {
       mb: SECTIONMARGINBOTTOM / 8,
       width: '100%',
       borderRadius: '15px',
-      background: `#E7816B url(${content.cirles}) 100% 50% no-repeat`,
+      background: `#E7816B url(${content.circles}) 100% 50% no-repeat`,
       textAlign: 'center',
       py: 64 / 8,
       color: 'common.white',
       '& .MuiTypography-h1': {
-         mb: 24/8,
+         mb: 24 / 8,
          width: '95%',
          mx: 'auto'
       },

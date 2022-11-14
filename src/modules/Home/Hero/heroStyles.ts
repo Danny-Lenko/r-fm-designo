@@ -1,7 +1,7 @@
-import { HEROHEIGHTWIDE } from "../../../library/common/constants/contstants"
+import { HEROHEIGHTWIDE } from "../../../library/common/constants/constants"
 import { Theme } from "@mui/system"
 import { calcSpacing } from "../../../library/utilities/utils"
-import { SECTIONMARGINBOTTOM } from "../../../library/common/constants/contstants"
+import { SECTIONMARGINBOTTOM } from "../../../library/common/constants/constants"
 
 export const heroBoxStyles = {
    mb: (theme: Theme) => calcSpacing(theme, SECTIONMARGINBOTTOM),

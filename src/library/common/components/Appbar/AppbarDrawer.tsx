@@ -8,10 +8,11 @@ import ListItemText from '@mui/material/ListItemText';
 import { styled } from '@mui/material/styles';
 import { ReactComponent as CloseIcon } from '../../../../resources/assets/shared/mobile/icon-close.svg'
 import logoDark from '../../../../resources/assets/shared/desktop/logo-dark.png'
-import { NAVITEMS, APPBARHEIGHTNARROW } from '../../constants/contstants';
+import { NAVITEMS, APPBARHEIGHTNARROW } from '../../constants/constants';
+import { useNavigate } from 'react-router-dom';
 
-// Component
 const AppbarDrawer = ({ handleDrawerToggle }: any) => {
+   const navigate = useNavigate()
 
    const DrawerHeader = styled('div')(({ theme }) => ({
       minHeight: APPBARHEIGHTNARROW,
@@ -24,14 +25,14 @@ const AppbarDrawer = ({ handleDrawerToggle }: any) => {
    }));
 
    // JSX
-   return (  
+   return (
       <Box
-         className='drawer-wrapper' 
-         onClick={handleDrawerToggle} 
+         className='drawer-wrapper'
+         onClick={handleDrawerToggle}
          sx={{ textAlign: 'center' }}
       >
          <DrawerHeader>
-            <Toolbar sx={{minWidth: '100%'}}>
+            <Toolbar sx={{ minWidth: '100%' }}>
                <Box
                   component='img'
                   display='block'
@@ -40,19 +41,22 @@ const AppbarDrawer = ({ handleDrawerToggle }: any) => {
                   src={logoDark}
                >
                </Box>
-               <SvgIcon 
-                  sx={{transform: 'translateY(2px) translateX(-10px)', ml: 'auto'}} 
-                  component={CloseIcon} 
-                  inheritViewBox 
+               <SvgIcon
+                  sx={{ transform: 'translateY(2px) translateX(-10px)', ml: 'auto' }}
+                  component={CloseIcon}
+                  inheritViewBox
                />
             </Toolbar>
          </DrawerHeader>
 
          <List>
-            {NAVITEMS.map((item:any) => (
-               <ListItem key={item} disablePadding>
-                  <ListItemButton sx={{ textAlign: 'center' }}>
-                     <ListItemText primary={item} />
+            {NAVITEMS.map((item: any) => (
+               <ListItem key={item.title} disablePadding>
+                  <ListItemButton
+                     sx={{ textAlign: 'center' }}
+                     onClick={() => navigate(item.path)}
+                  >
+                     <ListItemText primary={item.title} />
                   </ListItemButton>
                </ListItem>
             ))}
@@ -60,5 +64,5 @@ const AppbarDrawer = ({ handleDrawerToggle }: any) => {
       </Box>
    );
 }
- 
+
 export default AppbarDrawer;

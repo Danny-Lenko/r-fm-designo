@@ -4,17 +4,17 @@ import Grid from '@mui/material/Unstable_Grid2';
 import TopRectangle from '../../library/common/components/Rectangle/TopRectangle';
 import { SECTIONMARGINBOTTOM, DROPDESIGNTYPES } from '../../library/common/constants/constants';
 import DesignLink from '../../library/common/components/DesignLink/DesignLink';
-import { appDesignProps, graphicDesignProps } from '../../library/common/constants/constants';
+import { webDesignProps, appDesignProps } from '../../library/common/constants/constants';
 import BottomRectangle from '../../library/common/components/Rectangle/BottomRectangle';
 import ProjectCard from '../../library/common/components/ProjectCard/ProjectCard';
-import { projects } from './webProjects';
-import CirclesImg from '../../resources/assets/web-design/desktop/bg-pattern-intro-web.svg'
+import { projects } from './graphicProjects';
+import CirclesImg from '../../resources/assets/graphic-design/desktop/bg-pattern-intro-graphic.svg'
 import GreyDrop from '../../library/common/components/GreyDrop/GreyDrop';
 
-const WebDesign = () => {
+const GraphicDesign = () => {
    const topRectangleContent = {
-      title: 'Web Design',
-      desc: 'We build websites that serve as powerful marketing tools and bring memorable brand experiences.',
+      title: 'Graphic Design',
+      desc: 'We deliver eye-catching branding materials that are tailored to meet your business objectives.',
       circles: CirclesImg
    }
 
@@ -26,11 +26,11 @@ const WebDesign = () => {
       gridTemplateRows: { xs: '1fr 1fr', md: '1fr' },
       gridTemplateAreas: {
          xs: `
+            "web"
             "app"
-            "graphic"
          `,
          md: `
-            "app graphic"
+            "web app"
          `
       },
       gap: '25px',
@@ -50,8 +50,8 @@ const WebDesign = () => {
             </Grid>
 
             <Box sx={appDesignStyles} >
+               <DesignLink content={webDesignProps} />
                <DesignLink content={appDesignProps} />
-               <DesignLink content={graphicDesignProps} />
             </Box>
 
             <BottomRectangle />
@@ -60,4 +60,4 @@ const WebDesign = () => {
    );
 }
 
-export default WebDesign;
+export default GraphicDesign;

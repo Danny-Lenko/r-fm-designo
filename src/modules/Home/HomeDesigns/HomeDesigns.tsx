@@ -2,12 +2,12 @@ import { Box } from '@mui/material'
 import DesignLink from '../../../library/common/components/DesignLink/DesignLink'
 import { Theme } from "@mui/system"
 import { calcSpacing } from '../../../library/utilities/utils'
-import { SECTIONMARGINBOTTOM } from '../../../library/common/constants/contstants'
-import { webDesignProps, appDesignProps, graphicDesignProps } from '../../../library/common/constants/contstants'
+import { SECTIONMARGINBOTTOM } from '../../../library/common/constants/constants'
+import { webDesignProps, appDesignProps, graphicDesignProps } from '../../../library/common/constants/constants'
 
 const HomeDesigns = () => {
    const homeDesignsStyles = {
-      mb: (theme:Theme) => calcSpacing(theme, SECTIONMARGINBOTTOM),
+      mb: (theme: Theme) => calcSpacing(theme, SECTIONMARGINBOTTOM),
       minHeight: { xs: 800, sm: 640 },
       display: 'grid',
       gridTemplateColumns: { xs: '1f', md: '1fr 1fr' },

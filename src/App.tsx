@@ -7,6 +7,8 @@ import Footer from './library/common/components/Footer/Footer';
 import Home from './modules/Home/Home'
 import WebDesign from './modules/WebDesign/WebDesign';
 import AppDesign from './modules/AppDesign/AppDesign';
+import GraphicDesign from './modules/GraphicDesign/GraphicDesign';
+import About from './modules/About/About';
 
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/web-design' element={<WebDesign />} />
         <Route path='/app-design' element={<AppDesign />} />
+        <Route path='/graphic-design' element={<GraphicDesign />} />
+        <Route path='/about' element={<About />} />
         {/* <Route path='*' element={<NotFount />} /> */}
       </Routes>
 

@@ -9,12 +9,14 @@ import Button from '@mui/material/Button';
 import logoDark from '../../../../resources/assets/shared/desktop/logo-dark.png'
 import { ReactComponent as HamburgerIcon } from '../../../../resources/assets/shared/mobile/icon-hamburger.svg'
 import AppbarDrawer from './AppbarDrawer';
-import { NAVITEMS } from '../../constants/contstants';
+import { NAVITEMS } from '../../constants/constants';
 import { wrapperStyles, drawerStyles } from './appbarStyles';
 import Container from '@mui/material/Container';
+import { useNavigate } from 'react-router-dom';
 
 export default function Appbar() {
    const [mobileOpen, setMobileOpen] = useState(false);
+   const navigate = useNavigate()
 
    const handleDrawerToggle = () => {
       setMobileOpen(!mobileOpen);
@@ -51,8 +53,10 @@ export default function Appbar() {
                   {/* Links */}
                   <Box className='links-box' >
                      {NAVITEMS.map((item) => (
-                        <Button key={item} >
-                           {item}
+                        <Button
+                           onClick={() => navigate(item.path)}
+                           key={item.title} >
+                           {item.title}
                         </Button>
                      ))}
                   </Box>
@@ -77,7 +81,7 @@ export default function Appbar() {
                      <AppbarDrawer
                         handleDrawerToggle={handleDrawerToggle}
                      />
-                     <Box minHeight='100%' sx={{flexGrow: 1, bgcolor: 'rgba(0, 0, 0, 0.5)'}}></Box>
+                     <Box minHeight='100%' sx={{ flexGrow: 1, bgcolor: 'rgba(0, 0, 0, 0.5)' }}></Box>
                   </Box>
                }
             </Drawer>

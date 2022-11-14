@@ -2,18 +2,19 @@ import Box from '@mui/material/Box'
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
 import TopRectangle from '../../library/common/components/Rectangle/TopRectangle';
-import { SECTIONMARGINBOTTOM } from '../../library/common/constants/contstants';
+import { SECTIONMARGINBOTTOM, DROPDESIGNTYPES } from '../../library/common/constants/constants';
 import DesignLink from '../../library/common/components/DesignLink/DesignLink';
-import { webDesignProps, graphicDesignProps } from '../../library/common/constants/contstants';
+import { webDesignProps, graphicDesignProps } from '../../library/common/constants/constants';
 import BottomRectangle from '../../library/common/components/Rectangle/BottomRectangle';
 import ProjectCard from '../../library/common/components/ProjectCard/ProjectCard';
 import { projects } from './appProjects';
 import CirclesImg from '../../resources/assets/app-design/desktop/bg-pattern-intro-app.svg'
+import GreyDrop from '../../library/common/components/GreyDrop/GreyDrop';
 
 const AppDesign = () => {
    const topRectangleContent = {
-      title: 'Web Design',
-      desc: 'We build websites that serve as powerful marketing tools and bring memorable brand experiences.',
+      title: 'App Design',
+      desc: 'Our mobile designs bring intuitive digital solutions to your customers right at their fingertips.',
       circles: CirclesImg
    }
 
@@ -40,6 +41,8 @@ const AppDesign = () => {
          <Container>
             <TopRectangle content={topRectangleContent} />
 
+            <GreyDrop typeTop={true} margTop={DROPDESIGNTYPES} />
+
             <Grid container spacing={4} mb={SECTIONMARGINBOTTOM / 8}>
                {
                   projects.map(project => <ProjectCard key={project.title} project={project} />)
@@ -50,7 +53,7 @@ const AppDesign = () => {
                <DesignLink content={webDesignProps} />
                <DesignLink content={graphicDesignProps} />
             </Box>
-   
+
             <BottomRectangle />
          </Container>
       </Box>

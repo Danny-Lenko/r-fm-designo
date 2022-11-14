@@ -1,5 +1,5 @@
-import { APPBARHEIGHTNARROW, APPBARHEIGHTWIDE } from "../../constants/contstants"
-import { DRAWERWIDTH } from "../../constants/contstants"
+import { APPBARHEIGHTNARROW, APPBARHEIGHTWIDE } from "../../constants/constants"
+import { DRAWERWIDTH } from "../../constants/constants"
 
 export const wrapperStyles = {
    display: 'flex',
@@ -9,7 +9,7 @@ export const wrapperStyles = {
       p: 0
    },
    '& .links-box': {
-      display: { xs: 'none', sm: 'block' }, 
+      display: { xs: 'none', sm: 'block' },
       ml: 'auto',
       '& .MuiButton-root': {
          position: 'relative',

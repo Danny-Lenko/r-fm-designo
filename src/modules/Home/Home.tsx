@@ -5,6 +5,7 @@ import GreyDrop from "../../library/common/components/GreyDrop/GreyDrop";
 import HomeDesigns from "./HomeDesigns/HomeDesigns";
 import HomeTraits from "./HomeTraits/HomeTraits";
 import BottomRectangle from "../../library/common/components/Rectangle/BottomRectangle";
+import { DROPHOMETOP, DROPHOMEBOTTOM } from "../../library/common/constants/constants";
 
 const Home = () => {
    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
@@ -30,8 +31,8 @@ const Home = () => {
 
             <BottomRectangle />
 
-            <GreyDrop top={true} />
-            <GreyDrop top={false} />
+            <GreyDrop typeTop={true} margTop={DROPHOMETOP} />
+            <GreyDrop typeTop={false} margTop={DROPHOMEBOTTOM} />
          </Container>
       </Box>
    );
