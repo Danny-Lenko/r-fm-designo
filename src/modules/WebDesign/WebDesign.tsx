@@ -38,8 +38,9 @@ const WebDesign = () => {
 
    return (
       <Box component="main" sx={{ position: 'relative' }}>
+         <TopRectangle content={topRectangleContent} />
+
          <Container>
-            <TopRectangle content={topRectangleContent} />
 
             <GreyDrop typeTop={true} margTop={DROPDESIGNTYPES} />
 

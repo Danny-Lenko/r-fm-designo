@@ -7,7 +7,7 @@ export const heroBoxStyles = {
    mb: (theme: Theme) => calcSpacing(theme, SECTIONMARGINBOTTOM),
    minHeight: { md: HEROHEIGHTWIDE },
    backgroundColor: 'peachCustom.main',
-   borderRadius: 3,
+   borderRadius: { sm: 3 },
    position: 'relative',
    display: 'flex',
    flexDirection: { xs: 'column', md: 'row' },
@@ -55,8 +55,8 @@ export const phoneImageStyles = {
       '& .MuiSvgIcon-root': {
          filter: 'none',
          boxShadow: '20px -40px 80px rgba(93, 2, 2, 0.497569)',
-         borderTopRightRadius: '37px',
-         borderTopLeftRadius: '37px'
+         borderTopRightRadius: {sm:'37px'},
+         borderTopLeftRadius: {sm:'37px'}
       }
    }
 }

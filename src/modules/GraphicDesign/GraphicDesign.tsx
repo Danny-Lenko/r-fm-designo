@@ -38,9 +38,9 @@ const GraphicDesign = () => {
 
    return (
       <Box component="main" sx={{ position: 'relative' }}>
-         <Container>
-            <TopRectangle content={topRectangleContent} />
+         <TopRectangle content={topRectangleContent} />
 
+         <Container>
             <GreyDrop typeTop={true} margTop={DROPDESIGNTYPES} />
 
             <Grid container spacing={4} mb={SECTIONMARGINBOTTOM / 8}>
