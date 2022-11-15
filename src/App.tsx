@@ -9,6 +9,7 @@ import WebDesign from './modules/WebDesign/WebDesign';
 import AppDesign from './modules/AppDesign/AppDesign';
 import GraphicDesign from './modules/GraphicDesign/GraphicDesign';
 import About from './modules/About/About';
+import Locations from './modules/Locations/Locations';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path='/app-design' element={<AppDesign />} />
         <Route path='/graphic-design' element={<GraphicDesign />} />
         <Route path='/about' element={<About />} />
+        <Route path='/locations' element={<Locations />} />
         {/* <Route path='*' element={<NotFount />} /> */}
       </Routes>
 

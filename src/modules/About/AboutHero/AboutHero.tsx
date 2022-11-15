@@ -5,13 +5,10 @@ import imageXs from '../../../resources/assets/about/mobile/image-about-hero.jpg
 import { SECTIONMARGINBOTTOM } from "../../../library/common/constants/constants";
 import circleXs from '../../../resources/assets/about/mobile/bg-pattern-hero-about-mobile.svg'
 import circleSm from '../../../resources/assets/about/desktop/bg-pattern-hero-about-desktop.svg'
-import Container from "@mui/material/Container";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { useTheme } from "@mui/material/styles";
+import MobileContainer from "../../../library/common/components/MobileContainer/MobileContainer";
 
 const AboutHero = () => {
-   const theme = useTheme()
-
+   
    function assembleImgBackground(img: string) {
       return `url(${img}) 50% 50%/cover no-repeat`
    }
@@ -19,7 +16,7 @@ const AboutHero = () => {
    const aboutHeroStyles = {
       display: 'flex',
       flexDirection: { xs: 'column-reverse', md: 'row' },
-      mb: {xs: 0, sm: SECTIONMARGINBOTTOM / 8},
+      mb: { xs: 0, sm: SECTIONMARGINBOTTOM / 8 },
       borderRadius: '15px',
       '& .content-box': {
          color: 'common.white',
@@ -53,7 +50,7 @@ const AboutHero = () => {
    }
 
    return (
-      <Container disableGutters={useMediaQuery(theme.breakpoints.only('xs'))} maxWidth='lg'>
+      <MobileContainer>
          <Box sx={aboutHeroStyles}>
             <Box className="content-box">
                <Typography variant="h1">About Us</Typography>
@@ -63,7 +60,7 @@ const AboutHero = () => {
             </Box>
             <Box className="image-box"></Box>
          </Box>
-      </Container>
+      </MobileContainer>
    );
 }
 

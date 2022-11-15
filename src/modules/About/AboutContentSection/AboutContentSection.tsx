@@ -1,14 +1,11 @@
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import Container from '@mui/material/Container'
-import { useMediaQuery } from '@mui/material'
 import { SECTIONMARGINBOTTOM } from '../../../library/common/constants/constants'
 import { AboutContentItem } from '../../../library/interfaces/interfaces'
-import { useTheme } from "@mui/material/styles";
 import CirclesImg from '../../../resources/assets/about/desktop/content-circles.svg'
+import MobileContainer from '../../../library/common/components/MobileContainer/MobileContainer'
 
 const AboutContentSection = ({ props }: { props: AboutContentItem }) => {
-   const theme = useTheme()
 
    const {
       flexDirMd,
@@ -65,7 +62,7 @@ const AboutContentSection = ({ props }: { props: AboutContentItem }) => {
    }
 
    return (
-      <Container disableGutters={useMediaQuery(theme.breakpoints.only('xs'))} maxWidth='lg'>
+      <MobileContainer>
          <Box sx={componentStyle}>
             <Box className='image-box'></Box>
             <Box className='content-box'>
@@ -74,7 +71,7 @@ const AboutContentSection = ({ props }: { props: AboutContentItem }) => {
                <Typography>{paragraphTwo}</Typography>
             </Box>
          </Box>
-      </Container>
+      </MobileContainer>
    );
 }
 

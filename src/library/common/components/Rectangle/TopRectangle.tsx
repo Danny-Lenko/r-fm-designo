@@ -1,12 +1,9 @@
 import Box from '@mui/material/Box'
-import Container from '@mui/material/Container/Container';
 import Typography from '@mui/material/Typography';
 import { SECTIONMARGINBOTTOM } from '../../constants/constants';
-import { useMediaQuery } from '@mui/material';
-import useTheme from "@mui/material/styles/useTheme";
+import MobileContainer from '../MobileContainer/MobileContainer';
 
 const TopRectangle = ({ content }: { content: Record<string, string> }) => {
-   const theme = useTheme()
 
    const topRectangleStyles = {
       mb: SECTIONMARGINBOTTOM / 8,
@@ -28,7 +25,7 @@ const TopRectangle = ({ content }: { content: Record<string, string> }) => {
    }
 
    return (
-      <Container maxWidth='lg' disableGutters={useMediaQuery(theme.breakpoints.only('xs'))} >
+      <MobileContainer>
          <Box sx={topRectangleStyles}>
             <Typography variant='h1'>
                {content.title}
@@ -37,7 +34,7 @@ const TopRectangle = ({ content }: { content: Record<string, string> }) => {
                {content.desc}
             </Typography>
          </Box>
-      </Container>
+      </MobileContainer>
    );
 }
 
