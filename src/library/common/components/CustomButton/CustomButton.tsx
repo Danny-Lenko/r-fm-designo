@@ -6,7 +6,7 @@ const CustomButton = ({light, title}: {light: boolean, title: string}) => {
    const theme: any = useTheme()
 
    const MyButton = styled(Button)(() => ({
-      backgroundColor: light ? theme.palette.common.white : theme.palette.peachCustom.dark,
+      backgroundColor: light ? theme.palette.common.white : theme.palette.peachCustom.main,
       color: light ? theme.palette.common.black : theme.palette.common.white,
       boxShadow: 'none',
       width: '152px',

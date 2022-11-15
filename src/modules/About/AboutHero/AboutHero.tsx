@@ -19,7 +19,7 @@ const AboutHero = () => {
    const aboutHeroStyles = {
       display: 'flex',
       flexDirection: { xs: 'column-reverse', md: 'row' },
-      mb: SECTIONMARGINBOTTOM / 8,
+      mb: {xs: 0, sm: SECTIONMARGINBOTTOM / 8},
       borderRadius: '15px',
       '& .content-box': {
          color: 'common.white',
