@@ -10,6 +10,8 @@ import realImgSm from '../../resources/assets/about/tablet/image-real-deal.jpg'
 import realImgMd from '../../resources/assets/about/desktop/image-real-deal.jpg'
 import SeeLocationSection from '../../library/common/components/SeeLocationSection/SeeLocationSection';
 import BottomRectangle from '../../library/common/components/Rectangle/BottomRectangle';
+import GreyDrop from '../../library/common/components/GreyDrop/GreyDrop';
+import { DROPHOMETOP, DROPHOMEBOTTOM } from '../../library/common/constants/constants';
 
 const About = () => {
 
@@ -34,7 +36,7 @@ const About = () => {
    }
 
    return (
-      <Box component="main" sx={{ position: 'relative' }}>
+      <Box component="main" sx={{ position: 'relative', overflowX: 'hidden' }}>
          <AboutHero />
 
          <AboutContentSection props={worldContentSection} />
@@ -45,6 +47,9 @@ const About = () => {
 
          <Container maxWidth='lg'>
             <BottomRectangle />
+
+            <GreyDrop typeTop={true} margTop={DROPHOMETOP} />
+            <GreyDrop typeTop={true} margTop='1630px' margLeft='50vw' />
          </Container>
       </Box>
    );
