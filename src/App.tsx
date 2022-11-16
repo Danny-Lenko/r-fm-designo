@@ -10,7 +10,7 @@ import AppDesign from './modules/AppDesign/AppDesign';
 import GraphicDesign from './modules/GraphicDesign/GraphicDesign';
 import About from './modules/About/About';
 import Locations from './modules/Locations/Locations';
-
+import Contact from './modules/Contact/Contact';
 
 function App() {
   const myColorMode = ToggleColorMode()
@@ -28,6 +28,7 @@ function App() {
         <Route path='/graphic-design' element={<GraphicDesign />} />
         <Route path='/about' element={<About />} />
         <Route path='/locations' element={<Locations />} />
+        <Route path='/contact' element={<Contact />} />
         {/* <Route path='*' element={<NotFount />} /> */}
       </Routes>
 
