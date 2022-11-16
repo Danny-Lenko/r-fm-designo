@@ -1,9 +1,9 @@
 import Box from "@mui/material/Box";
-import ContactHero from "./ContactHero";
+import ContactHero from "./ContactHero/ContactHero";
 import SeeLocationSection from "../../library/common/components/SeeLocationSection/SeeLocationSection";
 
 const Contact = () => {
-   return (  
+   return (
       <Box component="main" sx={{ position: 'relative' }}>
 
          <ContactHero />
@@ -12,5 +12,5 @@ const Contact = () => {
       </Box>
    );
 }
- 
+
 export default Contact;

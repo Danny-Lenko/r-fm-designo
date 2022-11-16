@@ -1,28 +1,25 @@
-import MobileContainer from "../../library/common/components/MobileContainer/MobileContainer";
+import MobileContainer from "../../../library/common/components/MobileContainer/MobileContainer";
 import Box from '@mui/material/Box'
 import Typography from "@mui/material/Typography";
-import { SECTIONMARGINBOTTOM } from "../../library/common/constants/constants";
-
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-
+import CustomButton from "../../../library/common/components/CustomButton/CustomButton";
+import { contactHeroStyles } from "./contactHeroStyles";
 
 const ContactHero = () => {
-
    const validationSchema = yup.object({
       name: yup
          .string()
-         .required('Name is required')
+         .required(`Can't be empty`)
          .min(4, '4 characters length minimum'),
       email: yup
          .string()
          .email('Enter a valid email')
-         .required('Email is required'),
+         .required(`Can't be empty`),
       phone: yup
          .number()
-         .typeError('Must include only number')
+         .typeError('Must include only numbers')
          .min(9, '9 characters length minimum')
          .optional(),
       message: yup
@@ -43,60 +40,9 @@ const ContactHero = () => {
       },
    });
 
-
-   const componentStyles = {
-      display: 'flex',
-      backgroundColor: 'peachCustom.main',
-      borderRadius: '15px',
-      py: { xs: 72 / 8, md: 55 / 8 },
-      px: { xs: 3, sm: 58 / 8, md: 96 / 8 },
-      color: 'common.white',
-      mb: SECTIONMARGINBOTTOM / 8,
-      gap: 3,
-
-      '& .text-box': {
-         width: { xs: '100%', md: '50%' },
-         textAlign: { xs: 'center', sm: 'start' },
-         '& .MuiTypography-h1': {
-            mb: 3
-         }
-      },
-      // the form styles
-      '& .form-box': {
-         width: { xs: '100', md: '50%' },
-         '& .MuiTextField-root': {
-            mt: 2,
-            '& .MuiInputLabel-root': {
-               color: 'common.white',
-               opacity: 0.7,
-               ml: 2
-            },
-            '& .MuiInput-root': {
-               color: 'common.white',
-               pl: 2,
-               pb: 1,
-               '&:before': {
-                  borderColor: 'common.white',
-                  opacity: 0.5
-               }
-            }
-         },
-         '& .MuiInput-underline:after': {
-            borderBottomColor: 'common.white'
-         },
-         // prevents chrome autofill styling
-         '& input:-webkit-autofill': {
-            transition: 'background-color 600000s 0s, color 600000s 0s'
-         },
-         '& input:-webkit-autofill:focus': {
-            transition: 'background-color 600000s 0s, color 600000s 0s'
-         },
-      }
-   }
-
    return (
       <MobileContainer>
-         <Box sx={componentStyles}>
+         <Box sx={contactHeroStyles}>
             <Box className="text-box">
                <Typography variant="h1">Contact Us</Typography>
                <Typography>
@@ -143,8 +89,8 @@ const ContactHero = () => {
                      variant="standard"
                      fullWidth
                      multiline
-                     minRows={3}
-                     maxRows={5}
+                     minRows={2}
+                     maxRows={3}
                      id="message"
                      name="message"
                      label="Your Message"
@@ -153,9 +99,9 @@ const ContactHero = () => {
                      error={formik.touched.message && Boolean(formik.errors.message)}
                      helperText={formik.touched.message && formik.errors.message}
                   />
-                  <Button color="primary" variant="contained" fullWidth type="submit">
-                     Submit
-                  </Button>
+                  <Box sx={{ mt: 3, textAlign: 'end' }}>
+                     <CustomButton light={true} title='Submit' type='submit'></CustomButton>
+                  </Box>
                </form>
 
             </Box>

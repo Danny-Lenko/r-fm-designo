@@ -2,7 +2,7 @@ import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import useTheme from '@mui/material/styles/useTheme';
 
-const CustomButton = ({light, title}: {light: boolean, title: string}) => {
+const CustomButton = ({light, title, type}: {light: boolean, title: string, type?:any}) => {
    const theme: any = useTheme()
 
    const MyButton = styled(Button)(() => ({
@@ -20,7 +20,7 @@ const CustomButton = ({light, title}: {light: boolean, title: string}) => {
    }));
 
    return (
-      <MyButton>{title}</MyButton>
+      <MyButton type={type ? type : 'button'}>{title}</MyButton>
    );
 }
 
