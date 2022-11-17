@@ -85,11 +85,20 @@ export default function Appbar() {
                      <AppbarDrawer
                         handleDrawerToggle={handleDrawerToggle}
                      />
-                     <Box minHeight='100%' sx={{ flexGrow: 1, bgcolor: 'rgba(0, 0, 0, 0.5)' }}></Box>
                   </Box>
                }
             </Drawer>
          </Box>
+         {/* drawer overlay */}
+         <Box sx={{
+            minHeight: '100%', 
+            width: '100%', 
+            bgcolor: 'rgba(0, 0, 0, 0.5)', 
+            position: 'fixed', 
+            top: 0, 
+            zIndex: 10000,
+            display: mobileOpen ? 'block' : 'none'
+         }}></Box>
       </Box>
 
    );

@@ -41,7 +41,7 @@ export const wrapperStyles = {
 
 export const drawerStyles = {
    display: { xs: 'block', sm: 'none' },
-   '& .MuiDrawer-paper': { boxSizing: 'border-box', width: DRAWERWIDTH, backgroundColor: 'transparent' },
+   '& .MuiDrawer-paper': { boxSizing: 'border-box', width: DRAWERWIDTH, backgroundColor: 'transparent', zIndex: 100000 },
    '& .MuiList-root': { backgroundColor: 'common.black', color: 'hsl(0, 0%, 100%)', fontSize: '1.5rem', py: 3 },
    '& .MuiListItemText-primary': { fontSize: '1.5rem', textTransform: 'uppercase', textAlign: 'start' },
    '& .MuiListItemButton-root:hover': { backgroundColor: 'greyCustom.dark' },
