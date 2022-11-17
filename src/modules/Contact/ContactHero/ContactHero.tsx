@@ -99,7 +99,7 @@ const ContactHero = () => {
                      error={formik.touched.message && Boolean(formik.errors.message)}
                      helperText={formik.touched.message && formik.errors.message}
                   />
-                  <Box sx={{ mt: 3, textAlign: 'end' }}>
+                  <Box sx={{ mt: {xs: 5, sm: 3}, textAlign: {xs: 'center', sm:'end'} }}>
                      <CustomButton light={true} title='Submit' type='submit'></CustomButton>
                   </Box>
                </form>

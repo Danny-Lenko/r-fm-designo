@@ -1,13 +1,16 @@
 import { SECTIONMARGINBOTTOM } from "../../../library/common/constants/constants"
 import IconError from '../../../resources/assets/contact/desktop/icon-error.svg'
-// import CircleImgMd from '../../../resources/assets/contact/desktop/bg-pattern-hero-desktop.svg'
-// import CircleImgXs from '../../../resources/assets/contact/mobile/bg-pattern-hero-contact-mobile.svg'
+import CircleImgMd from '../../../resources/assets/contact/desktop/bg-pattern-hero-desktop.svg'
+import CircleImgXs from '../../../resources/assets/contact/mobile/bg-pattern-hero-contact-mobile.svg'
 
 export const contactHeroStyles = {
    display: 'flex',
+   flexDirection: {xs: 'column', md: 'row'},
    backgroundColor: 'peachCustom.main',
-   // backgroundImage: ''
-   borderRadius: '15px',
+   backgroundImage: {xs: `url(${CircleImgXs})`, sm: `url(${CircleImgMd})`},
+   backgroundRepeat: 'no-repeat',
+   backgroundPosition: {xs: '25% top', sm: '-100px -100px', md:'left bottom'},
+   borderRadius: {sm:'15px'},
    py: { xs: 72 / 8, md: 55 / 8 },
    px: { xs: 3, sm: 58 / 8, md: 96 / 8 },
    color: 'common.white',
@@ -15,7 +18,7 @@ export const contactHeroStyles = {
    justifyContent: 'space-between',
    gap: 1,
    '& .text-box': {
-      width: { xs: '100%', md: '45%' },
+      width: { xs: '100%', sm: '90%', md: '45%' },
       textAlign: { xs: 'center', sm: 'start' },
       display: 'flex',
       flexDirection: 'column',
