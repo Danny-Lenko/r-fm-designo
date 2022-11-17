@@ -12,11 +12,12 @@ import AppbarDrawer from './AppbarDrawer';
 import { NAVITEMS } from '../../constants/constants';
 import { wrapperStyles, drawerStyles } from './appbarStyles';
 import Container from '@mui/material/Container';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function Appbar() {
    const [mobileOpen, setMobileOpen] = useState(false);
    const navigate = useNavigate()
+   const location = useLocation()
 
    const handleDrawerToggle = () => {
       setMobileOpen(!mobileOpen);
@@ -29,10 +30,11 @@ export default function Appbar() {
                <Toolbar>
                   {/* Logo image */}
                   <Box
+                     onClick={() => navigate('/')}
                      component='img'
                      display='block'
                      alt='logo'
-                     sx={{ width: '194px', transform: 'translateY(2px)' }}
+                     sx={{ width: '194px', transform: 'translateY(2px)', cursor: 'pointer' }}
                      src={logoDark}
                   >
                   </Box>
@@ -54,8 +56,10 @@ export default function Appbar() {
                   <Box className='links-box' >
                      {NAVITEMS.map((item) => (
                         <Button
+                           disabled={location.pathname === item.path ? true : false}
                            onClick={() => navigate(item.path)}
-                           key={item.title} >
+                           key={item.title}
+                        >
                            {item.title}
                         </Button>
                      ))}

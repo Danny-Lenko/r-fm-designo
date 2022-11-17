@@ -50,11 +50,17 @@ const Locations = () => {
 
    return (
       <Box component="main" sx={{ position: 'relative' }}>
-         <LocationArticle content={canadaContent} />
+         <Box id='canada'>
+            <LocationArticle content={canadaContent} />
+         </Box>
 
-         <LocationArticle content={australiaContent} />
+         <Box id='australia'>
+            <LocationArticle content={australiaContent} />
+         </Box>
 
-         <LocationArticle content={ukContent} />
+         <Box id='uk'>
+            <LocationArticle content={ukContent} />
+         </Box>
 
          <Container maxWidth='lg'>
             <BottomRectangle />

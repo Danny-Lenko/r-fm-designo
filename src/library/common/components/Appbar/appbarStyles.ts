@@ -32,8 +32,8 @@ export const wrapperStyles = {
          '&:hover::after': {
             opacity: 1
          },
-         '&:focus::after': {
-            opacity: 1
+         '&:disabled': {
+            color: 'peachCustom.light'
          }
       }
    }

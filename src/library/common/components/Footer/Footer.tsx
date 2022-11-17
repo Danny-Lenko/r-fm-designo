@@ -5,21 +5,24 @@ import { ReactComponent as IconInstagram } from '../../../../resources/assets/sh
 import { ReactComponent as IconPinterest } from '../../../../resources/assets/shared/desktop/icon-pinterest.svg'
 import { ReactComponent as IconTwitter } from '../../../../resources/assets/shared/desktop/icon-twitter.svg'
 import { ReactComponent as IconYoutube } from '../../../../resources/assets/shared/desktop/icon-youtube.svg'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 const Footer = () => {
+   const navigate = useNavigate()
+   const location = useLocation()
 
    const socialIcons = [ IconFacebook, IconYoutube, IconTwitter, IconPinterest, IconInstagram ]
 
    const footerStyles = {
       pt: {
-         xs: 253 / 8,
+         xs: location.pathname === '/contact' ? 88 / 8 : 253 / 8,
          sm: 166 / 8,
          md: 144 / 8
       },
       pb: 72 / 8,
       zIndex: -100,
       backgroundColor: 'common.black',
-      mt: { xs: (64 - 253) / 8, sm: -9 },
+      mt: location.pathname === '/contact' ? 163 / 8 : { xs: (64 - 253) / 8, sm: -9 },
       // upper-box
       '& .upper-box': {
          position: 'relative',
@@ -70,9 +73,6 @@ const Footer = () => {
                },
                '&:hover::after': {
                   opacity: 1
-               },
-               '&:focus::after': {
-                  opacity: 1
                }
             }
          }
@@ -122,6 +122,7 @@ const Footer = () => {
 
    return (
       <Box sx={footerStyles}>
+
          <Container>
             {/* upper box */}
             <Box className='upper-box'>
@@ -131,9 +132,9 @@ const Footer = () => {
                   src={LogoLight}
                ></Box>
                <Box className='upper-box__links'>
-                  <Button>Our Company</Button>
-                  <Button>Locations</Button>
-                  <Button>Contact</Button>
+                  <Button onClick={() => navigate('/about')}>Our Company</Button>
+                  <Button onClick={() => navigate('/locations')}>Locations</Button>
+                  <Button onClick={() => navigate('/contact')}>Contact</Button>
                </Box>
             </Box>
             {/* lower box */}

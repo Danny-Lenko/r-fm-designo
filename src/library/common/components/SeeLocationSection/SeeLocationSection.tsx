@@ -6,9 +6,12 @@ import canadaImg from '../../../../resources/assets/shared/desktop/img-group-can
 import australiaImg from '../../../../resources/assets/shared/desktop/img-group-australia.svg'
 import ukImg from '../../../../resources/assets/shared/desktop/img-group-uk.svg'
 import { SECTIONMARGINBOTTOM } from '../../constants/constants'
+import { useNavigate } from 'react-router-dom'
+import { NavHashLink } from 'react-router-hash-link';
 
 const SeeLocationSection = () => {
-   
+   const navigate = useNavigate()
+
    const sectionStyles = {
       display: 'flex',
       flexDirection: {xs: 'column', md: 'row'},
@@ -22,27 +25,42 @@ const SeeLocationSection = () => {
             mb: 4,
             textTransform: 'uppercase'
          }
+      },
+      '& a': {
+         textDecoration: 'none'
       }
    }
+
+   const scrollWithOffset = (el:any) => {
+      const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+      const yOffset = -10; 
+      window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' }); 
+  }
 
    return (
       <Container maxWidth='lg' sx={sectionStyles}>
          <Box className='article'>
             <Box className='img-box' component='img' src={canadaImg} alt='Canada'></Box>
             <Typography variant='h3'>Canada</Typography>
-            <CustomButton light={false} title='see location'></CustomButton>
+            <NavHashLink smooth to='/locations#canada' scroll={el => scrollWithOffset(el)}>
+               <CustomButton light={false} title='see location'></CustomButton>
+            </NavHashLink>
          </Box>
 
          <Box className='article'>
             <Box className='img-box' component='img' src={australiaImg} alt='Australia'></Box>
             <Typography variant='h3'>Australia</Typography>
-            <CustomButton light={false} title='see location'></CustomButton>
+            <NavHashLink smooth to='/locations#australia' scroll={el => scrollWithOffset(el)}>
+               <CustomButton light={false} title='see location'></CustomButton>
+            </NavHashLink>
          </Box>
 
          <Box className='article'>
             <Box className='img-box' component='img' src={ukImg} alt='United Kingdom'></Box>
             <Typography variant='h3'>United Kingdom</Typography>
-            <CustomButton light={false} title='see location'></CustomButton>
+            <NavHashLink smooth to='/locations#uk' scroll={el => scrollWithOffset(el)}>
+               <CustomButton light={false} title='see location'></CustomButton>
+            </NavHashLink>
          </Box>
       </Container>
    );

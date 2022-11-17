@@ -4,8 +4,11 @@ import { heroBoxStyles, heroContentBoxStyles, heroTextStyles, phoneImageStyles }
 import { ReactComponent as HeroPhone } from '../../../resources/assets/home/desktop/image-hero-phone.svg'
 import { ReactComponent as HeroPhoneSm } from '../../../resources/assets/home/tablet/hero-phone-sm.svg'
 import { ReactComponent as HeroPhoneXs } from '../../../resources/assets/home/mobile/hero-phone-xs.svg'
+import { useNavigate } from "react-router-dom";
 
 const Hero = ({windowWidth}: {windowWidth:number}) => {
+   const navigate = useNavigate()
+
    return (
       <Box className='hero-box' sx={heroBoxStyles}>  {/* bgimage is in index.css */}
          {/* content box*/}
@@ -16,7 +19,7 @@ const Hero = ({windowWidth}: {windowWidth:number}) => {
             <Typography sx={heroTextStyles}>
                With over 10 years in the industry, we are experienced in creating fully responsive websites, app design, and engaging brand experiences. Find out more about our services.
             </Typography>
-            <CustomButton light={true} title='Learn More' />
+            <CustomButton onClick={() => navigate('/web-design')} light={true} title='Learn More' />
          </Box>
          {/* phone image */}
          <Box sx={phoneImageStyles}>   
