@@ -1,14 +1,14 @@
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography';
-import { SECTIONMARGINBOTTOM } from '../../constants/constants';
-import MobileContainer from '../MobileContainer/MobileContainer';
+import { SECTIONMARGINBOTTOM } from '../../library/common/constants/constants';
+import MobileContainer from '../../../components/MobileContainer/MobileContainer';
 
 const TopRectangle = ({ content }: { content: Record<string, string> }) => {
 
    const topRectangleStyles = {
       mb: SECTIONMARGINBOTTOM / 8,
       width: '100%',
-      borderRadius: {sm: '15px'},
+      borderRadius: { sm: '15px' },
       background: `#E7816B url(${content.circles}) 100% 50% no-repeat`,
       textAlign: 'center',
       py: 64 / 8,

@@ -1,15 +1,15 @@
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
-import TopRectangle from '../../library/common/components/Rectangle/TopRectangle';
-import { SECTIONMARGINBOTTOM, DROPDESIGNTYPES } from '../../library/common/constants/constants';
-import DesignLink from '../../library/common/components/DesignLink/DesignLink';
-import { webDesignProps, appDesignProps } from '../../library/common/constants/constants';
-import BottomRectangle from '../../library/common/components/Rectangle/BottomRectangle';
-import ProjectCard from '../../library/common/components/ProjectCard/ProjectCard';
+import TopRectangle from '../../../components/Rectangle/TopRectangle';
+import { SECTIONMARGINBOTTOM, DROPDESIGNTYPES } from '../../../lib/utils/constants';
+import DesignLink from '../../../components/common/DesignLink/DesignLink';
+import { webDesignProps, appDesignProps } from '../../../lib/utils/constants';
+import BottomRectangle from '../../../components/Rectangle/BottomRectangle';
+import ProjectCard from '../../../components/common/ProjectCard/ProjectCard';
 import { projects } from './graphicProjects';
 import CirclesImg from '../../resources/assets/graphic-design/desktop/bg-pattern-intro-graphic.svg'
-import GreyDrop from '../../library/common/components/GreyDrop/GreyDrop';
+import GreyDrop from '../../../components/common/GreyDrop/GreyDrop';
 
 const GraphicDesign = () => {
    const topRectangleContent = {

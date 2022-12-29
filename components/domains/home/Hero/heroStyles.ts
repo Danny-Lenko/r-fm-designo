@@ -1,7 +1,7 @@
-import { HEROHEIGHTWIDE } from "../../../library/common/constants/constants"
+import { HEROHEIGHTWIDE } from "../../../../lib/utils/constants"
 import { Theme } from "@mui/system"
-import { calcSpacing } from "../../../library/utilities/utils"
-import { SECTIONMARGINBOTTOM } from "../../../library/common/constants/constants"
+import { calcSpacing } from "../../../../src/library/utilities/utils"
+import { SECTIONMARGINBOTTOM } from "../../../../lib/utils/constants"
 
 export const heroBoxStyles = {
    mb: (theme: Theme) => calcSpacing(theme, SECTIONMARGINBOTTOM),
@@ -55,8 +55,8 @@ export const phoneImageStyles = {
       '& .MuiSvgIcon-root': {
          filter: 'none',
          boxShadow: '20px -40px 80px rgba(93, 2, 2, 0.497569)',
-         borderTopRightRadius: {sm:'37px'},
-         borderTopLeftRadius: {sm:'37px'}
+         borderTopRightRadius: { sm: '37px' },
+         borderTopLeftRadius: { sm: '37px' }
       }
    }
 }

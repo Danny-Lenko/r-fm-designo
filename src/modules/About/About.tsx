@@ -8,10 +8,10 @@ import worldImgMd from '../../resources/assets/about/desktop/image-world-class-t
 import realImgXs from '../../resources/assets/about/mobile/image-real-deal.jpg'
 import realImgSm from '../../resources/assets/about/tablet/image-real-deal.jpg'
 import realImgMd from '../../resources/assets/about/desktop/image-real-deal.jpg'
-import SeeLocationSection from '../../library/common/components/SeeLocationSection/SeeLocationSection';
-import BottomRectangle from '../../library/common/components/Rectangle/BottomRectangle';
-import GreyDrop from '../../library/common/components/GreyDrop/GreyDrop';
-import { DROPHOMETOP, DROPHOMEBOTTOM } from '../../library/common/constants/constants';
+import SeeLocationSection from '../../../components/common/SeeLocationSection/SeeLocationSection';
+import BottomRectangle from '../../../components/Rectangle/BottomRectangle';
+import GreyDrop from '../../../components/common/GreyDrop/GreyDrop';
+import { DROPHOMETOP, DROPHOMEBOTTOM } from '../../../lib/utils/constants';
 
 const About = () => {
 

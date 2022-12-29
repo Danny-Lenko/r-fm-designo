@@ -4,7 +4,7 @@ import ImagePassionate from '../../../resources/assets/home/desktop/img-group-pa
 import ImageResourceful from '../../../resources/assets/home/desktop/img-group-resourceful.svg'
 import ImageFriendly from '../../../resources/assets/home/desktop/img-group-friendly.svg'
 import SingleTrait from './SingleTrait';
-import { SECTIONMARGINBOTTOM } from '../../../library/common/constants/constants';
+import { SECTIONMARGINBOTTOM } from '../../../../lib/utils/constants';
 
 const HomeTraits = () => {
 
@@ -35,7 +35,7 @@ const HomeTraits = () => {
    )
 
    return (
-      <Box sx={{ flexGrow: 1, mb:  SECTIONMARGINBOTTOM / 8}}>
+      <Box sx={{ flexGrow: 1, mb: SECTIONMARGINBOTTOM / 8 }}>
          <Grid container spacing={2}>
             {/* passionate */}
             <SingleTrait propsObj={passionateTraitProps} />

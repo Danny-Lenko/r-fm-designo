@@ -6,18 +6,18 @@ import IconButton from '@mui/material/IconButton';
 import SvgIcon from '@mui/material/SvgIcon'
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
-import logoDark from '../../../../resources/assets/shared/desktop/logo-dark.png'
-import { ReactComponent as HamburgerIcon } from '../../../../resources/assets/shared/mobile/icon-hamburger.svg'
+import logoDark from 'public/assets/shared/desktop/logo-dark.png'
+import { ReactComponent as HamburgerIcon } from 'public/assets/shared/mobile/icon-hamburger.svg'
 import AppbarDrawer from './AppbarDrawer';
-import { NAVITEMS } from '../../constants/constants';
+import { NAVITEMS } from '../../../lib/utils/constants';
 import { wrapperStyles, drawerStyles } from './appbarStyles';
 import Container from '@mui/material/Container';
-import { useNavigate, useLocation } from 'react-router-dom';
+// import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function Appbar() {
    const [mobileOpen, setMobileOpen] = useState(false);
-   const navigate = useNavigate()
-   const location = useLocation()
+   // const navigate = useNavigate()
+   // const location = useLocation()
 
    const handleDrawerToggle = () => {
       setMobileOpen(!mobileOpen);
@@ -30,7 +30,7 @@ export default function Appbar() {
                <Toolbar>
                   {/* Logo image */}
                   <Box
-                     onClick={() => navigate('/')}
+                     // onClick={() => navigate('/')}
                      component='img'
                      display='block'
                      alt='logo'
@@ -56,8 +56,8 @@ export default function Appbar() {
                   <Box className='links-box' >
                      {NAVITEMS.map((item) => (
                         <Button
-                           disabled={location.pathname === item.path ? true : false}
-                           onClick={() => navigate(item.path)}
+                           // disabled={location.pathname === item.path ? true : false}
+                           // onClick={() => navigate(item.path)}
                            key={item.title}
                         >
                            {item.title}
@@ -91,11 +91,11 @@ export default function Appbar() {
          </Box>
          {/* drawer overlay */}
          <Box sx={{
-            minHeight: '100%', 
-            width: '100%', 
-            bgcolor: 'rgba(0, 0, 0, 0.5)', 
-            position: 'fixed', 
-            top: 0, 
+            minHeight: '100%',
+            width: '100%',
+            bgcolor: 'rgba(0, 0, 0, 0.5)',
+            position: 'fixed',
+            top: 0,
             zIndex: 10000,
             display: mobileOpen ? 'block' : 'none'
          }}></Box>

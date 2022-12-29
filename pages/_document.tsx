@@ -36,7 +36,6 @@ export default class MyDocument extends Document {
                <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
                   integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
                   crossOrigin=""></script>
-               <title>Designo</title>
             </Head>
             <body>
                <Main />

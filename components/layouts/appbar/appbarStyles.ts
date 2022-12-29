@@ -1,5 +1,5 @@
-import { APPBARHEIGHTNARROW, APPBARHEIGHTWIDE } from "../../constants/constants"
-import { DRAWERWIDTH } from "../../constants/constants"
+import { APPBARHEIGHTNARROW, APPBARHEIGHTWIDE } from "../../../lib/utils/constants"
+import { DRAWERWIDTH } from "../../../lib/utils/constants"
 
 export const wrapperStyles = {
    display: 'flex',

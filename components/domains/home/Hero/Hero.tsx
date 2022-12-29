@@ -1,12 +1,12 @@
 import { Typography, Box, SvgIcon } from "@mui/material";
-import CustomButton from "../../../library/common/components/CustomButton/CustomButton";
+import CustomButton from "../../../common/CustomButton/CustomButton";
 import { heroBoxStyles, heroContentBoxStyles, heroTextStyles, phoneImageStyles } from "./heroStyles";
 import { ReactComponent as HeroPhone } from '../../../resources/assets/home/desktop/image-hero-phone.svg'
 import { ReactComponent as HeroPhoneSm } from '../../../resources/assets/home/tablet/hero-phone-sm.svg'
 import { ReactComponent as HeroPhoneXs } from '../../../resources/assets/home/mobile/hero-phone-xs.svg'
 import { useNavigate } from "react-router-dom";
 
-const Hero = ({windowWidth}: {windowWidth:number}) => {
+const Hero = ({ windowWidth }: { windowWidth: number }) => {
    const navigate = useNavigate()
 
    return (
@@ -22,14 +22,14 @@ const Hero = ({windowWidth}: {windowWidth:number}) => {
             <CustomButton onClick={() => navigate('/web-design')} light={true} title='Learn More' />
          </Box>
          {/* phone image */}
-         <Box sx={phoneImageStyles}>   
-            <SvgIcon 
+         <Box sx={phoneImageStyles}>
+            <SvgIcon
                component={
                   windowWidth < 600 ? HeroPhoneXs
-                  : windowWidth < 900 ? HeroPhoneSm
-                  : HeroPhone
-               } 
-               inheritViewBox 
+                     : windowWidth < 900 ? HeroPhoneSm
+                        : HeroPhone
+               }
+               inheritViewBox
             />
          </Box>
       </Box>

@@ -1,12 +1,12 @@
 import { Container, Box } from "@mui/material";
 import { useEffect, useState } from "react";
-import Hero from "./Hero/Hero";
-import GreyDrop from "../../library/common/components/GreyDrop/GreyDrop";
-import HomeDesigns from "./HomeDesigns/HomeDesigns";
-import HomeTraits from "./HomeTraits/HomeTraits";
-import BottomRectangle from "../../library/common/components/Rectangle/BottomRectangle";
-import { DROPHOMETOP, DROPHOMEBOTTOM } from "../../library/common/constants/constants";
-import MobileContainer from "../../library/common/components/MobileContainer/MobileContainer";
+import Hero from "../../../components/domains/home/Hero/Hero";
+import GreyDrop from "../../../components/common/GreyDrop/GreyDrop";
+import HomeDesigns from "../../../components/domains/home/HomeDesigns/HomeDesigns";
+import HomeTraits from "../../../components/domains/home/HomeTraits/HomeTraits";
+import BottomRectangle from "../../../components/Rectangle/BottomRectangle";
+import { DROPHOMETOP, DROPHOMEBOTTOM } from "../../../lib/utils/constants";
+import MobileContainer from "../../../components/common/MobileContainer/MobileContainer";
 
 const Home = () => {
    const [windowWidth, setWindowWidth] = useState(window.innerWidth)

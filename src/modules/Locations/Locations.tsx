@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box'
 import LocationArticle from './LocationArticle';
-import BottomRectangle from '../../library/common/components/Rectangle/BottomRectangle';
+import BottomRectangle from '../../../components/Rectangle/BottomRectangle';
 import Container from '@mui/material/Container';
 
 const Locations = () => {
@@ -9,7 +9,7 @@ const Locations = () => {
       coords: [43.644, -79.394],
       flexDirMd: 'row-reverse',
       heading: 'Canada',
-      contact:[
+      contact: [
          'Designo Central Office',
          '3886 Wellington Street',
          'Toronto, Ontario M9C 3J5',
@@ -23,7 +23,7 @@ const Locations = () => {
       coords: [-30.329, 149.788],
       flexDirMd: 'row',
       heading: 'Australia',
-      contact:[
+      contact: [
          'Designo AU Office',
          '19 Balonne Street',
          'New South Wales 2443',
@@ -37,7 +37,7 @@ const Locations = () => {
       coords: [51.939, -3.881],
       flexDirMd: 'row-reverse',
       heading: 'United Kingdom',
-      contact:[
+      contact: [
          'Designo UK Office',
          '13  Colorado Way',
          'Rhyd-y-fro SA8 9GA',

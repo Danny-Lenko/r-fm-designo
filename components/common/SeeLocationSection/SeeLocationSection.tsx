@@ -5,7 +5,7 @@ import CustomButton from '../CustomButton/CustomButton'
 import canadaImg from '../../../../resources/assets/shared/desktop/img-group-canada.svg'
 import australiaImg from '../../../../resources/assets/shared/desktop/img-group-australia.svg'
 import ukImg from '../../../../resources/assets/shared/desktop/img-group-uk.svg'
-import { SECTIONMARGINBOTTOM } from '../../constants/constants'
+import { SECTIONMARGINBOTTOM } from '../../../lib/utils/constants'
 import { useNavigate } from 'react-router-dom'
 import { NavHashLink } from 'react-router-hash-link';
 
@@ -14,11 +14,11 @@ const SeeLocationSection = () => {
 
    const sectionStyles = {
       display: 'flex',
-      flexDirection: {xs: 'column', md: 'row'},
+      flexDirection: { xs: 'column', md: 'row' },
       justifyContent: 'space-around',
       mb: SECTIONMARGINBOTTOM / 8,
       '& .article': {
-         mb: {xs: 6, sm: 10, md: 0},
+         mb: { xs: 6, sm: 10, md: 0 },
          textAlign: 'center',
          '& .MuiTypography-root': {
             mt: 6,
@@ -31,11 +31,11 @@ const SeeLocationSection = () => {
       }
    }
 
-   const scrollWithOffset = (el:any) => {
+   const scrollWithOffset = (el: any) => {
       const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
-      const yOffset = -10; 
-      window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' }); 
-  }
+      const yOffset = -10;
+      window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
+   }
 
    return (
       <Container maxWidth='lg' sx={sectionStyles}>
@@ -65,5 +65,5 @@ const SeeLocationSection = () => {
       </Container>
    );
 }
- 
+
 export default SeeLocationSection;

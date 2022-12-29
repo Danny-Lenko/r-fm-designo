@@ -1,10 +1,10 @@
-import MobileContainer from "../../../library/common/components/MobileContainer/MobileContainer";
+import MobileContainer from "../../../../components/common/MobileContainer/MobileContainer";
 import Box from '@mui/material/Box'
 import Typography from "@mui/material/Typography";
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import TextField from '@mui/material/TextField';
-import CustomButton from "../../../library/common/components/CustomButton/CustomButton";
+import CustomButton from "../../../../components/common/CustomButton/CustomButton";
 import { contactHeroStyles } from "./contactHeroStyles";
 
 const ContactHero = () => {
@@ -99,7 +99,7 @@ const ContactHero = () => {
                      error={formik.touched.message && Boolean(formik.errors.message)}
                      helperText={formik.touched.message && formik.errors.message}
                   />
-                  <Box sx={{ mt: {xs: 5, sm: 3}, textAlign: {xs: 'center', sm:'end'} }}>
+                  <Box sx={{ mt: { xs: 5, sm: 3 }, textAlign: { xs: 'center', sm: 'end' } }}>
                      <CustomButton light={true} title='Submit' type='submit'></CustomButton>
                   </Box>
                </form>

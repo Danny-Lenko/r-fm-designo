@@ -1,9 +1,9 @@
 import { Box } from '@mui/material'
-import DesignLink from '../../../library/common/components/DesignLink/DesignLink'
+import DesignLink from '../../../common/DesignLink/DesignLink'
 import { Theme } from "@mui/system"
-import { calcSpacing } from '../../../library/utilities/utils'
-import { SECTIONMARGINBOTTOM } from '../../../library/common/constants/constants'
-import { webDesignProps, appDesignProps, graphicDesignProps } from '../../../library/common/constants/constants'
+import { calcSpacing } from '../../../../src/library/utilities/utils'
+import { SECTIONMARGINBOTTOM } from '../../../../lib/utils/constants'
+import { webDesignProps, appDesignProps, graphicDesignProps } from '../../../../lib/utils/constants'
 
 const HomeDesigns = () => {
    const homeDesignsStyles = {

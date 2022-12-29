@@ -1,20 +1,22 @@
 import { Box, Container, Button, Typography, SvgIcon } from '@mui/material'
-import LogoLight from '../../../../resources/assets/shared/desktop/logo-light.png'
-import { ReactComponent as IconFacebook } from '../../../../resources/assets/shared/desktop/icon-facebook.svg'
-import { ReactComponent as IconInstagram } from '../../../../resources/assets/shared/desktop/icon-instagram.svg'
-import { ReactComponent as IconPinterest } from '../../../../resources/assets/shared/desktop/icon-pinterest.svg'
-import { ReactComponent as IconTwitter } from '../../../../resources/assets/shared/desktop/icon-twitter.svg'
-import { ReactComponent as IconYoutube } from '../../../../resources/assets/shared/desktop/icon-youtube.svg'
-import { useNavigate, useLocation } from 'react-router-dom'
+import LogoLight from 'public/assets/shared/desktop/logo-light.png'
+import { ReactComponent as IconFacebook } from 'public/assets/shared/desktop/icon-facebook.svg'
+import { ReactComponent as IconInstagram } from 'public/assets/shared/desktop/icon-instagram.svg'
+import { ReactComponent as IconPinterest } from 'public/assets/shared/desktop/icon-pinterest.svg'
+import { ReactComponent as IconTwitter } from 'public/assets/shared/desktop/icon-twitter.svg'
+import { ReactComponent as IconYoutube } from 'public/assets/shared/desktop/icon-youtube.svg'
+// import { useNavigate, useLocation } from 'react-router-dom'
 import { footerStyles } from './footerStyles'
 
 const Footer = () => {
-   const navigate = useNavigate()
-   const location = useLocation()
+   // const navigate = useNavigate()
+   // const location = useLocation()
    const socialIcons = [ IconFacebook, IconYoutube, IconTwitter, IconPinterest, IconInstagram ]
 
    return (
-      <Box sx={footerStyles(location)}>
+      <Box 
+         // sx={footerStyles(location)
+      >
 
          <Container>
             {/* upper box */}
@@ -25,9 +27,9 @@ const Footer = () => {
                   src={LogoLight}
                ></Box>
                <Box className='upper-box__links'>
-                  <Button onClick={() => navigate('/about')}>Our Company</Button>
+                  {/* <Button onClick={() => navigate('/about')}>Our Company</Button>
                   <Button onClick={() => navigate('/locations')}>Locations</Button>
-                  <Button onClick={() => navigate('/contact')}>Contact</Button>
+                  <Button onClick={() => navigate('/contact')}>Contact</Button> */}
                </Box>
             </Box>
             {/* lower box */}

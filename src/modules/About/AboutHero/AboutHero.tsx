@@ -2,13 +2,13 @@ import { Box, Typography } from "@mui/material";
 import imageMd from '../../../resources/assets/about/desktop/image-about-hero.jpg'
 import imageSm from '../../../resources/assets/about/tablet/image-about-hero.jpg'
 import imageXs from '../../../resources/assets/about/mobile/image-about-hero.jpg'
-import { SECTIONMARGINBOTTOM } from "../../../library/common/constants/constants";
+import { SECTIONMARGINBOTTOM } from "../../../../lib/utils/constants";
 import circleXs from '../../../resources/assets/about/mobile/bg-pattern-hero-about-mobile.svg'
 import circleSm from '../../../resources/assets/about/desktop/bg-pattern-hero-about-desktop.svg'
-import MobileContainer from "../../../library/common/components/MobileContainer/MobileContainer";
+import MobileContainer from "../../../../components/common/MobileContainer/MobileContainer";
 
 const AboutHero = () => {
-   
+
    function assembleImgBackground(img: string) {
       return `url(${img}) 50% 50%/cover no-repeat`
    }

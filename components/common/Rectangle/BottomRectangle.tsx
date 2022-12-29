@@ -1,7 +1,7 @@
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box'
 import CirclesImg from '../../../../resources/assets/shared/desktop/bg-pattern-call-to-action.svg'
-import CustomButton from '../CustomButton/CustomButton';
+import CustomButton from '../common/CustomButton/CustomButton';
 import { useNavigate } from 'react-router-dom';
 
 const BottomRectangle = () => {
@@ -19,9 +19,9 @@ const BottomRectangle = () => {
       gap: 4,
       zIndex: 10,
       '& .content-box-rectangle': {
-         textAlign: { xs:'center', md: 'start' },
+         textAlign: { xs: 'center', md: 'start' },
          color: 'common.white',
-         width: { xs: '100%', sm: '75%', md:'50%' },
+         width: { xs: '100%', sm: '75%', md: '50%' },
          '& .MuiTypography-h2': {
             mx: { xs: 'auto', md: 0 },
             maxWidth: '310px',
@@ -47,7 +47,7 @@ const BottomRectangle = () => {
             </Typography>
          </Box>
          <Box className='btn-box-rectangle'>
-            <CustomButton onClick={()=>navigate('/contact')} light={true} title={'get in touch'} />
+            <CustomButton onClick={() => navigate('/contact')} light={true} title={'get in touch'} />
          </Box>
       </Box>
    );

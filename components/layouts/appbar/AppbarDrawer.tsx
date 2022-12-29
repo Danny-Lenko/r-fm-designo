@@ -6,13 +6,13 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import { styled } from '@mui/material/styles';
-import { ReactComponent as CloseIcon } from '../../../../resources/assets/shared/mobile/icon-close.svg'
-import logoDark from '../../../../resources/assets/shared/desktop/logo-dark.png'
-import { NAVITEMS, APPBARHEIGHTNARROW } from '../../constants/constants';
+import { ReactComponent as CloseIcon } from 'public/assets/shared/mobile/icon-close.svg'
+import logoDark from 'public/assets/shared/desktop/logo-dark.png'
+import { NAVITEMS, APPBARHEIGHTNARROW } from '../../../lib/utils/constants';
 import { useNavigate } from 'react-router-dom';
 
 const AppbarDrawer = ({ handleDrawerToggle }: any) => {
-   const navigate = useNavigate()
+   // const navigate = useNavigate()
 
    const DrawerHeader = styled('div')(({ theme }) => ({
       minHeight: APPBARHEIGHTNARROW,
@@ -54,7 +54,7 @@ const AppbarDrawer = ({ handleDrawerToggle }: any) => {
                <ListItem key={item.title} disablePadding>
                   <ListItemButton
                      sx={{ textAlign: 'center' }}
-                     onClick={() => navigate(item.path)}
+                     // onClick={() => navigate(item.path)}
                   >
                      <ListItemText primary={item.title} />
                   </ListItemButton>

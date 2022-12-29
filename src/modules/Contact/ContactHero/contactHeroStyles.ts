@@ -1,16 +1,16 @@
-import { SECTIONMARGINBOTTOM } from "../../../library/common/constants/constants"
+import { SECTIONMARGINBOTTOM } from "../../../../lib/utils/constants"
 import IconError from '../../../resources/assets/contact/desktop/icon-error.svg'
 import CircleImgMd from '../../../resources/assets/contact/desktop/bg-pattern-hero-desktop.svg'
 import CircleImgXs from '../../../resources/assets/contact/mobile/bg-pattern-hero-contact-mobile.svg'
 
 export const contactHeroStyles = {
    display: 'flex',
-   flexDirection: {xs: 'column', md: 'row'},
+   flexDirection: { xs: 'column', md: 'row' },
    backgroundColor: 'peachCustom.main',
-   backgroundImage: {xs: `url(${CircleImgXs})`, sm: `url(${CircleImgMd})`},
+   backgroundImage: { xs: `url(${CircleImgXs})`, sm: `url(${CircleImgMd})` },
    backgroundRepeat: 'no-repeat',
-   backgroundPosition: {xs: '25% top', sm: '-100px -100px', md:'left bottom'},
-   borderRadius: {sm:'15px'},
+   backgroundPosition: { xs: '25% top', sm: '-100px -100px', md: 'left bottom' },
+   borderRadius: { sm: '15px' },
    py: { xs: 72 / 8, md: 55 / 8 },
    px: { xs: 3, sm: 58 / 8, md: 96 / 8 },
    color: 'common.white',
