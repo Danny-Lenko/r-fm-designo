@@ -1,5 +1,6 @@
 import { Box, Container, Button, Typography, SvgIcon } from '@mui/material'
-import LogoLight from 'public/assets/shared/desktop/logo-light.png'
+import Image from 'next/image'
+import logoLight from 'public/assets/shared/desktop/logo-light.png'
 // import { ReactComponent as IconFacebook } from 'public/assets/shared/desktop/icon-facebook.svg'
 // import { ReactComponent as IconInstagram } from 'public/assets/shared/desktop/icon-instagram.svg'
 // import { ReactComponent as IconPinterest } from 'public/assets/shared/desktop/icon-pinterest.svg'

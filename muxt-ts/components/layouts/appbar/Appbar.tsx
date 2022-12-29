@@ -6,7 +6,8 @@ import IconButton from '@mui/material/IconButton';
 import SvgIcon from '@mui/material/SvgIcon'
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
-import logoDark from 'public/assets/shared/desktop/logo-dark.png'
+import Image from 'next/image'
+import logoDark from '../../../public/assets/shared/desktop/logo-dark.png'
 // import { ReactComponent as HamburgerIcon } from 'public/assets/shared/mobile/icon-hamburger.svg'
 import AppbarDrawer from './AppbarDrawer';
 import { NAVITEMS } from '../../../lib/utils/constants';
@@ -29,15 +30,14 @@ export default function Appbar() {
             <Container maxWidth='lg'>
                <Toolbar>
                   {/* Logo image */}
-                  {/* <Box
-                     // onClick={() => navigate('/')}
-                     component='img'
-                     display='block'
-                     alt='logo'
-                     sx={{ width: '194px', transform: 'translateY(2px)', cursor: 'pointer' }}
+                  <Image
                      src={logoDark}
-                  >
-                  </Box> */}
+                     alt="Picture of the author"
+                     width={194}
+                     height={26}
+                     style={{transform: 'translateY(2px)', cursor: 'pointer'}}
+                  />
+
                   {/* Burget btn */}
                   <IconButton
                      color="inherit"
