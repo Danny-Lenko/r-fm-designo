@@ -3,12 +3,11 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import SvgIcon from '@mui/material/SvgIcon'
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import Image from 'next/image'
 import logoDark from '../../../public/assets/shared/desktop/logo-dark.png'
-// import { ReactComponent as HamburgerIcon } from 'public/assets/shared/mobile/icon-hamburger.svg'
+import hamburgerIcon from '../../../public/assets/shared/mobile/icon-hamburger.svg'
 import AppbarDrawer from './AppbarDrawer';
 import { NAVITEMS } from '../../../lib/utils/constants';
 import { wrapperStyles, drawerStyles } from './appbarStyles';
@@ -37,7 +36,6 @@ export default function Appbar() {
                      height={26}
                      style={{transform: 'translateY(2px)', cursor: 'pointer'}}
                   />
-
                   {/* Burget btn */}
                   <IconButton
                      color="inherit"
@@ -46,11 +44,12 @@ export default function Appbar() {
                      onClick={handleDrawerToggle}
                      sx={{ ml: 'auto', display: { sm: 'none' } }}
                   >
-                     {/* <SvgIcon
-                        sx={{ transform: 'translateY(2px)' }}
-                        component={HamburgerIcon}
-                        inheritViewBox
-                     /> */}
+                     <Image
+                        src={hamburgerIcon}
+                        width={24}
+                        height={20}
+                        alt="burger menu"
+                     />
                   </IconButton>
                   {/* Links */}
                   <Box className='links-box' >
