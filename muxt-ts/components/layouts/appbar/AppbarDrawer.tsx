@@ -1,13 +1,13 @@
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import SvgIcon from '@mui/material/SvgIcon'
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import { styled } from '@mui/material/styles';
-// import { ReactComponent as CloseIcon } from 'public/assets/shared/mobile/icon-close.svg'
-import logoDark from 'public/assets/shared/desktop/logo-dark.png'
+import Image from 'next/image';
+import closeIcon from '../../../public/assets/shared/mobile/icon-close.svg'
+import logoDark from '../../../public/assets/shared/desktop/logo-dark.png'
 import { NAVITEMS, APPBARHEIGHTNARROW } from '../../../lib/utils/constants';
 // import { useNavigate } from 'react-router-dom';
 
@@ -24,7 +24,6 @@ const AppbarDrawer = ({ handleDrawerToggle }: any) => {
       justifyContent: 'flex-end',
    }));
 
-   // JSX
    return (
       <Box
          className='drawer-wrapper'
@@ -32,20 +31,20 @@ const AppbarDrawer = ({ handleDrawerToggle }: any) => {
          sx={{ textAlign: 'center' }}
       >
          <DrawerHeader>
-            <Toolbar sx={{ minWidth: '100%' }}>
-               {/* <Box
-                  component='img'
-                  display='block'
-                  alt='logo'
-                  sx={{ width: '194px', transform: 'translateY(2px)' }}
+            <Toolbar sx={{ minWidth: '100%', display: 'flex', justifyContent: 'space-between' }}>
+               <Image
                   src={logoDark}
-               >
-               </Box> */}
-               {/* <SvgIcon
-                  sx={{ transform: 'translateY(2px) translateX(-10px)', ml: 'auto' }}
-                  component={CloseIcon}
-                  inheritViewBox
-               /> */}
+                  alt='Designo'
+                  width={194}
+                  height={26}
+                  style={{ transform: 'translateY(2px)' }}
+               />
+               <Image
+                  src={closeIcon}
+                  alt='Close'
+                  width={20}
+                  height={20}
+               />
             </Toolbar>
          </DrawerHeader>
 
@@ -54,7 +53,7 @@ const AppbarDrawer = ({ handleDrawerToggle }: any) => {
                <ListItem key={item.title} disablePadding>
                   <ListItemButton
                      sx={{ textAlign: 'center' }}
-                     // onClick={() => navigate(item.path)}
+                  // onClick={() => navigate(item.path)}
                   >
                      <ListItemText primary={item.title} />
                   </ListItemButton>
