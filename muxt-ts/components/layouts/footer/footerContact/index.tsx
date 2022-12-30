@@ -44,9 +44,6 @@ const FooterContact = () => {
             </Box>
          </Box>
 
-         {/* <SvgIcon component={IconFacebook}/> */}
-         {/* <IconFacebook /> */}
-
          <Box className='icons-box'>
             {
                socialIcons.map((icon, i) => <SvgIcon key={i} component={icon} inheritViewBox />)

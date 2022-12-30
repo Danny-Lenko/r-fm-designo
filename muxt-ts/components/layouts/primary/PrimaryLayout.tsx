@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
+import Header from '../header'
 import Footer from '../footer'
-import { Appbar } from '../appbar'
 import React from 'react';
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 function PrimaryLayout({ children }: Props) {
    return (
       <>
-         <Appbar />
+         <Header />
          <main>{children}</main>
          <Footer />
       </>
