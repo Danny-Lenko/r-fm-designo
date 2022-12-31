@@ -7,7 +7,7 @@ const ColorModeContext = createContext({ toggleClrMode: () => { } });
 function ToggleColorMode() {
    const [mode, setMode] = useState<'light' | 'dark'>('light');
    const defaultTheme = createTheme()
-   console.log(defaultTheme)
+
    const colorMode = useMemo(
       () => ({
          toggleClrMode: () => {

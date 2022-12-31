@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app';
 import { CacheProvider, EmotionCache } from '@emotion/react';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import { ToggleColorMode } from '../styles/theme/ToggleColorMode';
-import createEmotionCache from '../utility/createEmotionCache';
+import createEmotionCache from '../lib/utils/createEmotionCache';
 import '../styles/globals.css';
 import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
 
