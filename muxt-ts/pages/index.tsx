@@ -7,12 +7,11 @@ import { Container, Box } from "@mui/material";
 import { useEffect, useState } from "react";
 import Hero from '../components/domains/home/homeHero';
 import GreyDrop from '../components/common/GreyDrop/GreyDrop';
-import HomeDesigns from '../components/domains/home/HomeDesigns';
-import HomeTraits from '../components/domains/home/HomeTraits/HomeTraits';
+import HomeDesigns from '../components/domains/home/homeDesigns';
+import HomeTraits from '../components/domains/home/homeTraits';
 import BottomRectangle from '../components/common/Rectangle/BottomRectangle';
 import MobileContainer from '../components/common/MobileContainer/MobileContainer';
 import { DROPHOMETOP, DROPHOMEBOTTOM } from '../lib/utils/constants';
-
 
 const Home: NextPage = () => {
   const [windowWidth, setWindowWidth] = useState(0)
@@ -37,9 +36,9 @@ const Home: NextPage = () => {
       <Container maxWidth='lg'>
         <HomeDesigns />
 
-        {/* <HomeTraits />
+        <HomeTraits />
 
-        <BottomRectangle />
+        {/* <BottomRectangle />
 
         <GreyDrop typeTop={true} margTop={DROPHOMETOP} />
         <GreyDrop typeTop={false} margTop={DROPHOMEBOTTOM} /> */}

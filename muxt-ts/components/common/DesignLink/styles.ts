@@ -12,6 +12,7 @@ export const styles = (content:any, assembleBg:any) => ({
          opacity: 0.3
       }
    },
+
    // img box
    '& .img': {
       width: '100%',
@@ -28,6 +29,7 @@ export const styles = (content:any, assembleBg:any) => ({
          md: assembleBg(content.img, 'MD')
       }
    },
+
    // typography items
    '& .textbox': {
       width: '100%',
@@ -36,11 +38,13 @@ export const styles = (content:any, assembleBg:any) => ({
       position: 'absolute',
       top: '50%',
       transform: 'translateY(-50%)',
+      
       '& .MuiTypography-h2, & .MuiTypography-body1': {
          textTransform: 'uppercase',
          color: 'common.white',
          px: 3
       },
+      
       '& .MuiTypography-body1': {
          fontSize: 15 / 16 + 'rem',
          letterSpacing: '5px',
