@@ -11,10 +11,10 @@ import closeIcon from '../../../../public/assets/shared/mobile/icon-close.svg'
 import logoDark from '../../../../public/assets/shared/desktop/logo-dark.png'
 import { NAVITEMS } from '../../../../lib/utils/constants';
 import { styles, DrawerHeader } from './styles'
-// import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router';
 
 const HeaderDrawer = ({ handleDrawerToggle, mobileOpen }: any) => {
-   // const navigate = useNavigate()
+   const router = useRouter()
 
    return (
       <Box
@@ -47,7 +47,7 @@ const HeaderDrawer = ({ handleDrawerToggle, mobileOpen }: any) => {
                { NAVITEMS.map((item: any) => (
                   <ListItem key={item.title} disablePadding>
                      <ListItemButton
-                     // onClick={() => navigate(item.path)}
+                     onClick={() => router.push(item.path)}
                      >
                         <ListItemText primary={item.title} />
                      </ListItemButton>

@@ -22,6 +22,7 @@ export const styles = {
          display: 'block',
          mx: 'auto',
          alignSelf: 'center',
+         cursor: 'pointer'
       }
    },
 

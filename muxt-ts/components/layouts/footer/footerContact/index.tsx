@@ -8,7 +8,6 @@ import iconPinterest from '../../../../public/assets/shared/desktop/icon-pintere
 import iconTwitter from '../../../../public/assets/shared/desktop/icon-twitter.svg'
 import iconYoutube from '../../../../public/assets/shared/desktop/icon-youtube.svg'
 import { styles } from './styles'
-// import { useNavigate, useLocation } from 'react-router-dom'
 
 const socialIcons = [iconFacebook, iconYoutube, iconTwitter, iconPinterest, iconInstagram]
 

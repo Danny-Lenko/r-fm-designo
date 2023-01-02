@@ -2,10 +2,9 @@ import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
 import AboutHero from '../../components/domains/about/aboutHero';
 import AboutContent from '../../components/domains/about/aboutContent';
-
-// import SeeLocationSection from '../../../components/common/SeeLocationSection/SeeLocationSection';
+import SeeLocation from '../../components/common/seeLocation';
 import BottomRectangle from '../../components/common/bottomRectangle';
-import GreyDrop from '../../../components/common/GreyDrop/GreyDrop';
+import GreyDrop from '../../components/common/greyDrop';
 import { DROPHOMETOP } from '../../lib/utils/constants';
 
 const worldContentSection = {
@@ -34,19 +33,19 @@ const About = () => {
          component="main" 
          sx={{ 
             position: 'relative', 
-            overflowX: 'hidden' 
+            overflowX: 'hidden'
          }}
       >
          <AboutHero />
          <AboutContent props={worldContentSection} />
-         {/* <SeeLocationSection /> */}
+         <SeeLocation />
          <AboutContent props={realContentSection} />
          
-         {/* <Container maxWidth='lg'>
+         <Container maxWidth='lg'>
             <BottomRectangle />
             <GreyDrop typeTop={true} margTop={DROPHOMETOP} />
             <GreyDrop typeTop={true} margTop='1630px' margLeft='50vw' />
-         </Container> */}
+         </Container>
       </Box>
    );
 }

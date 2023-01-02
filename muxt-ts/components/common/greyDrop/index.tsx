@@ -1,7 +1,4 @@
 import { Box } from "@mui/material"
-import greyDropTop from '../../../../public/assets/home/desktop/grey-drop-top.svg'
-import greyDropBottom from '../../../../public/assets/home/desktop/grey-drop-bottom.svg'
-
 const GreyDrop = ({typeTop, margTop, margLeft}: {typeTop:boolean, margTop:string, margLeft?:string}) => {
 
    const dropStyles = {

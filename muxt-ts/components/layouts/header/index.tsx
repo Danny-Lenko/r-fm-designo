@@ -3,12 +3,9 @@ import Box from '@mui/material/Box';
 import HeaderDrawer from './headerDrawer';
 import HeaderAppbar from './headerAppbar';
 import { styles } from './styles';
-// import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function Header() {
    const [mobileOpen, setMobileOpen] = useState(false);
-   // const navigate = useNavigate()
-   // const location = useLocation()
 
    const handleDrawerToggle = () => {
       setMobileOpen(!mobileOpen);

@@ -32,6 +32,7 @@ const HeaderAppbar = ({ handleDrawerToggle } :any) => {
                   width={194}
                   height={26}
                   className='logo'
+                  onClick={() => router.push('/')}
                />
                {/* Burget btn */}
                <IconButton
@@ -47,7 +48,7 @@ const HeaderAppbar = ({ handleDrawerToggle } :any) => {
                <Box className='links-box' >
                   {NAVITEMS.map((item) => (
                      <Button
-                        // disabled={location.pathname === item.path ? true : false}
+                        disabled={router.pathname === item.path ? true : false}
                         onClick={() => router.push(item.path)}
                         key={item.title}
                         className='link-btn'
