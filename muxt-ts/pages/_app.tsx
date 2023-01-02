@@ -6,7 +6,7 @@ import { ThemeProvider, CssBaseline } from '@mui/material';
 import { ToggleColorMode } from '../styles/theme/ToggleColorMode';
 import createEmotionCache from '../lib/utils/createEmotionCache';
 import '../styles/globals.css';
-import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
+import PrimaryLayout from '../components/layouts/primaryLayout';
 
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;

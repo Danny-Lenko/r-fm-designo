@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import { IAboutContentItem } from '../../../../lib/interfaces/interfaces'
-import MobileContainer from '../../../common/MobileContainer/MobileContainer'
+import MobileContainer from '../../../common/mobileContainer'
 import { styles } from './styles'
 
 const AboutContent = ({ props }: { props: IAboutContentItem }) => {

@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import MobileContainer from "../../../common/MobileContainer/MobileContainer";
+import MobileContainer from "../../../common/mobileContainer";
 import { styles } from './styles'
 
 const AboutHero = () => {
