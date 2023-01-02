@@ -1,4 +1,4 @@
-export interface AboutContentItem {
+export interface IAboutContentItem {
    flexDirMd: string;
    imgXs: string;
    imgSm: string;
