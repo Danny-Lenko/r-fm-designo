@@ -1,17 +1,17 @@
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
-// import { useNavigate } from 'react-router-dom';
-import WebImgMD from '../../../../public/assets/home/desktop/image-web-design-large.jpg'
-import WebImgSM from '../../../../public/assets/home/tablet/image-web-design.jpg'
-import WebImgXS from '../../../../public/assets/home/mobile/image-web-design.jpg'
-import AppImgMD from '../../../../public/assets/home/desktop/image-app-design.jpg'
-import AppImgSM from '../../../../public/assets/home/tablet/image-app-design.jpg'
-import AppImgXS from '../../../../public/assets/home/mobile/image-app-design.jpg'
-import GraphicImgMD from '../../../../public/assets/home/desktop/image-graphic-design.jpg'
-import GraphicImgSM from '../../../../public/assets/home/tablet/image-graphic-design.jpg'
-import GraphicImgXS from '../../../../public/assets/home/mobile/image-graphic-design.jpg'
+import WebImgMD from '/public/assets/home/desktop/image-web-design-large.jpg'
+import WebImgSM from '/public/assets/home/tablet/image-web-design.jpg'
+import WebImgXS from '/public/assets/home/mobile/image-web-design.jpg'
+import AppImgMD from '/public/assets/home/desktop/image-app-design.jpg'
+import AppImgSM from '/public/assets/home/tablet/image-app-design.jpg'
+import AppImgXS from '/public/assets/home/mobile/image-app-design.jpg'
+import GraphicImgMD from '/public/assets/home/desktop/image-graphic-design.jpg'
+import GraphicImgSM from '/public/assets/home/tablet/image-graphic-design.jpg'
+import GraphicImgXS from '/public/assets/home/mobile/image-graphic-design.jpg'
 import { styles } from './styles'
+// import { useNavigate } from 'react-router-dom';
 
 function assembleBg(img: string, size: string) {
    const allImages = [

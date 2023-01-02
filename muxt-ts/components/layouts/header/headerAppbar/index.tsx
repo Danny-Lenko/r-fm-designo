@@ -10,8 +10,11 @@ import logoDark from '../../../../public/assets/shared/desktop/logo-dark.png'
 import hamburgerIcon from '../../../../public/assets/shared/mobile/icon-hamburger.svg'
 import { NAVITEMS } from "../../../../lib/utils/constants"
 import { styles } from './styles'
+import { useRouter } from "next/router"
 
 const HeaderAppbar = ({ handleDrawerToggle } :any) => {
+   const router = useRouter()
+
    return (
       <AppBar 
          component="nav" 
@@ -45,7 +48,7 @@ const HeaderAppbar = ({ handleDrawerToggle } :any) => {
                   {NAVITEMS.map((item) => (
                      <Button
                         // disabled={location.pathname === item.path ? true : false}
-                        // onClick={() => navigate(item.path)}
+                        onClick={() => router.push(item.path)}
                         key={item.title}
                         className='link-btn'
                      >

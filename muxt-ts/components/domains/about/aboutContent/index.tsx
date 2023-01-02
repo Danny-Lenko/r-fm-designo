@@ -3,10 +3,9 @@ import Typography from '@mui/material/Typography'
 import { SECTIONMARGINBOTTOM } from '../../../../lib/utils/constants'
 import { AboutContentItem } from '../../../library/interfaces/interfaces'
 import CirclesImg from '../../../resources/assets/about/desktop/content-circles.svg'
-import MobileContainer from '../../../../components/common/MobileContainer/MobileContainer'
+import MobileContainer from '../../../common/MobileContainer/MobileContainer'
 
-const AboutContentSection = ({ props }: { props: AboutContentItem }) => {
-
+const AboutContent = ({ props }: { props: AboutContentItem }) => {
    const {
       flexDirMd,
       imgXs,
@@ -75,4 +74,4 @@ const AboutContentSection = ({ props }: { props: AboutContentItem }) => {
    );
 }
 
-export default AboutContentSection;
+export default AboutContent;

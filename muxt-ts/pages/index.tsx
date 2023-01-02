@@ -1,5 +1,4 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
 import Image from 'next/image'
 
 import { Container, Box } from "@mui/material";
@@ -8,7 +7,7 @@ import Hero from '../components/domains/home/homeHero';
 import HomeDesigns from '../components/domains/home/homeDesigns';
 import HomeTraits from '../components/domains/home/homeTraits';
 import BottomRectangle from '../components/common/bottomRectangle';
-import GreyDrop from '../components/common/GreyDrop/GreyDrop';
+import GreyDrop from '../components/common/greyDrop';
 import { DROPHOMETOP, DROPHOMEBOTTOM } from '../lib/utils/constants';
 
 const Home: NextPage = () => {
@@ -25,7 +24,7 @@ const Home: NextPage = () => {
         <BottomRectangle />
 
         <GreyDrop typeTop={true} margTop={DROPHOMETOP} />
-        {/* <GreyDrop typeTop={false} margTop={DROPHOMEBOTTOM} /> */}
+        <GreyDrop typeTop={false} margTop={DROPHOMEBOTTOM} />
       </Container>
     </Box>
   )

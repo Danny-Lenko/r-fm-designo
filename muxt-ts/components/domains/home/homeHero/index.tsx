@@ -1,9 +1,9 @@
 import useWindowWidth from "../../../../lib/hooks/useWindowWidth";
 import { Typography, Box, SvgIcon } from "@mui/material";
 import CustomButton from "../../../common/CustomButton/CustomButton";
-import HeroPhone from '../../../../public/assets/home/desktop/image-hero-phone.svg'
-import HeroPhoneSm from '../../../../public/assets/home/tablet/hero-phone-sm.svg'
-import HeroPhoneXs  from '../../../../public/assets/home/mobile/hero-phone-xs.svg'
+import HeroPhone from '/public/assets/home/desktop/image-hero-phone.svg'
+import HeroPhoneSm from '/public/assets/home/tablet/hero-phone-sm.svg'
+import HeroPhoneXs  from '/public/assets/home/mobile/hero-phone-xs.svg'
 import { styles } from "./styles";
 // import { useNavigate } from "react-router-dom";
 

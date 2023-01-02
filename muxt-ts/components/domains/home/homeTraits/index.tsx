@@ -1,8 +1,8 @@
 import Grid from '@mui/material/Unstable_Grid2';
 import Box from '@mui/material/Box'
-import ImagePassionate from '../../../../public/assets/home/desktop/img-group-passionate.svg'
-import ImageResourceful from '../../../../public/assets/home/desktop/img-group-resourceful.svg'
-import ImageFriendly from '../../../../public/assets/home/desktop/img-group-friendly.svg'
+import ImagePassionate from '/public/assets/home/desktop/img-group-passionate.svg'
+import ImageResourceful from '/public/assets/home/desktop/img-group-resourceful.svg'
+import ImageFriendly from '/public/assets/home/desktop/img-group-friendly.svg'
 import SingleTrait from './singleTrait';
 import { SECTIONMARGINBOTTOM } from '../../../../lib/utils/constants';
 
