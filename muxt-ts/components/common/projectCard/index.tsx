@@ -1,12 +1,12 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Grid from '@mui/material/Unstable_Grid2';
-import { projectCardStyles } from "./projectCardStyles";
+import { styles } from "./styles";
 
 const ProjectCard = ({ project }: { project: Record<string, string> }) => {
 
    return (
-      <Grid xs={12} sm={12} md={4} sx={projectCardStyles}>
+      <Grid xs={12} sm={12} md={4} sx={styles}>
          <Box
             component='img'
             alt={project.title}

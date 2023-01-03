@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import useWindowWidth from "../../../../lib/hooks/useWindowWidth";
 import { Typography, Box, SvgIcon } from "@mui/material";
 import CustomButton from "../../../common/customButton";
@@ -5,11 +6,10 @@ import HeroPhone from '/public/assets/home/desktop/image-hero-phone.svg'
 import HeroPhoneSm from '/public/assets/home/tablet/hero-phone-sm.svg'
 import HeroPhoneXs from '/public/assets/home/mobile/hero-phone-xs.svg'
 import { styles } from "./styles";
-// import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
    const windowWidth = useWindowWidth()
-   // const navigate = useNavigate()
+   const router = useRouter()
 
    return (
       <Box className="hero-box" sx={styles}>  {/* bgimage is in globals.css */}
@@ -24,7 +24,7 @@ const Hero = () => {
             <CustomButton
                light={true}
                title='Learn More'
-            // onClick={() => navigate('/web-design')} 
+               onClick={() => router.push('/web-design')} 
             />
          </Box>
          {/* phone image */}
