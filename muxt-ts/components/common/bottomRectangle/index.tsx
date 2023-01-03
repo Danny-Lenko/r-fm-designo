@@ -1,6 +1,6 @@
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box'
-import CustomButton from '../CustomButton/CustomButton';
+import CustomButton from '../customButton';
 import { styles } from './styles'
 // import { useNavigate } from 'react-router-dom';
 
@@ -18,10 +18,10 @@ const BottomRectangle = () => {
             </Typography>
          </Box>
          <Box className='btn-box'>
-            <CustomButton 
-               light={true} 
-               title={'get in touch'} 
-               // onClick={() => navigate('/contact')} 
+            <CustomButton
+               light={true}
+               title={'get in touch'}
+            // onClick={() => navigate('/contact')} 
             />
          </Box>
       </Box>

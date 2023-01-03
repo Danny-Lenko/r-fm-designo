@@ -1,13 +1,10 @@
-import { SECTIONMARGINBOTTOM } from "../../../../lib/utils/constants"
-import IconError from '../../../resources/assets/contact/desktop/icon-error.svg'
-import CircleImgMd from '../../../resources/assets/contact/desktop/bg-pattern-hero-desktop.svg'
-import CircleImgXs from '../../../resources/assets/contact/mobile/bg-pattern-hero-contact-mobile.svg'
+import { SECTIONMARGINBOTTOM } from "../../../lib/utils/constants"
 
-export const contactHeroStyles = {
+export const styles = {
    display: 'flex',
    flexDirection: { xs: 'column', md: 'row' },
    backgroundColor: 'peachCustom.main',
-   backgroundImage: { xs: `url(${CircleImgXs})`, sm: `url(${CircleImgMd})` },
+   backgroundImage: { xs: `url('/assets/contact/mobile/bg-pattern-hero-contact-mobile.svg')`, sm: `url('/assets/contact/desktop/bg-pattern-hero-desktop.svg')` },
    backgroundRepeat: 'no-repeat',
    backgroundPosition: { xs: '25% top', sm: '-100px -100px', md: 'left bottom' },
    borderRadius: { sm: '15px' },
@@ -17,6 +14,7 @@ export const contactHeroStyles = {
    mb: SECTIONMARGINBOTTOM / 8,
    justifyContent: 'space-between',
    gap: 1,
+
    '& .text-box': {
       width: { xs: '100%', sm: '90%', md: '45%' },
       textAlign: { xs: 'center', sm: 'start' },
@@ -25,9 +23,11 @@ export const contactHeroStyles = {
       justifyContent: 'center',
       gap: 3
    },
+
    // the form styles
    '& .form-box': {
       width: { xs: '100', md: '50%' },
+
       '& .MuiTextField-root': {
          mt: 2,
          position: 'relative',
@@ -36,6 +36,7 @@ export const contactHeroStyles = {
             opacity: 0.7,
             ml: 2
          },
+
          '& .MuiInput-root': {
             color: 'common.white',
             pl: 2,
@@ -45,6 +46,7 @@ export const contactHeroStyles = {
                opacity: 0.5
             }
          },
+         
          '& .MuiFormHelperText-root.Mui-error': {
             position: 'absolute',
             pr: 4,
@@ -53,7 +55,7 @@ export const contactHeroStyles = {
             color: 'common.white',
             fontStyle: 'italic',
             opacity: 0.8,
-            backgroundImage: `url(${IconError})`,
+            backgroundImage: `url('/assets/contact/desktop/icon-error.svg')`,
             backgroundRepeat: 'no-repeat',
             backgroundPosition: '99% 100%',
          }

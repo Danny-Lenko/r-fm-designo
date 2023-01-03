@@ -1,11 +1,11 @@
-import MobileContainer from "../../../../components/common/MobileContainer/MobileContainer";
-import Box from '@mui/material/Box'
-import Typography from "@mui/material/Typography";
 import { useFormik } from 'formik';
 import * as yup from 'yup';
+import Box from '@mui/material/Box'
+import Typography from "@mui/material/Typography";
 import TextField from '@mui/material/TextField';
-import CustomButton from "../../../../components/common/CustomButton/CustomButton";
-import { contactHeroStyles } from "./contactHeroStyles";
+import MobileContainer from '../../../components/common/mobileContainer';
+import CustomButton from "../../../components/common/customButton";
+import { styles } from "./styles";
 
 const ContactHero = () => {
    const validationSchema = yup.object({
@@ -42,7 +42,7 @@ const ContactHero = () => {
 
    return (
       <MobileContainer>
-         <Box sx={contactHeroStyles}>
+         <Box sx={styles}>
             <Box className="text-box">
                <Typography variant="h1">Contact Us</Typography>
                <Typography>
