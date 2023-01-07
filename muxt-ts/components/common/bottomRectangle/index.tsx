@@ -1,11 +1,11 @@
+import { useRouter } from 'next/router';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box'
 import CustomButton from '../customButton';
 import { styles } from './styles'
-// import { useNavigate } from 'react-router-dom';
 
 const BottomRectangle = () => {
-   // const navigate = useNavigate()
+   const router = useRouter()
 
    return (
       <Box sx={styles} >
@@ -21,7 +21,7 @@ const BottomRectangle = () => {
             <CustomButton
                light={true}
                title={'get in touch'}
-            // onClick={() => navigate('/contact')} 
+               onClick={() => router.push('/contact')} 
             />
          </Box>
       </Box>

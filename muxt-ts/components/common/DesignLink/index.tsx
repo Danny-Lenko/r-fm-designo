@@ -11,7 +11,6 @@ import AppImgXS from '/public/assets/home/mobile/image-app-design.jpg'
 import GraphicImgMD from '/public/assets/home/desktop/image-graphic-design.jpg'
 import GraphicImgSM from '/public/assets/home/tablet/image-graphic-design.jpg'
 import GraphicImgXS from '/public/assets/home/mobile/image-graphic-design.jpg'
-// import { useNavigate } from 'react-router-dom';
 import { styles } from './styles'
 
 function assembleBg(img: string, size: string) {

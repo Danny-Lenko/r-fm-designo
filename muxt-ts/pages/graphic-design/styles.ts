@@ -6,12 +6,12 @@ export const styles = {
    gridTemplateRows: { xs: '1fr 1fr', md: '1fr' },
    gridTemplateAreas: {
       xs: `
-            "web"
-            "graphic"
-         `,
+         "web"
+         "app"
+      `,
       md: `
-            "web graphic"
-         `
+         "web app"
+      `
    },
-   gap: '25px',
+   gap: '25px'
 }

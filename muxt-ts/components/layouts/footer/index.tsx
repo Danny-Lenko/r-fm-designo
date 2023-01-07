@@ -4,11 +4,8 @@ import FooterContact from './footerContact'
 import { styles } from './styles'
 
 const Footer = () => {
-   // const navigate = useNavigate()
-   // const location = useLocation()
-
    return (
-      <Box sx={styles('home')}>
+      <Box sx={ styles('home') }>
          <Container>
             <FooterLogoLinks />
             <FooterContact />
