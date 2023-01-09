@@ -30,21 +30,12 @@ const LocationArticle = ({ content }: any) => {
       }
    )
 
-   const [isMap, setIsMap] = useState<boolean>(false)
-
-   useEffect(() => {
-      setIsMap(true)
-   }, [])
-
    return (
       <MobileContainer>
          <Box sx={styles(flexDirMd, margBottom)}>
-            {/* {
-               isMap && <Box className='map-box'>
-                  <Map coords={coords} />
-               </Box>
-            } */}
-
+            <Box className='map-box'>
+               <Map coords={coords} />
+            </Box>
             <Box className='text-box'>
                <Typography variant='h2'>{heading}</Typography>
                <Box className='text-box__contact'>
