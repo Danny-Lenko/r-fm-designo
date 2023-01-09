@@ -14,13 +14,21 @@ const LocationArticle = ({ content }: any) => {
       margBottom
    } = content
 
-   const Map = useMemo(() => dynamic(
+   // const Map = useMemo(() => dynamic(
+   //    () => import('../locationArticleMap'),
+   //    {
+   //       loading: () => <p>A map is loading</p>,
+   //       ssr: false
+   //    }
+   // ), [])
+
+   const Map = dynamic(
       () => import('../locationArticleMap'),
       {
          loading: () => <p>A map is loading</p>,
          ssr: false
       }
-   ), [])
+   )
 
    return (
       <MobileContainer>
