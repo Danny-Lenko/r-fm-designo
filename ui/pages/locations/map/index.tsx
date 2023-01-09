@@ -1,8 +1,9 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
+import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css'
+import 'leaflet-defaulticon-compatibility';
 
-const LocationArticleMap = ({ coords }: any) => {
-
+const Map = ({ coords }: any) => {
    return (
       <MapContainer
          center={coords}
@@ -23,4 +24,4 @@ const LocationArticleMap = ({ coords }: any) => {
    );
 }
 
-export default LocationArticleMap;
+export default Map;

@@ -15,7 +15,7 @@ const LocationArticle = ({ content }: any) => {
    } = content
 
    // const Map = useMemo(() => dynamic(
-   //    () => import('../locationArticleMap'),
+   //    () => import('../map),
    //    {
    //       loading: () => <p>A map is loading</p>,
    //       ssr: false
@@ -23,9 +23,9 @@ const LocationArticle = ({ content }: any) => {
    // ), [])
 
    const Map = dynamic(
-      () => import('../locationArticleMap'),
+      () => import('../map'),
       {
-         loading: () => <p>A map is loading</p>,
+         // loading: () => <p>A map is loading</p>,
          ssr: false
       }
    )
