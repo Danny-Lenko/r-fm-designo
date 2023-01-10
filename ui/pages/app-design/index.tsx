@@ -7,8 +7,8 @@ import DesignLink from '../../components/common/designLink';
 import BottomRectangle from '../../components/common/bottomRectangle';
 import ProjectCard from '../../components/common/projectCard';
 import GreyDrop from '../../components/common/greyDrop';
-import { projects } from './appProjects';
-import { styles } from './styles'
+import { projects } from '../../lib/local-data/app-design-projects';
+import { styles } from '../../styles/pages-styles/app-design-styles'
 
 const topRectangleContent = {
    title: 'App Design',

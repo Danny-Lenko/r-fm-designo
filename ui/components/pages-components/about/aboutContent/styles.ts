@@ -36,7 +36,7 @@ export const styles = ({ props }: { props: IAboutContentItem }) => {
             mb: 3
          }
       },
-      
+
       '& .image-box': {
          borderTopLeftRadius: { sm: '15px', md: flexDirMd !== 'row' ? '0' : '15px' },
          borderTopRightRadius: { sm: '15px', md: flexDirMd === 'row' ? 0 : '15px' },

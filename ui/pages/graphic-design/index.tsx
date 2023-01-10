@@ -7,8 +7,8 @@ import DesignLink from '../../components/common/designLink';
 import BottomRectangle from '../../components/common/bottomRectangle';
 import ProjectCard from '../../components/common/projectCard';
 import GreyDrop from '../../components/common/greyDrop';
-import { projects } from './graphicProjects';
-import { styles } from './styles'
+import { projects } from '../../lib/local-data/graphic-design-projects';
+import { styles } from '../../styles/pages-styles/graphic-design-styles'
 
 const topRectangleContent = {
    title: 'Graphic Design',

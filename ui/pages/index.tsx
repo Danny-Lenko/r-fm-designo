@@ -1,9 +1,9 @@
 import type { NextPage } from 'next'
 import { Container, Box } from "@mui/material";
 import MobileContainer from '../components/common/mobileContainer';
-import Hero from '../components/domains/home/homeHero';
-import HomeDesigns from '../components/domains/home/homeDesigns';
-import HomeTraits from '../components/domains/home/homeTraits';
+import Hero from '../components/pages-components/home/homeHero';
+import HomeDesigns from '../components/pages-components/home/homeDesigns';
+import HomeTraits from '../components/pages-components/home/homeTraits';
 import BottomRectangle from '../components/common/bottomRectangle';
 import GreyDrop from '../components/common/greyDrop';
 import { DROPHOMETOP, DROPHOMEBOTTOM } from '../lib/utils/constants';

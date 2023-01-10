@@ -1,6 +1,6 @@
 import { SECTIONMARGINBOTTOM, DROPDESIGNTYPES } from '../../lib/utils/constants';
 import { appDesignProps, graphicDesignProps } from '../../lib/utils/constants';
-import { projects } from './webProjects';
+import { projects } from '../../lib/local-data/web-design-projects';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
@@ -9,7 +9,7 @@ import DesignLink from '../../components/common/designLink';
 import BottomRectangle from '../../components/common/bottomRectangle';
 import ProjectCard from '../../components/common/projectCard';
 import GreyDrop from '../../components/common/greyDrop';
-import { styles } from './styles';
+import { styles } from '../../styles/pages-styles/web-design-styles';
 
 const topRectangleContent = {
    title: 'Web Design',

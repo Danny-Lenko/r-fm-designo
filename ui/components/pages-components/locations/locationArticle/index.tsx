@@ -1,6 +1,6 @@
-import { useMemo, useState, useEffect } from 'react';
+import { useMemo } from 'react';
 import dynamic from 'next/dynamic';
-import MobileContainer from '../../../components/common/mobileContainer';
+import MobileContainer from '../../../common/mobileContainer';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { styles } from './styles'
@@ -14,37 +14,20 @@ const LocationArticle = ({ content }: any) => {
       margBottom
    } = content
 
-   // const Map = useMemo(() => dynamic(
-   //    () => import('../map),
-   //    {
-   //       loading: () => <p>A map is loading</p>,
-   //       ssr: false
-   //    }
-   // ), [])
-
-   const Map = dynamic(
+   const Map = useMemo(() => dynamic(
       () => import('../map'),
       {
-         // loading: () => <p>A map is loading</p>,
+         loading: () => <p>A map is loading</p>,
          ssr: false
       }
-   )
-
-   const [isMap, setIsMap] = useState<boolean>(false)
-
-   useEffect(() => {
-      setIsMap(true)
-   }, [])
+   ), [])
 
    return (
       <MobileContainer>
          <Box sx={styles(flexDirMd, margBottom)}>
-            {
-               isMap && <Box className='map-box'>
-                  <Map coords={coords} />
-               </Box>
-            }
-
+            <Box className='map-box'>
+               <Map coords={coords} />
+            </Box>
             <Box className='text-box'>
                <Typography variant='h2'>{heading}</Typography>
                <Box className='text-box__contact'>
