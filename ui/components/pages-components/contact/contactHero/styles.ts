@@ -1,4 +1,4 @@
-import { SECTIONMARGINBOTTOM } from "../../../lib/utils/constants"
+import { SECTIONMARGINBOTTOM } from "../../../../lib/utils/constants"
 
 export const styles = {
    display: 'flex',
@@ -46,7 +46,7 @@ export const styles = {
                opacity: 0.5
             }
          },
-         
+
          '& .MuiFormHelperText-root.Mui-error': {
             position: 'absolute',
             pr: 4,

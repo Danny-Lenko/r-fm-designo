@@ -1,6 +1,6 @@
-import { SECTIONMARGINBOTTOM } from '../../../lib/utils/constants';
+import { SECTIONMARGINBOTTOM } from '../../../../lib/utils/constants';
 
-export const styles = (flexDirMd:any, margBottom:any) => ({
+export const styles = (flexDirMd: any, margBottom: any) => ({
    display: 'flex',
    flexDirection: { xs: 'column', md: flexDirMd },
    gap: { sx: 0, sm: '30px' },
@@ -17,7 +17,7 @@ export const styles = (flexDirMd:any, margBottom:any) => ({
          borderRadius: { sm: '15px' }
       }
    },
-   
+
    '& .text-box': {
       textAlign: { xs: 'center', sm: 'start' },
       backgroundColor: '#FDF3F0',

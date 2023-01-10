@@ -3,8 +3,8 @@ import * as yup from 'yup';
 import Box from '@mui/material/Box'
 import Typography from "@mui/material/Typography";
 import TextField from '@mui/material/TextField';
-import MobileContainer from '../../../components/common/mobileContainer';
-import CustomButton from "../../../components/common/customButton";
+import MobileContainer from '../../../common/mobileContainer';
+import CustomButton from "../../../common/customButton";
 import { styles } from "./styles";
 
 const ContactHero = () => {

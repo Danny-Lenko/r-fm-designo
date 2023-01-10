@@ -1,6 +1,6 @@
 import { useMemo, useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
-import MobileContainer from '../../../components/common/mobileContainer';
+import MobileContainer from '../../../common/mobileContainer';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { styles } from './styles'
@@ -22,16 +22,16 @@ const LocationArticle = ({ content }: any) => {
    //    }
    // ), [])
 
-   // const Map = dynamic(() => import('../map'), {
-   //    ssr: false
-   // })
+   const Map = dynamic(() => import('../map'), {
+      ssr: false
+   })
 
    return (
       <MobileContainer>
          <Box sx={styles(flexDirMd, margBottom)}>
-            {/* <Box className='map-box'>
+            <Box className='map-box'>
                <Map coords={coords} />
-            </Box> */}
+            </Box>
             <Box className='text-box'>
                <Typography variant='h2'>{heading}</Typography>
                <Box className='text-box__contact'>

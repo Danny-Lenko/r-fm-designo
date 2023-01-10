@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container';
-import LocationArticle from './locationArticle';
+import LocationArticle from '../../components/pages-components/locations/locationArticle';
 import BottomRectangle from '../../components/common/bottomRectangle';
 
 import { useEffect } from 'react';

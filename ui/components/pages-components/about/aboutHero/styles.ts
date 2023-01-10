@@ -13,9 +13,9 @@ export const styles = {
    '& .content-box': {
       color: 'common.white',
       backgroundColor: 'peachCustom.main',
-      backgroundImage: { 
-         xs: `url(/assets/about/mobile/bg-pattern-hero-about-mobile.svg)`, 
-         sm: `url(/assets/about/desktop/bg-pattern-hero-about-desktop.svg)` 
+      backgroundImage: {
+         xs: `url(/assets/about/mobile/bg-pattern-hero-about-mobile.svg)`,
+         sm: `url(/assets/about/desktop/bg-pattern-hero-about-desktop.svg)`
       },
       backgroundPosition: { xs: '100% 25%', sm: '-100px 125%', md: '100% 100%' },
       backgroundRepeat: 'no-repeat',
@@ -30,7 +30,7 @@ export const styles = {
          mb: { xs: 3, sm: 4 }
       }
    },
-   
+
    '& .image-box': {
       borderTopRightRadius: { sm: '15px', md: '15px' },
       borderBottomRightRadius: { xs: 0, md: '15px' },

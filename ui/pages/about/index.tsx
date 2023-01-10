@@ -1,7 +1,7 @@
 import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
-import AboutHero from '../../components/domains/about/aboutHero';
-import AboutContent from '../../components/domains/about/aboutContent';
+import AboutHero from '../../components/pages-components/about/aboutHero';
+import AboutContent from '../../components/pages-components/about/aboutContent';
 import SeeLocation from '../../components/common/seeLocation';
 import BottomRectangle from '../../components/common/bottomRectangle';
 import GreyDrop from '../../components/common/greyDrop';
@@ -29,10 +29,10 @@ const realContentSection = {
 
 const About = () => {
    return (
-      <Box 
-         component="main" 
-         sx={{ 
-            position: 'relative', 
+      <Box
+         component="main"
+         sx={{
+            position: 'relative',
             overflowX: 'hidden'
          }}
       >
@@ -40,7 +40,7 @@ const About = () => {
          <AboutContent props={worldContentSection} />
          <SeeLocation />
          <AboutContent props={realContentSection} />
-         
+
          <Container maxWidth='lg'>
             <BottomRectangle />
             <GreyDrop typeTop={true} margTop={DROPHOMETOP} />
