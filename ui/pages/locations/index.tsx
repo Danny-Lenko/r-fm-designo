@@ -53,14 +53,14 @@ const Locations = () => {
    const router = useRouter()
    const id = router.query.id
 
-   // useEffect(() => {
-   //    if (typeof id === 'string') {
-   //       const el = document.getElementById(id)
-   //       const yCoordinate = el!.getBoundingClientRect().top + window.pageYOffset;
-   //       const yOffset = -10;
-   //       window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
-   //    }
-   // }, [])
+   useEffect(() => {
+      if (typeof id === 'string') {
+         const el = document.getElementById(id)
+         const yCoordinate = el!.getBoundingClientRect().top + window.pageYOffset;
+         const yOffset = -10;
+         window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
+      }
+   }, [])
 
    return (
       <Box component="main" sx={{ position: 'relative' }}>

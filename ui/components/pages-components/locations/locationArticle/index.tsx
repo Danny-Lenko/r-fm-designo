@@ -1,4 +1,4 @@
-import { useMemo, useState, useEffect } from 'react';
+import { useMemo } from 'react';
 import dynamic from 'next/dynamic';
 import MobileContainer from '../../../common/mobileContainer';
 import Box from '@mui/material/Box';
@@ -14,17 +14,13 @@ const LocationArticle = ({ content }: any) => {
       margBottom
    } = content
 
-   // const Map = useMemo(() => dynamic(
-   //    () => import('../map),
-   //    {
-   //       loading: () => <p>A map is loading</p>,
-   //       ssr: false
-   //    }
-   // ), [])
-
-   const Map = dynamic(() => import('../map'), {
-      ssr: false
-   })
+   const Map = useMemo(() => dynamic(
+      () => import('../map'),
+      {
+         loading: () => <p>A map is loading</p>,
+         ssr: false
+      }
+   ), [])
 
    return (
       <MobileContainer>
