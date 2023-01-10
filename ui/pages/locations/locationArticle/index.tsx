@@ -22,20 +22,16 @@ const LocationArticle = ({ content }: any) => {
    //    }
    // ), [])
 
-   const Map = dynamic(
-      () => import('../map'),
-      {
-         // loading: () => <p>A map is loading</p>,
-         ssr: false
-      }
-   )
+   // const Map = dynamic(() => import('../map'), {
+   //    ssr: false
+   // })
 
    return (
       <MobileContainer>
          <Box sx={styles(flexDirMd, margBottom)}>
-            <Box className='map-box'>
+            {/* <Box className='map-box'>
                <Map coords={coords} />
-            </Box>
+            </Box> */}
             <Box className='text-box'>
                <Typography variant='h2'>{heading}</Typography>
                <Box className='text-box__contact'>
