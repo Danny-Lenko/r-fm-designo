@@ -1,4 +1,4 @@
-export const styles = (content:any, assembleBg:any) => ({
+export const styles = (content:any, img:string) => ({
    gridArea: content.gridArea ? content.gridArea : 'none',
    position: 'relative',
    cursor: 'pointer',
@@ -23,11 +23,12 @@ export const styles = (content:any, assembleBg:any) => ({
          transform 750ms cubic-bezier(.5, 0, .5, 1),
          opacity 250ms linear
       `,
-      background: {
-         xs: assembleBg(content.img, 'XS'),
-         sm: assembleBg(content.img, 'SM'),
-         md: assembleBg(content.img, 'MD')
-      }
+      background: `rgba(0,0,0,0.5) url(${img}) 0 0/cover no-repeat`
+      // background: {
+      //    xs: assembleBg(content.img, 'XS'),
+      //    sm: assembleBg(content.img, 'SM'),
+      //    md: assembleBg(content.img, 'MD')
+      // }
    },
 
    // typography items

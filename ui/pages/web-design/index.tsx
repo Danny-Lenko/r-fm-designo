@@ -9,6 +9,7 @@ import DesignLink from '../../components/common/designLink';
 import BottomRectangle from '../../components/common/bottomRectangle';
 import ProjectCard from '../../components/common/projectCard';
 import GreyDrop from '../../components/common/greyDrop';
+import { IProductItem } from '../../lib/interfaces/interfaces';
 import { styles } from '../../styles/pages-styles/web-design-styles';
 
 import { createClient } from 'contentful'
@@ -21,21 +22,25 @@ const topRectangleContent = {
 
 export async function getStaticProps() {
    const client = createClient({
-     space: process.env.CONTENTFUL_SPACE_ID!,
-     accessToken: process.env.CONTENTFUL_ACCESS_KEY!,
+      space: process.env.CONTENTFUL_SPACE_ID!,
+      accessToken: process.env.CONTENTFUL_ACCESS_KEY!,
    })
-   const res = await client.getEntries({ content_type: "webDesign" })
- 
+   const res = await client.getEntries<IProductItem[]>({ content_type: "designCollection" })
+
    return {
-     props: {
-       webDesigns: res.items,
-     }
+      props: {
+         products: res.items,
+      }
    }
- }
+}
 
-const WebDesign = ({webDesigns}:any) => {
+const WebDesign = ({
+   products
+}: {
+   products: IProductItem[]
+}) => {
 
-   console.log(webDesigns)
+   console.log(products)
 
    return (
       <Box component="main" sx={{ position: 'relative' }}>
@@ -43,9 +48,9 @@ const WebDesign = ({webDesigns}:any) => {
          <Container>
             <GreyDrop typeTop={true} margTop={DROPDESIGNTYPES} />
             <Grid container spacing={4} mb={SECTIONMARGINBOTTOM / 8}>
-               {
-                  projects.map(project => <ProjectCard key={project.title} project={project} />)
-               }
+               {/* {
+                  designs.map(project => <ProjectCard key={project.title} project={project} />)
+               } */}
             </Grid>
             <Box sx={styles} >
                <DesignLink content={appDesignProps} />

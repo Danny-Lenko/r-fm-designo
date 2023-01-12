@@ -10,13 +10,39 @@ import GreyDrop from '../../components/common/greyDrop';
 import { projects } from '../../lib/local-data/app-design-projects';
 import { styles } from '../../styles/pages-styles/app-design-styles'
 
+import { IDesignItem } from '../../lib/interfaces/interfaces';
+import { createClient } from 'contentful';
+
 const topRectangleContent = {
    title: 'App Design',
    desc: 'Our mobile designs bring intuitive digital solutions to your customers right at their fingertips.',
    circles: '/assets/app-design/desktop/bg-pattern-intro-app.svg'
 }
 
-const AppDesign = () => {
+export async function getStaticProps() {
+   const client = createClient({
+      space: process.env.CONTENTFUL_SPACE_ID!,
+      accessToken: process.env.CONTENTFUL_ACCESS_KEY!,
+   })
+   const res = await client.getEntries<IDesignItem[]>({ content_type: "webDesign" })
+
+   return {
+      props: {
+         products: res.items,
+      }
+   }
+}
+
+
+
+const AppDesign = ({
+   products
+}: {
+   products: IDesignItem[]
+}) => {
+
+   console.log(products)
+
    return (
       <Box component="main" sx={{ position: 'relative' }}>
          <TopRectangle content={topRectangleContent} />
