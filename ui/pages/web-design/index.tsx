@@ -11,13 +11,32 @@ import ProjectCard from '../../components/common/projectCard';
 import GreyDrop from '../../components/common/greyDrop';
 import { styles } from '../../styles/pages-styles/web-design-styles';
 
+import { createClient } from 'contentful'
+
 const topRectangleContent = {
    title: 'Web Design',
    desc: 'We build websites that serve as powerful marketing tools and bring memorable brand experiences.',
    circles: '/assets/web-design/desktop/bg-pattern-intro-web.svg'
 }
 
-const WebDesign = () => {
+export async function getStaticProps() {
+   const client = createClient({
+     space: process.env.CONTENTFUL_SPACE_ID!,
+     accessToken: process.env.CONTENTFUL_ACCESS_KEY!,
+   })
+   const res = await client.getEntries({ content_type: "webDesign" })
+ 
+   return {
+     props: {
+       webDesigns: res.items,
+     }
+   }
+ }
+
+const WebDesign = ({webDesigns}:any) => {
+
+   console.log(webDesigns)
+
    return (
       <Box component="main" sx={{ position: 'relative' }}>
          <TopRectangle content={topRectangleContent} />
