@@ -5,9 +5,14 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import { styles } from './styles'
 import { IDesignItemFields } from '../../../lib/interfaces/interfaces'
 
-const DesignLink = ({ content, className }: { content: IDesignItemFields, className: string }) => {
+const DesignLink = ({ 
+   content, 
+   className 
+}: { 
+   content: IDesignItemFields, 
+   className: string 
+}) => {
    const router = useRouter()
-
    const imgXs = content.imageXs.fields.file.url
    const imgSm = content.imageSm?.fields.file.url
    const imgMd = content.imageMd?.fields.file.url
@@ -16,7 +21,7 @@ const DesignLink = ({ content, className }: { content: IDesignItemFields, classN
       <Box
          sx={styles(imgXs, imgSm, imgMd)}
          className={className}
-         // onClick={() => router.push(content.path)}
+         onClick={() => router.push('/designs/' + content.slug)}
       >
          <Box className='textbox'>
             <Typography variant="h2">{content.title}</Typography>

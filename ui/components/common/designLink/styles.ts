@@ -33,7 +33,7 @@ export const styles = (
       background: {
          xs: `rgba(0,0,0,0.5) url(${ imgXs }) 0 0/cover no-repeat`,
          sm: `rgba(0,0,0,0.5) url(${ imgSm ? imgSm : imgXs }) 0 0/cover no-repeat`,
-         md: `rgba(0,0,0,0.5) url(${ imgMd ? imgMd : imgXs}) 0 0/cover no-repeat`
+         md: `rgba(0,0,0,0.5) url(${ imgMd ? imgMd : imgXs }) 0 0/cover no-repeat`
       }
    },
 

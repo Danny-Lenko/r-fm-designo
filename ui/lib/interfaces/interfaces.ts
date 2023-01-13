@@ -21,11 +21,12 @@ export interface IDesignItemFields {
 }
 export type IDesignItem = Contentful.Entry<IDesignItemFields>
 
-export interface IProductItem {
+export interface IProjectItemFields {
    title: Contentful.EntryFields.Text,
    slug: Contentful.EntryFields.Text,
    description: Contentful.EntryFields.Text,
    image: Contentful.Asset,
    text?: Contentful.EntryFields.Text
 }
+export type IProjectItem = Contentful.Entry<IProjectItemFields>
 
