@@ -33,15 +33,11 @@ export async function getStaticProps() {
    }
 }
 
-
-
 const AppDesign = ({
    products
 }: {
    products: IDesignItem[]
 }) => {
-
-   console.log(products)
 
    return (
       <Box component="main" sx={{ position: 'relative' }}>

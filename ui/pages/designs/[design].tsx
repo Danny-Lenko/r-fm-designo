@@ -1,6 +1,4 @@
 import { createClient } from 'contentful'
-import { appDesignProps, graphicDesignProps } from '../../lib/utils/constants';
-import { projects } from '../../lib/local-data/web-design-projects';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
@@ -11,24 +9,29 @@ import ProjectCard from '../../components/common/projectCard';
 import GreyDrop from '../../components/common/greyDrop';
 import { SECTIONMARGINBOTTOM, DROPDESIGNTYPES } from '../../lib/utils/constants';
 import { convertToCamelcase } from '../../lib/utils/utils';
-import { IProjectItem, IDesignItem, IDesignItemFields, IProjectItemFields } from '../../lib/interfaces/interfaces';
+import { IProjectItem, IDesignItem, IDesignItemFields } from '../../lib/interfaces/interfaces';
 import { styles } from '../../styles/pages-styles/web-design-styles';
 
-const topRectangleContent = {
-   title: 'Web Design',
-   desc: 'We build websites that serve as powerful marketing tools and bring memorable brand experiences.',
-   circles: '/assets/web-design/desktop/bg-pattern-intro-web.svg'
-}
-
 const Design = ({
-   projects
+   projects,
+   currentDesign,
+   otherDesigns
 }: {
    projects: IProjectItem[]
+   currentDesign: IDesignItem
+   otherDesigns: IDesignItem[]
 }) => {
+   const {id, title, description} = currentDesign.fields
+
+   console.log(otherDesigns)
 
    return (
       <Box component="main" sx={{ position: 'relative' }}>
-         <TopRectangle content={topRectangleContent} />
+         <TopRectangle 
+            id={id} 
+            title={title} 
+            description={description} 
+         />
          <Container>
             <GreyDrop typeTop={true} margTop={DROPDESIGNTYPES} />
             <Grid container spacing={4} mb={SECTIONMARGINBOTTOM / 8}>
@@ -40,8 +43,12 @@ const Design = ({
                }
             </Grid>
             <Box sx={styles} >
-               {/* <DesignLink content={appDesignProps} />
-               <DesignLink content={graphicDesignProps} /> */}
+               {
+                  otherDesigns.map(design => <DesignLink
+                     key={design.sys.id}
+                     content={design.fields}
+                  />)
+               }
             </Box>
             <BottomRectangle />
          </Container>
@@ -76,11 +83,22 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params }: any) => {
    const camelCased = convertToCamelcase(params.design)
 
-   const { items } = await client.getEntries({
+   const { items: projects } = await client.getEntries({
       content_type: camelCased,
    })
 
+   const { items } = await client.getEntries<IDesignItemFields>({
+      content_type: 'designCollection'
+   })
+
+   const currentDesign = items.find(item => item.fields.slug === params.design)
+   const otherDesigns = items.filter(item => item.fields.slug !== params.design)
+
    return {
-      props: { projects: items }
+      props: {
+         projects,
+         currentDesign,
+         otherDesigns
+      }
    }
 }

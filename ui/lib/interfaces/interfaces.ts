@@ -10,11 +10,19 @@ export interface IAboutContentItem {
    paragraphTwo: string;
 }
 
+export interface ITopRectangle {
+   id: number;
+   title: string;
+   description: string;
+}
+
 // --------- Contentful data ------------
 
 export interface IDesignItemFields {
+   id: Contentful.EntryFields.Number,
    title: Contentful.EntryFields.Text,
    slug: Contentful.EntryFields.Text,
+   description: Contentful.EntryFields.Text,
    imageXs: Contentful.Asset,
    imageSm?: Contentful.Asset,
    imageMd?: Contentful.Asset

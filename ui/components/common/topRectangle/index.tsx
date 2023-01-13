@@ -2,17 +2,18 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography';
 import MobileContainer from '../mobileContainer';
 import { styles } from './styles'
+import { ITopRectangle } from '../../../lib/interfaces/interfaces';
 
-const TopRectangle = ({ content }: { content: Record<string, string> }) => {
+const TopRectangle = ({ id, title, description }: ITopRectangle) => {
 
    return (
       <MobileContainer>
-         <Box sx={ styles(content) } >
+         <Box sx={ styles(id) } >
             <Typography variant='h1'>
-               {content.title}
+               {title}
             </Typography>
             <Typography>
-               {content.desc}
+               {description}
             </Typography>
          </Box>
       </MobileContainer>

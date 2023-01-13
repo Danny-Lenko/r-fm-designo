@@ -40,8 +40,6 @@ const WebDesign = ({
    products: IProductItem[]
 }) => {
 
-   console.log(products)
-
    return (
       <Box component="main" sx={{ position: 'relative' }}>
          <TopRectangle content={topRectangleContent} />

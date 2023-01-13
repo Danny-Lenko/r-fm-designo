@@ -12,8 +12,6 @@ import { IDesignItem } from '../lib/interfaces/interfaces';
 
 const Home: NextPage<{ designs: IDesignItem[] }> = ({ designs }) => {
 
-  console.log(designs)
-
   return (
     <Box component="main" sx={{ position: 'relative' }}>
       <MobileContainer>

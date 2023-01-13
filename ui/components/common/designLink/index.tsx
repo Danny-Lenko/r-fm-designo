@@ -10,7 +10,7 @@ const DesignLink = ({
    className 
 }: { 
    content: IDesignItemFields, 
-   className: string 
+   className?: string 
 }) => {
    const router = useRouter()
    const imgXs = content.imageXs.fields.file.url
