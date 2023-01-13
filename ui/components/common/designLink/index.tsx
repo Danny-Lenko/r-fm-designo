@@ -5,33 +5,17 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import { styles } from './styles'
 import { IDesignItemFields } from '../../../lib/interfaces/interfaces'
 
-// function assembleBg(img: string, size: string) {
-//    const allImages = [
-//       { name: 'WebImgMD', link: WebImgMD },
-//       { name: 'WebImgSM', link: WebImgSM },
-//       { name: 'WebImgXS', link: WebImgXS },
-//       { name: 'AppImgMD', link: AppImgMD },
-//       { name: 'AppImgSM', link: AppImgSM },
-//       { name: 'AppImgXS', link: AppImgXS },
-//       { name: 'GraphicImgMD', link: GraphicImgMD },
-//       { name: 'GraphicImgSM', link: GraphicImgSM },
-//       { name: 'GraphicImgXS', link: GraphicImgXS },
-//    ]
-//    const actualImageName = img + size
-//    const actualImage = allImages.find(image => image.name === actualImageName)
-
-//    return `rgba(0,0,0,0.5) url(${actualImage?.link.src}) 0 0/cover no-repeat`
-// }
-
-const DesignLink = ({ content }: { content: IDesignItemFields }) => {
+const DesignLink = ({ content, className }: { content: IDesignItemFields, className: string }) => {
    const router = useRouter()
 
-   console.log(content.imageXs.fields.file)
-   const img = content.imageXs.fields.file.url
+   const imgXs = content.imageXs.fields.file.url
+   const imgSm = content.imageSm?.fields.file.url
+   const imgMd = content.imageMd?.fields.file.url
 
    return (
       <Box
-         sx={styles(content, img)}
+         sx={styles(imgXs, imgSm, imgMd)}
+         className={className}
          // onClick={() => router.push(content.path)}
       >
          <Box className='textbox'>

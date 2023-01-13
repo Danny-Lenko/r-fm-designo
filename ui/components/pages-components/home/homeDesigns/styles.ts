@@ -6,18 +6,7 @@ export const styles = {
    mb: (theme: Theme) => calcSpacing(theme, SECTIONMARGINBOTTOM),
    minHeight: { xs: 800, sm: 640 },
    display: 'grid',
-   gridTemplateColumns: { xs: '1f', md: '1fr 1fr' },
-   gridTemplateRows: { xs: '1fr 1fr 1f', md: '1fr 1fr' },
-   gridTemplateAreas: {
-      xs: `
-         "web"
-         "app"
-         "graphic"
-      `,
-      md: `
-         "web app"
-         "web graphic"
-      `
-   },
+   gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
+   gridTemplateRows: { xs: '1fr 1fr 1fr', md: '1fr 1fr' },
    gap: '25px',
 }

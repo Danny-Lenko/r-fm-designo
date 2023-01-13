@@ -1,6 +1,5 @@
 import { Box } from '@mui/material'
 import DesignLink from '../../../common/designLink'
-import { webDesignProps, appDesignProps, graphicDesignProps } from '../../../../lib/utils/constants'
 import { IDesignItem } from '../../../../lib/interfaces/interfaces'
 import { styles } from './styles'
 
@@ -12,17 +11,17 @@ const HomeDesigns = ({
 
    return (
       <Box sx={styles} >
-
          {
-            designs.map( design => <DesignLink 
-               key={design.sys.id} 
-               content={design.fields}
-            /> )
-         }
+            designs.map((design, i) => {
+               const className = i === 0 ? 'highItem' : ''
 
-         {/* <DesignLink content={webDesignProps} />
-         <DesignLink content={appDesignProps} />
-         <DesignLink content={graphicDesignProps} /> */}
+               return <DesignLink
+                  key={design.sys.id}
+                  content={design.fields}
+                  className={className}
+               />
+            })
+         }
       </Box>
    );
 }
