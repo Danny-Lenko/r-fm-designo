@@ -4,8 +4,8 @@ import AboutHero from '../../components/pageComponents/about/aboutHero';
 import AboutContent from '../../components/pageComponents/about/aboutContent';
 import SeeLocation from '../../components/common/seeLocation';
 import BottomRectangle from '../../components/common/bottomRectangle';
-import GreyDrop from '../../components/common/greyDrop';
-import { DROPHOMETOP } from '../../lib/utils/constants';
+import BcgBulb from '../../components/common/bcgBulb';
+import { styles } from '../../styles/pagesStyles/aboutStyles';
 
 const worldContentSection = {
    flexDirMd: 'row',
@@ -29,13 +29,7 @@ const realContentSection = {
 
 const About = () => {
    return (
-      <Box
-         component="main"
-         sx={{
-            position: 'relative',
-            overflowX: 'hidden'
-         }}
-      >
+      <Box component="main" sx={styles} >
          <AboutHero />
          <AboutContent props={worldContentSection} />
          <SeeLocation />
@@ -43,9 +37,10 @@ const About = () => {
 
          <Container maxWidth='lg'>
             <BottomRectangle />
-            <GreyDrop typeTop={true} margTop={DROPHOMETOP} />
-            <GreyDrop typeTop={true} margTop='1630px' margLeft='50vw' />
          </Container>
+
+         <BcgBulb className='bulb-top'/>
+         <BcgBulb className='bulb-bottom'/>
       </Box>
    );
 }

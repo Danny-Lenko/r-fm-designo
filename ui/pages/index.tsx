@@ -6,14 +6,14 @@ import Hero from '../components/pageComponents/home/homeHero';
 import HomeDesigns from '../components/pageComponents/home/homeDesigns';
 import HomeTraits from '../components/pageComponents/home/homeTraits';
 import BottomRectangle from '../components/common/bottomRectangle';
-import GreyDrop from '../components/common/greyDrop';
-import { DROPHOMETOP, DROPHOMEBOTTOM } from '../lib/utils/constants';
+import BcgBulb from '../components/common/bcgBulb';
 import { IDesignItem } from '../lib/interfaces/interfaces';
+import { styles } from '../styles/pagesStyles/homeStyles';
 
 const Home: NextPage<{ designs: IDesignItem[] }> = ({ designs }) => {
 
   return (
-    <Box component="main" sx={{ position: 'relative' }}>
+    <Box component="main" sx={styles}>
       <MobileContainer>
         <Hero />
       </MobileContainer>
@@ -23,9 +23,9 @@ const Home: NextPage<{ designs: IDesignItem[] }> = ({ designs }) => {
         <HomeTraits />
         <BottomRectangle />
       </Container>
-      
-      <GreyDrop typeTop={true} margTop={DROPHOMETOP} />
-      <GreyDrop typeTop={false} margTop={DROPHOMEBOTTOM} />
+
+      <BcgBulb className='bulb-top' />
+      <BcgBulb className='bulb-bottom' />
     </Box>
   )
 }

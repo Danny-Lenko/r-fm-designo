@@ -6,8 +6,7 @@ import TopRectangle from '../../components/common/topRectangle';
 import DesignLink from '../../components/common/designLink';
 import BottomRectangle from '../../components/common/bottomRectangle';
 import ProjectCard from '../../components/common/projectCard';
-import GreyDrop from '../../components/common/greyDrop';
-import { SECTIONMARGINBOTTOM, DROPDESIGNTYPES } from '../../lib/utils/constants';
+import BcgBulb from '../../components/common/bcgBulb';
 import { convertToCamelcase } from '../../lib/utils/utils';
 import { IProjectItem, IDesignItem, IDesignItemFields } from '../../lib/interfaces/interfaces';
 import { styles } from '../../styles/pagesStyles/designStyles';
@@ -24,14 +23,14 @@ const Design = ({
    const { id, title, description } = currentDesign.fields
 
    return (
-      <Box component="main" sx={{ position: 'relative' }}>
+      <Box sx={styles} component="main" >
          <TopRectangle
             id={id}
             title={title}
             description={description}
          />
          <Container>
-            <Grid container spacing={4} mb={SECTIONMARGINBOTTOM / 8}>
+            <Grid container spacing={4} className='projects-grid' >
                {
                   projects.map(project => <ProjectCard
                      key={project.sys.id}
@@ -39,7 +38,7 @@ const Design = ({
                   />)
                }
             </Grid>
-            <Box sx={styles} >
+            <Box className='designs-box' >
                {
                   otherDesigns.map(design => <DesignLink
                      key={design.sys.id}
@@ -49,7 +48,7 @@ const Design = ({
             </Box>
             <BottomRectangle />
          </Container>
-         <GreyDrop typeTop={true} margTop={DROPDESIGNTYPES} />
+         <BcgBulb className='bulb' />
       </Box>
    );
 }

@@ -1,20 +1,14 @@
 export const styles = {
    position: 'relative',
 
-   '& .bulb-box': {
-      position: 'absolute', 
-      bottom: -120, 
-      right: 0,
-      zIndex: -2, 
-      display: { xs: 'none', md: 'block' },
-      '& .bulb': {
-         width: '100%',
-         height: '100%'
-      },
+   '& .margin-box': {
+      height: {xs: 150, sm: 0, md: 50}
    },
 
-   '& .margin-box': {
-      border: 1,
-      height: {xs: 150, sm: 0, md: 50}
+   '& .bulb': {
+      width: '1000px',
+      backgroundImage: `url(/assets/contact/desktop/bulb-img.svg)`,
+      right: 0,
+      bottom: -120,
    }
 }
