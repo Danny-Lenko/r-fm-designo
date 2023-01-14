@@ -1,9 +1,9 @@
 import Box from "@mui/material/Box";
 import SvgIcon from "@mui/material/SvgIcon";
-import ContactHero from "../../components/pages-components/contact/contactHero";
+import ContactHero from "../../components/pageComponents/contact/contactHero";
 import SeeLocation from "../../components/common/seeLocation";
 import bulb from '/public/assets/contact/desktop/bulb-img.svg'
-import { styles } from '../../styles/pages-styles/contact-styles'
+import { styles } from '../../styles/pagesStyles/contactStyles'
 
 const Contact = () => {
    return (

@@ -10,7 +10,7 @@ import GreyDrop from '../../components/common/greyDrop';
 import { SECTIONMARGINBOTTOM, DROPDESIGNTYPES } from '../../lib/utils/constants';
 import { convertToCamelcase } from '../../lib/utils/utils';
 import { IProjectItem, IDesignItem, IDesignItemFields } from '../../lib/interfaces/interfaces';
-import { styles } from '../../styles/pages-styles/web-design-styles';
+import { styles } from '../../styles/pagesStyles/designStyles';
 
 const Design = ({
    projects,
@@ -21,19 +21,16 @@ const Design = ({
    currentDesign: IDesignItem
    otherDesigns: IDesignItem[]
 }) => {
-   const {id, title, description} = currentDesign.fields
-
-   console.log(otherDesigns)
+   const { id, title, description } = currentDesign.fields
 
    return (
       <Box component="main" sx={{ position: 'relative' }}>
-         <TopRectangle 
-            id={id} 
-            title={title} 
-            description={description} 
+         <TopRectangle
+            id={id}
+            title={title}
+            description={description}
          />
          <Container>
-            <GreyDrop typeTop={true} margTop={DROPDESIGNTYPES} />
             <Grid container spacing={4} mb={SECTIONMARGINBOTTOM / 8}>
                {
                   projects.map(project => <ProjectCard
@@ -52,6 +49,7 @@ const Design = ({
             </Box>
             <BottomRectangle />
          </Container>
+         <GreyDrop typeTop={true} margTop={DROPDESIGNTYPES} />
       </Box>
    );
 }

@@ -2,9 +2,9 @@ import type { NextPage } from 'next'
 import { createClient } from 'contentful'
 import { Container, Box } from "@mui/material";
 import MobileContainer from '../components/common/mobileContainer';
-import Hero from '../components/pages-components/home/homeHero';
-import HomeDesigns from '../components/pages-components/home/homeDesigns';
-import HomeTraits from '../components/pages-components/home/homeTraits';
+import Hero from '../components/pageComponents/home/homeHero';
+import HomeDesigns from '../components/pageComponents/home/homeDesigns';
+import HomeTraits from '../components/pageComponents/home/homeTraits';
 import BottomRectangle from '../components/common/bottomRectangle';
 import GreyDrop from '../components/common/greyDrop';
 import { DROPHOMETOP, DROPHOMEBOTTOM } from '../lib/utils/constants';
@@ -22,10 +22,10 @@ const Home: NextPage<{ designs: IDesignItem[] }> = ({ designs }) => {
         <HomeDesigns designs={designs} />
         <HomeTraits />
         <BottomRectangle />
-
-        <GreyDrop typeTop={true} margTop={DROPHOMETOP} />
-        <GreyDrop typeTop={false} margTop={DROPHOMEBOTTOM} />
       </Container>
+      
+      <GreyDrop typeTop={true} margTop={DROPHOMETOP} />
+      <GreyDrop typeTop={false} margTop={DROPHOMEBOTTOM} />
     </Box>
   )
 }
@@ -34,14 +34,14 @@ export default Home
 
 export async function getStaticProps() {
   const client = createClient({
-     space: process.env.CONTENTFUL_SPACE_ID!,
-     accessToken: process.env.CONTENTFUL_ACCESS_KEY!,
+    space: process.env.CONTENTFUL_SPACE_ID!,
+    accessToken: process.env.CONTENTFUL_ACCESS_KEY!,
   })
   const res = await client.getEntries<IDesignItem[]>({ content_type: "designCollection" })
 
   return {
-     props: {
-        designs: res.items,
-     }
+    props: {
+      designs: res.items,
+    }
   }
 }
