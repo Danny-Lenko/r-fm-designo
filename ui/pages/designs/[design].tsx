@@ -8,7 +8,7 @@ import BottomRectangle from '../../components/common/bottomRectangle';
 import ProjectCard from '../../components/common/projectCard';
 import BcgBulb from '../../components/common/bcgBulb';
 import { convertToCamelcase } from '../../lib/utils/utils';
-import { IProjectItem, IDesignItem, IDesignItemFields } from '../../lib/interfaces/interfaces';
+import { IProjectItem, IDesignItem, IDesignItemFields, IProjectItemFields } from '../../lib/interfaces/interfaces';
 import { styles } from '../../styles/pagesStyles/designStyles';
 
 const Design = ({
@@ -65,6 +65,8 @@ export const getStaticPaths = async () => {
       content_type: "designCollection"
    })
 
+   // console.log(params)
+
    const paths = res.items.map(item => {
       return {
          params: { design: item.fields.slug }
@@ -77,16 +79,20 @@ export const getStaticPaths = async () => {
    }
 }
 
-export const getStaticProps = async ({ params }: any) => {
+export const getStaticProps = async ({ params }: {params: {design: string}}) => {
    const camelCased = convertToCamelcase(params.design)
 
-   const { items: projects } = await client.getEntries({
+   const { items: projects } = await client.getEntries<IProjectItemFields>({
       content_type: camelCased,
    })
+
+   projects.sort((a,b) => a.fields.id - b.fields.id)
 
    const { items } = await client.getEntries<IDesignItemFields>({
       content_type: 'designCollection'
    })
+
+   items.sort((a,b) => a.fields.id - b.fields.id)
 
    const currentDesign = items.find(item => item.fields.slug === params.design)
    const otherDesigns = items.filter(item => item.fields.slug !== params.design)

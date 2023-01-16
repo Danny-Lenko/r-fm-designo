@@ -7,7 +7,7 @@ import HomeDesigns from '../components/pageComponents/home/homeDesigns';
 import HomeTraits from '../components/pageComponents/home/homeTraits';
 import BottomRectangle from '../components/common/bottomRectangle';
 import BcgBulb from '../components/common/bcgBulb';
-import { IDesignItem } from '../lib/interfaces/interfaces';
+import { IDesignItem, IDesignItemFields } from '../lib/interfaces/interfaces';
 import { styles } from '../styles/pagesStyles/homeStyles';
 
 const Home: NextPage<{ designs: IDesignItem[] }> = ({ designs }) => {
@@ -37,7 +37,9 @@ export async function getStaticProps() {
     space: process.env.CONTENTFUL_SPACE_ID!,
     accessToken: process.env.CONTENTFUL_ACCESS_KEY!,
   })
-  const res = await client.getEntries<IDesignItem[]>({ content_type: "designCollection" })
+  const res = await client.getEntries<IDesignItemFields>({ content_type: "designCollection" })
+
+  res.items.sort((a,b) => a.fields.id - b.fields.id)
 
   return {
     props: {

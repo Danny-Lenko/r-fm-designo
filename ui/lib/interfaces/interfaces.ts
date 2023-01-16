@@ -30,8 +30,10 @@ export interface IDesignItemFields {
 export type IDesignItem = Contentful.Entry<IDesignItemFields>
 
 export interface IProjectItemFields {
+   id: Contentful.EntryFields.Number,
    title: Contentful.EntryFields.Text,
    slug: Contentful.EntryFields.Text,
+   category: Contentful.EntryFields.Text,
    description: Contentful.EntryFields.Text,
    image: Contentful.Asset,
    text?: Contentful.EntryFields.Text
