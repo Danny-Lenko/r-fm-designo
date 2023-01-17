@@ -4,21 +4,26 @@ import { convertToCamelcase } from '../../../lib/utils/utils';
 import { fetchAllProjectNames } from '../../../lib/utils/utils';
 import { IProjectItemFields, IDesignItemFields, IProjectItem } from '../../../lib/interfaces/interfaces';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import BottomRectangle from '../../../components/common/bottomRectangle';
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
+import ProjectSkeleton from '../../../components/pageComponents/project/projectSkeleton';
+
+import { styles } from '../../../styles/pagesStyles/projectStyles';
 
 const Project = ({
    project
 }: {
    project: IProjectItem
 }) => {
-   const router = useRouter()
+   if ( !project ) return <ProjectSkeleton />
+
    const { title, text } = project.fields
 
    console.log(project)
 
    return (
-      <Box component="main" >
+      <Box sx={styles} component="main" >
          <Container>
 
             <h1>{title}</h1>
@@ -27,6 +32,9 @@ const Project = ({
                text && <div>{documentToReactComponents(text!)}</div>
             }
 
+
+
+            <BottomRectangle />
          </Container>
       </Box>
    );
@@ -53,7 +61,7 @@ export const getStaticPaths = async () => {
 
    return {
       paths,
-      fallback: false
+      fallback: true
    }
 }
 
@@ -73,8 +81,17 @@ export const getStaticProps = async ({
       'fields.slug': params.project
    })
 
+   if (!items.length) {
+      return {
+         redirect: {
+            destination: '/',
+            permanent: false,
+         },
+      }
+   }
+
    return {
       props: { project: items[0] },
-      revalidate: 1
+      revalidate: 100
    }
 }

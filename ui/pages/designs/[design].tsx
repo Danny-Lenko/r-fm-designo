@@ -119,6 +119,6 @@ export const getStaticProps = async ({
          currentDesign,
          otherDesigns
       },
-      revalidate: 1
+      revalidate: 100
    }
 }
