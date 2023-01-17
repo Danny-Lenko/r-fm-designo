@@ -4,14 +4,10 @@ import { convertToCamelcase } from '../../../lib/utils/utils';
 import { fetchAllProjectNames } from '../../../lib/utils/utils';
 import { IProjectItemFields, IDesignItemFields } from '../../../lib/interfaces/interfaces';
 
-
-
-const Project = () => {
+const Project = ({project}:any) => {
    const router = useRouter()
 
-   // console.log(router.asPath)
-   // console.log(router.query.design)
-   // console.log(router)
+   console.log(project)
 
    return (
       <div>Hello project</div>
@@ -19,7 +15,6 @@ const Project = () => {
 }
 
 export default Project;
-
 
 const client = createClient({
    space: process.env.CONTENTFUL_SPACE_ID!,
@@ -29,31 +24,11 @@ const client = createClient({
 export const getStaticPaths = async () => {
    const res = await fetchAllProjectNames()
 
-   // console.log(res.flat())
-
-   // const res = await client.getEntries<any>({
-   //    content_type: "designCollection"
-   // })
-
-   // const designs = res.items
-   // const projectsArr = []
-
-
-   // res.items.forEach(async item => {
-   //    const response = await client.getEntries<any>({
-   //       content_type: convertToCamelcase(item.fields.slug)
-   //    })
-   //    // console.log(response)
-   //    projects.push(response)
-   //    console.log(projects)
-   // })
-
-
-   const paths = res.flat().map(item => {
+   const paths = res.map(item => {
       return {
-         params: { 
+         params: {
             design: item.fields.category,
-            project: item.fields.slug 
+            project: item.fields.slug
          }
       }
    })
@@ -64,8 +39,8 @@ export const getStaticPaths = async () => {
    }
 }
 
-export const getStaticProps = async ({ 
-   params 
+export const getStaticProps = async ({
+   params
 }: {
    params: {
       design: string
@@ -73,30 +48,14 @@ export const getStaticProps = async ({
    }
 }) => {
 
-   console.log(params.project)
+   const camelCased = convertToCamelcase(params.design)
 
-   // const camelCased = convertToCamelcase(params.design)
-
-   // const { items: projects } = await client.getEntries<IProjectItemFields>({
-   //    content_type: camelCased,
-   // })
-
-   // projects.sort((a,b) => a.fields.id - b.fields.id)
-
-   // const { items } = await client.getEntries<IDesignItemFields>({
-   //    content_type: 'designCollection'
-   // })
-
-   // items.sort((a,b) => a.fields.id - b.fields.id)
-
-   // const currentDesign = items.find(item => item.fields.slug === params.design)
-   // const otherDesigns = items.filter(item => item.fields.slug !== params.design)
+   const { items } = await client.getEntries<IProjectItemFields>({
+      content_type: camelCased,
+      'fields.slug': params.project
+   })
 
    return {
-      props: {
-         // projects,
-         // currentDesign,
-         // otherDesigns
-      }
+      props: { project: items[0] }
    }
 }

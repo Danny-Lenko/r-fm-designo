@@ -65,8 +65,6 @@ export const getStaticPaths = async () => {
       content_type: "designCollection"
    })
 
-   // console.log(params)
-
    const paths = res.items.map(item => {
       return {
          params: { design: item.fields.slug }

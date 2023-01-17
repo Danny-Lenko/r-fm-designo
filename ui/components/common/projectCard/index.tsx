@@ -13,8 +13,6 @@ const ProjectCard = ({
    const router = useRouter()
    const image = project.image.fields.file.url
 
-   // console.log(router.asPath)
-
    return (
       <Grid xs={12} sm={12} md={4} sx={styles}>
          <Box
