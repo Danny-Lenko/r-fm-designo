@@ -7,6 +7,7 @@ import DesignLink from '../../components/common/designLink';
 import BottomRectangle from '../../components/common/bottomRectangle';
 import ProjectCard from '../../components/common/projectCard';
 import BcgBulb from '../../components/common/bcgBulb';
+import DesignSkeleton from '../../components/pageComponents/design/designSkeleton';
 import { convertToCamelcase } from '../../lib/utils/utils';
 import { IProjectItem, IDesignItem, IDesignItemFields, IProjectItemFields } from '../../lib/interfaces/interfaces';
 import { styles } from '../../styles/pagesStyles/designStyles';
@@ -20,6 +21,9 @@ const Design = ({
    currentDesign: IDesignItem
    otherDesigns: IDesignItem[]
 }) => {
+
+   if (!projects.length || !currentDesign) return <DesignSkeleton />
+
    const { id, title, description } = currentDesign.fields
 
    return (
@@ -73,24 +77,38 @@ export const getStaticPaths = async () => {
 
    return {
       paths,
-      fallback: false
+      fallback: true
    }
 }
 
-export const getStaticProps = async ({ params }: {params: {design: string}}) => {
+export const getStaticProps = async ({
+   params
+}: {
+   params: {
+      design: string
+   }
+}) => {
    const camelCased = convertToCamelcase(params.design)
 
    const { items: projects } = await client.getEntries<IProjectItemFields>({
       content_type: camelCased,
    })
 
-   projects.sort((a,b) => a.fields.id - b.fields.id)
-
    const { items } = await client.getEntries<IDesignItemFields>({
       content_type: 'designCollection'
    })
 
-   items.sort((a,b) => a.fields.id - b.fields.id)
+   if (!projects.length || !items.length) {
+      return {
+         redirect: {
+            destination: '/',
+            permanent: false,
+         },
+      }
+   }
+
+   projects.sort((a, b) => a.fields.id - b.fields.id)
+   items.sort((a, b) => a.fields.id - b.fields.id)
 
    const currentDesign = items.find(item => item.fields.slug === params.design)
    const otherDesigns = items.filter(item => item.fields.slug !== params.design)
@@ -100,6 +118,7 @@ export const getStaticProps = async ({ params }: {params: {design: string}}) => 
          projects,
          currentDesign,
          otherDesigns
-      }
+      },
+      revalidate: 1
    }
 }

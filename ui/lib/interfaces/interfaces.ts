@@ -1,4 +1,5 @@
 import Contentful from 'contentful'
+import * as CFRichTextTypes from '@contentful/rich-text-types';
 
 export interface IAboutContentItem {
    flexDirMd: string;
@@ -36,7 +37,7 @@ export interface IProjectItemFields {
    category: Contentful.EntryFields.Text,
    description: Contentful.EntryFields.Text,
    image: Contentful.Asset,
-   text?: Contentful.EntryFields.Text
+   text?: CFRichTextTypes.Document
 }
 export type IProjectItem = Contentful.Entry<IProjectItemFields>
 

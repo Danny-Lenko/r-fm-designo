@@ -2,15 +2,33 @@ import { createClient } from 'contentful'
 import { useRouter } from "next/router";
 import { convertToCamelcase } from '../../../lib/utils/utils';
 import { fetchAllProjectNames } from '../../../lib/utils/utils';
-import { IProjectItemFields, IDesignItemFields } from '../../../lib/interfaces/interfaces';
+import { IProjectItemFields, IDesignItemFields, IProjectItem } from '../../../lib/interfaces/interfaces';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import Box from '@mui/material/Box'
+import Container from '@mui/material/Container'
 
-const Project = ({project}:any) => {
+const Project = ({
+   project
+}: {
+   project: IProjectItem
+}) => {
    const router = useRouter()
+   const { title, text } = project.fields
 
    console.log(project)
 
    return (
-      <div>Hello project</div>
+      <Box component="main" >
+         <Container>
+
+            <h1>{title}</h1>
+
+            {
+               text && <div>{documentToReactComponents(text!)}</div>
+            }
+
+         </Container>
+      </Box>
    );
 }
 
@@ -56,6 +74,7 @@ export const getStaticProps = async ({
    })
 
    return {
-      props: { project: items[0] }
+      props: { project: items[0] },
+      revalidate: 1
    }
 }
