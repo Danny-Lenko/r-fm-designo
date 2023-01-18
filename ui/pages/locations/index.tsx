@@ -6,6 +6,10 @@ import BottomRectangle from '../../components/common/bottomRectangle';
 
 import { useEffect } from 'react';
 
+import { useAtom } from 'jotai';
+import { useAtomValue, useHydrateAtoms } from 'jotai/utils'
+import { loadableAtom } from '../../lib/context/locationsAtom';
+
 const canadaContent = {
    coords: [43.644, -79.394],
    flexDirMd: 'row-reverse',
@@ -52,6 +56,9 @@ const ukContent = {
 const Locations = () => {
    const router = useRouter()
    const id = router.query.id
+
+   const [locations] = useAtom(loadableAtom)
+   console.log(locations)
 
    useEffect(() => {
       if (typeof id === 'string') {

@@ -1,14 +1,11 @@
 import { createClient } from 'contentful'
-import { useRouter } from "next/router";
-import { convertToCamelcase } from '../../../lib/utils/utils';
-import { fetchAllProjectNames } from '../../../lib/utils/utils';
-import { IProjectItemFields, IDesignItemFields, IProjectItem } from '../../../lib/interfaces/interfaces';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import BottomRectangle from '../../../components/common/bottomRectangle';
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
+import BottomRectangle from '../../../components/common/bottomRectangle';
 import ProjectSkeleton from '../../../components/pageComponents/project/projectSkeleton';
-
+import { convertToCamelcase, fetchAllProjectNames } from '../../../lib/utils/utils';
+import { IProjectItemFields, IProjectItem } from '../../../lib/interfaces/interfaces';
 import { styles } from '../../../styles/pagesStyles/projectStyles';
 
 const Project = ({
@@ -20,8 +17,6 @@ const Project = ({
 
    const { title, text } = project.fields
 
-   console.log(project)
-
    return (
       <Box sx={styles} component="main" >
          <Container>
@@ -31,8 +26,6 @@ const Project = ({
             {
                text && <div>{documentToReactComponents(text!)}</div>
             }
-
-
 
             <BottomRectangle />
          </Container>

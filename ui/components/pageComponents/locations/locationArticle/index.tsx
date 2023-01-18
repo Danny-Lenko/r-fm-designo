@@ -36,7 +36,7 @@ const LocationArticle = ({ content }: any) => {
                   <Typography>{contact[2]}</Typography>
                </Box>
                <Box className='text-box__contact'>
-                  <Typography fontWeight='700'>{contact[3]}</Typography>
+                  <Typography fontWeight='700'>Contact</Typography>
                   <Typography>{contact[4]}</Typography>
                   <Typography>{contact[5]}</Typography>
                </Box>

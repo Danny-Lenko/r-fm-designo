@@ -7,6 +7,7 @@ import { ToggleColorMode } from '../styles/theme/ToggleColorMode';
 import createEmotionCache from '../lib/utils/createEmotionCache';
 import '../styles/globals.css';
 import PrimaryLayout from '../components/layouts/primaryLayout';
+import { Provider } from 'jotai';
 
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
@@ -29,7 +30,9 @@ const MyApp: React.FunctionComponent<MyAppProps> = (props) => {
         <ThemeProvider theme={myColorMode.theme}>
           <CssBaseline />
           <PrimaryLayout>
-            <Component {...pageProps} />
+            <Provider>
+              <Component {...pageProps} />
+            </Provider>
           </PrimaryLayout>
         </ThemeProvider>
       </CacheProvider>

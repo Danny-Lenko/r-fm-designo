@@ -10,6 +10,8 @@ import BcgBulb from '../components/common/bcgBulb';
 import { IDesignItem, IDesignItemFields } from '../lib/interfaces/interfaces';
 import { styles } from '../styles/pagesStyles/homeStyles';
 
+import { getLocations } from '../lib/context/locationsAtom';
+
 const Home: NextPage<{ designs: IDesignItem[] }> = ({ designs }) => {
 
   return (
@@ -37,13 +39,19 @@ export async function getStaticProps() {
     space: process.env.CONTENTFUL_SPACE_ID!,
     accessToken: process.env.CONTENTFUL_ACCESS_KEY!,
   })
-  const res = await client.getEntries<IDesignItemFields>({ content_type: "designCollection" })
+  const res = await client.getEntries<IDesignItemFields>({ 
+    content_type: "designCollection" 
+  })
 
-  res.items.sort((a,b) => a.fields.id - b.fields.id)
+  res.items.sort((a, b) => a.fields.id - b.fields.id)
+
+  // const locations = await getLocations()
+  // console.log(locations)
 
   return {
     props: {
       designs: res.items,
-    }
+    },
+    revalidate: 100
   }
 }

@@ -18,6 +18,7 @@
     "@svgr/webpack": "^6.5.1",
     "contentful": "^9.2.15",
     "formik": "^2.2.9",
+    "jotai": "^1.13.1",
     "leaflet": "^1.9.3",
     "leaflet-defaulticon-compatibility": "^0.1.1",
     "next": "^12.1.6",

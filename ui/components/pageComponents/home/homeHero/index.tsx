@@ -24,7 +24,7 @@ const Hero = () => {
             <CustomButton
                light={true}
                title='Learn More'
-               onClick={() => router.push('/web-design')} 
+               onClick={() => router.push('/designs/web-design')} 
             />
          </Box>
          {/* phone image */}
