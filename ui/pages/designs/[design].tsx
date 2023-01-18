@@ -22,7 +22,7 @@ const Design = ({
    otherDesigns: IDesignItem[]
 }) => {
 
-   if (!projects[0] || !currentDesign) return <DesignSkeleton />
+   if (!projects || !currentDesign) return <DesignSkeleton />
 
    const { id, title, description } = currentDesign.fields
 
