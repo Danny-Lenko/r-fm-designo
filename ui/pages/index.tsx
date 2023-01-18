@@ -10,8 +10,6 @@ import BcgBulb from '../components/common/bcgBulb';
 import { IDesignItem, IDesignItemFields } from '../lib/interfaces/interfaces';
 import { styles } from '../styles/pagesStyles/homeStyles';
 
-import { getLocations } from '../lib/context/locationsAtom';
-
 const Home: NextPage<{ designs: IDesignItem[] }> = ({ designs }) => {
 
   return (
