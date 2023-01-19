@@ -1,4 +1,4 @@
-import { createClient } from 'contentful'
+import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
@@ -35,11 +35,6 @@ const Project = ({
 
 export default Project;
 
-const client = createClient({
-   space: process.env.CONTENTFUL_SPACE_ID!,
-   accessToken: process.env.CONTENTFUL_ACCESS_KEY!,
-})
-
 export const getStaticPaths = async () => {
    const res = await fetchAllProjectNames()
 
@@ -66,7 +61,11 @@ export const getStaticProps = async ({
       project: string
    }
 }) => {
-
+   const client = createClient({
+      space: process.env.CONTENTFUL_SPACE_ID!,
+      accessToken: process.env.CONTENTFUL_ACCESS_KEY!,
+   })
+   
    const camelCased = convertToCamelcase(params.design)
 
    const { items } = await client.getEntries<IProjectItemFields>({

@@ -22,3 +22,4 @@ export const NAVITEMS = [
 
 // Home
 export const HEROHEIGHTWIDE = '640px'
+

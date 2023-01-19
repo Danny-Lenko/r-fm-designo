@@ -11,12 +11,13 @@ export function convertToCamelcase(str: string) {
    return str.replace(/-([a-z])/g, function (g: string) { return g[1].toUpperCase(); });
 }
 
+// -------- Contentful utils -----------
+
 export async function fetchAllProjectNames() {
    const client = createClient({
       space: process.env.CONTENTFUL_SPACE_ID!,
       accessToken: process.env.CONTENTFUL_ACCESS_KEY!,
    })
-
    const res = await client.getEntries<IDesignItemFields>({
       content_type: "designCollection"
    })

@@ -43,9 +43,6 @@ export async function getStaticProps() {
 
   res.items.sort((a, b) => a.fields.id - b.fields.id)
 
-  // const locations = await getLocations()
-  // console.log(locations)
-
   return {
     props: {
       designs: res.items,

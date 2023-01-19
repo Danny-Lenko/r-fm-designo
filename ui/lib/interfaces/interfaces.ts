@@ -40,4 +40,3 @@ export interface IProjectItemFields {
    text?: CFRichTextTypes.Document
 }
 export type IProjectItem = Contentful.Entry<IProjectItemFields>
-

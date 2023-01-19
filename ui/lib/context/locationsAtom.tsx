@@ -1,25 +1,14 @@
 import { atom } from "jotai";
 import { loadable } from "jotai/utils"
-import { createClient } from "contentful";
 import { IDesignItemFields } from "../interfaces/interfaces";
 
-const client = createClient({
-   space: process.env.CONTENTFUL_SPACE_ID!,
-   accessToken: process.env.CONTENTFUL_ACCESS_KEY!,
-})
+const host = process.env.NEXT_PUBLIC_HOST!
 
 export const asyncAtom = atom(async () => {
-   const res = await client.getEntries<IDesignItemFields>({
-      content_type: "locations"
-   })
+   const res = await fetch( host + 'api/contentful/locationsApi' )
+   const data = await res.json()
 
-   res.items.sort((a, b) => a.fields.id - b.fields.id)
-
-   return res.items
-
+   return data
 })
-export const loadableAtom = loadable(asyncAtom)
-
-// export async function getLocations() {
-// }
+export const locationsAtom = loadable(asyncAtom)
 

@@ -3,12 +3,9 @@ import Box from '@mui/material/Box'
 import Container from '@mui/material/Container';
 import LocationArticle from '../../components/pageComponents/locations/locationArticle';
 import BottomRectangle from '../../components/common/bottomRectangle';
-
 import { useEffect } from 'react';
-
 import { useAtom } from 'jotai';
-import { useAtomValue, useHydrateAtoms } from 'jotai/utils'
-import { loadableAtom } from '../../lib/context/locationsAtom';
+import { locationsAtom } from '../../lib/context/locationsAtom';
 
 const canadaContent = {
    coords: [43.644, -79.394],
@@ -56,9 +53,9 @@ const ukContent = {
 const Locations = () => {
    const router = useRouter()
    const id = router.query.id
+   const [locations] = useAtom<any>(locationsAtom)
 
-   const [locations] = useAtom(loadableAtom)
-   console.log(locations)
+   console.log(locations.data)
 
    useEffect(() => {
       if (typeof id === 'string') {
