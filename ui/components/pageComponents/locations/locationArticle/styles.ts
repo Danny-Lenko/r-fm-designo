@@ -1,10 +1,13 @@
 import { SECTIONMARGINBOTTOM } from '../../../../lib/utils/constants';
 
-export const styles = (flexDirMd: any, margBottom: any) => ({
+export const styles = (id: number, length: number) => ({
    display: 'flex',
-   flexDirection: { xs: 'column', md: flexDirMd },
+   flexDirection: { 
+      xs: 'column', 
+      md: id % 2 !== 0 ? 'row-reverse' : 'row' 
+   },
    gap: { sx: 0, sm: '30px' },
-   mb: margBottom ? SECTIONMARGINBOTTOM / 8 : { xs: 40 / 8, sm: 120 / 8, md: 4 },
+   mb: id === length ? SECTIONMARGINBOTTOM / 8 : { xs: 40 / 8, sm: 120 / 8, md: 4 },
 
    '& .map-box': {
       minWidth: '30%',

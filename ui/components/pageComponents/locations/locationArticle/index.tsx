@@ -1,17 +1,29 @@
 import { useMemo } from 'react';
 import dynamic from 'next/dynamic';
-import MobileContainer from '../../../common/mobileContainer';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import MobileContainer from '../../../common/mobileContainer';
+import { ILocationFields } from '../../../../lib/interfaces/interfaces';
 import { styles } from './styles'
 
-const LocationArticle = ({ content }: any) => {
+const LocationArticle = ({ 
+   content, 
+   length
+}: {
+   content: ILocationFields
+   length: number
+}) => {
    const {
+      address,
+      city,
       coords,
-      flexDirMd,
-      heading,
-      contact,
-      margBottom
+      country,
+      email,
+      id,
+      name,
+      phone,
+      postalZipCode,
+      region
    } = content
 
    const Map = useMemo(() => dynamic(
@@ -24,21 +36,25 @@ const LocationArticle = ({ content }: any) => {
 
    return (
       <MobileContainer>
-         <Box sx={styles(flexDirMd, margBottom)}>
+         <Box sx={styles(id, length)}>
             <Box className='map-box'>
                <Map coords={coords} />
             </Box>
             <Box className='text-box'>
-               <Typography variant='h2'>{heading}</Typography>
+               <Typography variant='h2'>{country}</Typography>
                <Box className='text-box__contact'>
-                  <Typography fontWeight='700'>{contact[0]}</Typography>
-                  <Typography>{contact[1]}</Typography>
-                  <Typography>{contact[2]}</Typography>
+                  <Typography fontWeight='700'>{name}</Typography>
+                  {
+                     address && <Typography>{address}</Typography>
+                  }
+                  <Typography>{`${city}${region && `, ${region}`} ${postalZipCode}`}</Typography>
                </Box>
                <Box className='text-box__contact'>
                   <Typography fontWeight='700'>Contact</Typography>
-                  <Typography>{contact[4]}</Typography>
-                  <Typography>{contact[5]}</Typography>
+                  {
+                     phone && <Typography>{`P : ${phone}`}</Typography>
+                  }
+                  <Typography>M : {email}</Typography>
                </Box>
             </Box>
          </Box>
