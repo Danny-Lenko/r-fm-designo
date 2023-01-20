@@ -35,7 +35,8 @@ const Locations = () => {
                      content={location.fields}
                      length={locations.length}
                   />
-               </Box>)
+               </Box>
+            )
          }
          <Container maxWidth='lg'>
             <BottomRectangle />

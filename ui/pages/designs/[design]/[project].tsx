@@ -13,12 +13,17 @@ const Project = ({
 }: {
    project: IProjectItem
 }) => {
-   if ( !project ) return <ProjectSkeleton />
+   if (!project) return <ProjectSkeleton />
 
-   const { title, text } = project.fields
+   const { title, text, image } = project.fields
+   const imageUrl = image.fields.file.url
+
+   console.log(project)
 
    return (
-      <Box sx={styles} component="main" >
+      <Box sx={styles(imageUrl)} component="main" >
+         <div className='parallax'></div>
+
          <Container>
 
             <h1>{title}</h1>
@@ -65,7 +70,7 @@ export const getStaticProps = async ({
       space: process.env.CONTENTFUL_SPACE_ID!,
       accessToken: process.env.CONTENTFUL_ACCESS_KEY!,
    })
-   
+
    const camelCased = convertToCamelcase(params.design)
 
    const { items } = await client.getEntries<IProjectItemFields>({
