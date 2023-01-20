@@ -1,5 +1,8 @@
-export const styles = (content:any, assembleBg:any) => ({
-   gridArea: content.gridArea ? content.gridArea : 'none',
+export const styles = (
+   imgXs:string, 
+   imgSm:string | undefined, 
+   imgMd:string | undefined
+) => ({
    position: 'relative',
    cursor: 'pointer',
    backgroundColor: 'peachCustom.main',
@@ -11,6 +14,10 @@ export const styles = (content:any, assembleBg:any) => ({
          transform: 'scale(1.2)',
          opacity: 0.3
       }
+   },
+   '&.highItem': {
+      gridRowStart: 1,
+      gridRowEnd: { xs: 1, md: 'span 2' }
    },
 
    // img box
@@ -24,9 +31,9 @@ export const styles = (content:any, assembleBg:any) => ({
          opacity 250ms linear
       `,
       background: {
-         xs: assembleBg(content.img, 'XS'),
-         sm: assembleBg(content.img, 'SM'),
-         md: assembleBg(content.img, 'MD')
+         xs: `rgba(0,0,0,0.5) url(${ imgXs }) 0 0/cover no-repeat`,
+         sm: `rgba(0,0,0,0.5) url(${ imgSm ? imgSm : imgXs }) 0 0/cover no-repeat`,
+         md: `rgba(0,0,0,0.5) url(${ imgMd ? imgMd : imgXs }) 0 0/cover no-repeat`
       }
    },
 

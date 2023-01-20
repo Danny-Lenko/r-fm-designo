@@ -4,51 +4,44 @@ import Box from '@mui/material/Box'
 import SvgIcon from '@mui/material/SvgIcon'
 import Typography from '@mui/material/Typography'
 import CustomButton from '../customButton'
-import canadaImg from '/public/assets/shared/desktop/img-group-canada.svg'
-import australiaImg from '/public/assets/shared/desktop/img-group-australia.svg'
-import ukImg from '/public/assets/shared/desktop/img-group-uk.svg'
+import { locationsAtom } from '../../../lib/context/locationsAtom'
+import { useAtom } from 'jotai'
+import { ILocation } from '../../../lib/interfaces/interfaces'
 import { styles } from './styles'
+import Image from 'next/image'
 
 const SeeLocation = () => {
    const router = useRouter()
+   const [loadableAtom] = useAtom<any>(locationsAtom)
+   const locations: ILocation[] = loadableAtom.data
+   const mainLocations = locations ? locations.slice(0, 3) : []
 
    return (
       <Container maxWidth='lg' sx={styles}>
-         <Box className='article'>
-            <SvgIcon component={canadaImg} inheritViewBox />
-            <Typography variant='h3'>Canada</Typography>
-            <CustomButton
-               light={false}
-               title='see location'
-               onClick={() => {
-                  router.push({ pathname: '/locations', query: { id: 'canada' } })
-               }}
-            ></CustomButton>
-         </Box>
-
-         <Box className='article'>
-            <SvgIcon component={australiaImg} inheritViewBox />
-            <Typography variant='h3'>Australia</Typography>
-            <CustomButton
-               light={false}
-               title='see location'
-               onClick={() => {
-                  router.push({ pathname: '/locations', query: { id: 'australia' } })
-               }}
-            ></CustomButton>
-         </Box>
-
-         <Box className='article'>
-            <SvgIcon component={ukImg} inheritViewBox />
-            <Typography variant='h3'>United Kingdom</Typography>
-            <CustomButton
-               light={false}
-               title='see location'
-               onClick={() => {
-                  router.push({ pathname: '/locations', query: { id: 'uk' } })
-               }}
-            ></CustomButton>
-         </Box>
+         {
+            locations && mainLocations.map(location => {
+               const {image, country, name} = location.fields
+               return <Box
+                  key={location.sys.id}
+                  className='article'
+               >
+                  <Image 
+                     src={'https:' + image.fields.file.url} 
+                     alt={location.fields.country}
+                     width={202}
+                     height={202} 
+                  />
+                  <Typography variant='h3'>{country}</Typography>
+                  <CustomButton
+                     light={false}
+                     title='see location'
+                     onClick={() => {
+                        router.push({ pathname: '/locations', query: { id: name } })
+                     }}
+                  ></CustomButton>
+               </Box>
+            })
+         }
       </Container>
    );
 }

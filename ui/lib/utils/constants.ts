@@ -23,30 +23,3 @@ export const NAVITEMS = [
 // Home
 export const HEROHEIGHTWIDE = '640px'
 
-// GreyDrop
-
-export const DROPHOMETOP = '350px'
-export const DROPHOMEBOTTOM = '1730px'
-export const DROPDESIGNTYPES = '130px'
-
-// DesingLink
-export const webDesignProps = {
-   title: 'Web Design',
-   path: '/web-design',
-   img: 'WebImg',
-   gridArea: 'web'
-}
-
-export const appDesignProps = {
-   title: 'App Design',
-   path: '/app-design',
-   img: 'AppImg',
-   gridArea: 'app'
-}
-
-export const graphicDesignProps = {
-   title: 'Graphic Design',
-   path: '/graphic-design',
-   img: 'GraphicImg',
-   gridArea: 'graphic'
-}
