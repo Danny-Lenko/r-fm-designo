@@ -9,6 +9,7 @@ export const styles = {
    '& .article': {
       mb: { xs: 6, sm: 10, md: 0 },
       textAlign: 'center',
+      width: {xs: 'unset', md: '32%'},
       '& svg': {
          width: 202,
          height: 202

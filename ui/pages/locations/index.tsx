@@ -13,7 +13,7 @@ const Locations = () => {
    const id = router.query.id
    const [loadableAtom] = useAtom<any>(locationsAtom)
    const locations: ILocation[] = loadableAtom.data
-   
+
    useEffect(() => {
       if (typeof id === 'string') {
          const el = document.getElementById(id)
@@ -26,11 +26,16 @@ const Locations = () => {
    return (
       <Box component="main" sx={{ position: 'relative' }}>
          {
-            locations && locations.map(location => <LocationArticle 
-               key={location.sys.id} 
-               content={location.fields}
-               length={locations.length}
-            />)
+            locations && locations.map(location =>
+               <Box
+                  key={location.sys.id}
+                  id={location.fields.name}
+               >
+                  <LocationArticle
+                     content={location.fields}
+                     length={locations.length}
+                  />
+               </Box>)
          }
          <Container maxWidth='lg'>
             <BottomRectangle />

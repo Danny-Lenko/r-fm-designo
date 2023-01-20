@@ -52,5 +52,6 @@ export interface ILocationFields {
    postalZipCode?: Contentful.EntryFields.Text
    region?: Contentful.EntryFields.Text
    phone?: Contentful.EntryFields.Text
+   image: Contentful.Asset
 }
 export type ILocation = Contentful.Entry<ILocationFields>
