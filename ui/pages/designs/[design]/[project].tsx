@@ -18,20 +18,14 @@ const Project = ({
    const { title, text, image } = project.fields
    const imageUrl = image.fields.file.url
 
-   console.log(project)
-
    return (
       <Box sx={styles(imageUrl)} component="main" >
          <div className='parallax'></div>
-
          <Container>
-
             <h1>{title}</h1>
-
             {
                text && <div>{documentToReactComponents(text!)}</div>
             }
-
             <BottomRectangle />
          </Container>
       </Box>
