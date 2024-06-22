@@ -24,12 +24,12 @@ const DesignLink = ({
   console.log("content", content);
 
   const img = md
-    ? `${content.imageMd?.fields.file.url}`
+    ? `https:${content.imageMd?.fields.file.url}`
     : sm
-    ? `${content.imageSm?.fields.file.url}`
+    ? `https:${content.imageSm?.fields.file.url}`
     : xs
-    ? `${content.imageXs.fields.file.url}`
-    : `${content.imageMd?.fields.file.url}`;
+    ? `https:${content.imageXs.fields.file.url}`
+    : `https:${content.imageMd?.fields.file.url}`;
 
   return (
     <Box
@@ -44,7 +44,13 @@ const DesignLink = ({
         </Typography>
       </Box>
       <Box className="img">
-        <Image loading="lazy" src={img} alt={content.title} layout="fill" objectFit="cover" />
+        <Image
+          loading="lazy"
+          src={img}
+          alt={content.title}
+          layout="fill"
+          objectFit="cover"
+        />
       </Box>
     </Box>
   );
