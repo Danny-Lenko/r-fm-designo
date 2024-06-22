@@ -2,11 +2,11 @@ import { useRouter } from "next/router";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import { styles } from "./styles";
 import { IDesignItemFields } from "../../../lib/interfaces/interfaces";
 import Image from "next/image";
 import useTheme from "@mui/material/styles/useTheme";
 import useMediaQuery from "@mui/material/useMediaQuery/useMediaQuery";
+import { styles } from "./styles";
 
 const DesignLink = ({
   content,
@@ -20,6 +20,8 @@ const DesignLink = ({
   const xs = useMediaQuery(theme.breakpoints.up("xs"));
   const sm = useMediaQuery(theme.breakpoints.up("sm"));
   const md = useMediaQuery(theme.breakpoints.up("md"));
+
+  console.log("content", content);
 
   const img = md
     ? `https://${content.imageMd?.fields.file.url}`
@@ -42,7 +44,7 @@ const DesignLink = ({
         </Typography>
       </Box>
       <Box className="img">
-        <Image src={img!} alt={content.title} layout="fill" objectFit="cover" />
+        <Image src={img} alt={content.title} layout="fill" objectFit="cover" />
       </Box>
     </Box>
   );
